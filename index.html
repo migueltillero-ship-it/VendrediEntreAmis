@@ -1,415 +1,76 @@
 ﻿<!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vendredi entre amis · Accueil</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="estilo-dinamico.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-:root {
-    --vendredi-bleu: #1f4d8c;
-    --vendredi-bleu-clair: #4F81BD;
-    --vendredi-creme: #FFF8ED;
-    --vendredi-or: #D4A017;
-    --vendredi-texte: #2B2B2B;
-    --vendredi-surface: #FFFFFF;
-}
-body {
-    background: linear-gradient(180deg, #FFFDF8 0%, #FFF8ED 100%);
-    color: var(--vendredi-texte);
-}
-.carnet-header {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-.badge {
-    display: inline-block;
-    background: rgba(212,160,23,.12);
-    color: var(--vendredi-or);
-    padding: .5rem .9rem;
-    border-radius: 999px;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-.reflection {
-    background: white;
-    border-left: 4px solid var(--vendredi-or);
-    border-radius: 14px;
-    padding: 1.25rem;
-    margin-bottom: 1rem;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendredi entre amis | Le Cercle de Conversation de Miguel Tillero</title>
+    <meta name="description" content="Un espace curatif et indépendant pour pratiquer le Français Langue Étrangère (FLE). Animé par Miguel Tillero, fort de 13 ans d'expérience.">
 
-<style id="vendredi-premium">
-.card,
-.dashboard,
-.history{
-    background: var(--vendredi-surface);
-    border: 1px solid rgba(212,160,23,.15);
-    border-radius: 22px;
-    box-shadow: 0 12px 30px rgba(31,77,140,.08);
-    padding: 2rem;
-    margin-bottom: 2rem;
-}
-.stats{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-}
-.stat{
-    background: linear-gradient(135deg, #FFFFFF, #FFF8ED);
-    border: 1px solid rgba(212,160,23,.15);
-    border-radius: 18px;
-    padding: 1rem;
-    text-align: center;
-}
-.stat span{
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--vendredi-bleu);
-}
-.primary-btn{
-    background: var(--vendredi-bleu);
-    color: white;
-    border: none;
-    transition: all .25s ease;
-}
-.primary-btn:hover{
-    background: var(--vendredi-bleu-clair);
-    transform: translateY(-2px);
-}
-.edit-btn{
-    background: var(--vendredi-bleu);
-    color: white;
-}
-.delete-btn{
-    background: #dc2626;
-    color: white;
-}
-input,
-textarea,
-select{
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    border: 1px solid #d4d4d4;
-    box-sizing: border-box;
-}
-</style>
-<link rel="stylesheet" href="assets/css/design-system.css">
+    <!-- Fuentes de Marca -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Dinámico Definitivo -->
+    <link rel="stylesheet" href="assets/css/estilo-dinamico.css">
 </head>
 <body>
-<header class="barra">
-  <div class="barra-in">
-    <a class="marca" href="../index.html">Miguel <b>Tillero</b></a>
-    <nav class="nav-scroll">
-      <a href="index.html" class="on">Accueil</a>
-      <a href="pourquoi.html">Le Concept</a>
-      <a href="animateur.html">L'Animateur</a>
-      <a href="niveles.html">Pédagogie</a>
-      <a href="recursos.html">Ressources</a>
-      <a href="comunidad.html">Communauté</a>
-      <a href="ideas.html">Contact</a>
-    </nav>
-    <a class="btn-oro" href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis" target="_blank"><i class="fa-brands fa-whatsapp"></i> Rejoindre</a>
-  </div>
-</header>
-<main class="contenedor-slide" style="text-align:center; max-width:900px;">
-  <span style="font-family:'Syne'; font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-claro);">Un proyecto independiente de Miguel Tillero</span>
-  <h1 style="font-size:clamp(2.5rem, 5vw, 4.5rem); margin:0.5rem 0 0.5rem;">Vendredi <em style="color:var(--gold); font-style:normal;">entre amis</em></h1>
-  <p style="font-size:1.4rem; font-family:'Syne', sans-serif; font-weight:600; color:var(--gold-claro); margin-bottom:1rem;">Club de conversation francophone</p>
-  
-  <p style="font-size:1.15rem; line-height:1.7; max-width:750px; margin:0 auto 2rem; color:rgba(255,255,255,0.9);">Parlez français avec confiance, authenticité et plaisir. Un espacio diseñado para practicar francés en un ambiente cálido, respetuoso e inclusivo, donde cada conversación se convierte en una oportunidad para progresar.</p>
-  
-  <div style="margin-bottom:3rem; padding:1.5rem; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-    <p style="font-size:1.3rem; font-style:italic; margin:0; color:#fff;">"Ici, l'erreur n'est pas un obstacle. C'est une étape naturelle de l'apprentissage."</p>
-  </div>
 
-  <h2 style="font-size:2rem; margin-bottom:1rem;">Découvrez l'esprit du club</h2>
-  <p style="margin-bottom:1.5rem; color:rgba(255,255,255,0.85);">Le français est avant tout une langue de rencontre. Regardez cette courte présentation et découvrez pourquoi tant d'apprenants choisissent de vivre le français autrement.</p>
-  
-  <div style="position:relative; width:100%; border-radius:8px; overflow:hidden; box-shadow:var(--sombra); border:2px solid var(--gold); margin-bottom:3rem;">
-    <video
-    controls
-    playsinline
-    preload="metadata"
-    style="width:100%; border-radius:12px;"
->
-    <source src="assets/club-de-conversacion.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de video HTML5.
-</video>
-  </div>
+    <!-- HERO -->
+    <section class="section-wrapper" style="text-align: center; padding-top: 8rem;">
+        <span class="eyebrow">Un espace indépendant par Miguel Tillero</span>
+        <h1>Vendredi entre amis</h1>
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: var(--em2); margin-top: 1rem;">
+            « Chaque vendredi, une conversation. Chaque semaine, une progression. »
+        </p>
+    </section>
 
-  <div style="text-align:left; background:rgba(255,255,255,0.05); padding:2rem; border-radius:8px; margin-bottom:2rem;">
-    <h2 style="margin-top:0; color:var(--gold-claro);">Bienvenue dans notre communauté</h2>
-    <p style="line-height:1.7;">Aprender una lengua implica mucho más que dominar estructuras gramaticales. Implica desarrollar confianza, descubrir culturas, compartir experiencias y sentirse parte de una comunidad. <em>Vendredi entre amis</em> nació precisamente con ese propósito: crear un espacio donde el francés se viva de manera auténtica.</p>
-  </div>
+    <!-- VIDEO INTEGRADO (Ruta corregida al archivo real) -->
+    <section class="section-wrapper" style="padding-top: 0;">
+        <div class="video-wrapper">
+            <video id="vid-bienvenida" class="video-player" controls playsinline preload="metadata" poster="assets/images/poster-bienvenue.jpg">
+                <source src="assets/club-de-conversacion.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de cette vidéo.
+            </video>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="#inscription" class="btn-primary">Rejoindre le cercle (Places limitées)</a>
+        </div>
+    </section>
 
-  <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
-    <a href="pourquoi.html" class="btn-oro">Siguiente: ¿Por qué participar? <i class="fa-solid fa-arrow-right"></i></a>
-  </div>
-</main>
-<footer><p>© 2026 Miguel Tillero · Vendredi entre amis</p></footer>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const video = document.querySelector('video');
-    const audios = document.querySelectorAll('audio');
-    
-    if (video) {
-        video.addEventListener('play', () => {
-            audios.forEach(audio => {
-                if (!audio.paused) {
-                    audio.dataset.wasPlaying = 'true';
-                    audio.pause();
-                }
-            });
-        });
-        video.addEventListener('pause', () => {
-            audios.forEach(audio => {
-                if (audio.dataset.wasPlaying === 'true') {
-                    audio.play().catch(e => console.log("Audio resume prevented:", e));
-                    audio.dataset.wasPlaying = 'false';
-                }
-            });
-        });
-        video.addEventListener('ended', () => {
-            audios.forEach(audio => {
-                if (audio.dataset.wasPlaying === 'true') {
-                    audio.play().catch(e => console.log("Audio resume prevented:", e));
-                    audio.dataset.wasPlaying = 'false';
-                }
-            });
-        });
-    }
-});
-</script>
-<!-- MODULO CARNET REFLEXIF PREMIUM -->
-<section id="carnet-reflexif-module" class="vea-journal">
-  <div class="vea-journal-header">
-    <span class="vea-journal-tag">Mon parcours francophone</span>
-    <h2>Mon journal de bord</h2>
-    <p class="vea-journal-date">Chaque seance laisse une trace. Conservez vos decouvertes, votre vocabulaire et votre progression.</p>
-  </div>
+    <!-- L'ANIMATEUR (MARCA PERSONAL) -->
+    <section class="section-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+            <h2>L'Animateur</h2>
+            <p>Fort de 13 ans d'expérience dans l'enseignement du FLE et de mon parcours à la direction générale d'institutions culturelles francophones au Mexique, j'ai conçu ce cercle indépendant pour redonner à la parole toute sa liberté.</p>
+            <p>Ici, on parle français — peu importe le niveau. On apprend tous, ensemble.</p>
+            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; margin-top: 2rem; color: var(--em1);">Miguel Tillero</p>
+        </div>
+        <div style="background-color: var(--panel); padding: 1rem; border: 1px solid var(--line-borde); box-shadow: var(--sombra);">
+            <div style="width: 100%; aspect-ratio: 3/4; background-color: var(--deep); display: flex; align-items: center; justify-content: center; color: var(--muted);">
+                [Insérer portrait-miguel.jpg]
+            </div>
+        </div>
+    </section>
 
-  <div class="vea-dashboard">
-    <div class="vea-dashboard-stat">
-      <strong id="totalSessions">0</strong>
-      <p>Sessions realisees</p>
-    </div>
-    <div class="vea-dashboard-stat">
-      <strong id="averageRating">0.0</strong>
-      <p>Satisfaction moyenne</p>
-    </div>
-    <div class="vea-dashboard-stat">
-      <strong id="totalWords">0</strong>
-      <p>Mots enregistres</p>
-    </div>
-  </div>
+    <!-- RSVP / INSCRIPCIÓN (FORMSPREE) -->
+    <section id="inscription" class="section-wrapper">
+        <div class="rsvp-card" style="max-width: 600px; margin: 0 auto;">
+            <h2 style="text-align: center; margin-top: 0;">Confirmer sa présence</h2>
+            <form action="TU_ENDPOINT_FORMSPREE" method="POST">
+                <input type="text" name="nom" class="input-ligne" placeholder="Votre nom complet" required>
+                <input type="email" name="email" class="input-ligne" placeholder="Courriel de contact" required>
+                <input type="text" name="attentes" class="input-ligne" placeholder="Qu'attendez-vous de cette séance ?" required>
+                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Envoyer ma demande</button>
+            </form>
+        </div>
+    </section>
 
-  <form id="reflectionForm" onsubmit="saveReflection(event)" class="vea-journal-form">
-    <input type="hidden" id="editingId">
+    <!-- FOOTER INDEPENDIENTE -->
+    <footer class="footer-independant">
+        <p>&copy; 2026 Miguel Tillero. Tous droits réservés.</p>
+        <p>Espace pédagogique et culturel indépendant.</p>
+    </footer>
 
-    <div class="vea-journal-block">
-      <label for="sessionDate">Date de la seance</label>
-      <input type="date" id="sessionDate" required>
-    </div>
-
-    <div class="vea-journal-block">
-      <label for="theme">Theme aborde</label>
-      <input type="text" id="theme" placeholder="Ex. Les expressions idiomatiques, Le voyage..." required>
-    </div>
-
-    <div class="vea-journal-block">
-      <label for="rating">Evaluation de la seance</label>
-      <select id="rating" required>
-        <option value="5">Excellente</option>
-        <option value="4">Tres enrichissante</option>
-        <option value="3">Correcte</option>
-        <option value="2">A ameliorer</option>
-        <option value="1">Difficile</option>
-      </select>
-    </div>
-
-    <div class="vea-journal-block">
-      <label for="emotion">Comment vous sentez-vous apres cette seance ?</label>
-      <select id="emotion">
-        <option value="">Selectionnez une emotion</option>
-        <option value="Inspire(e)">Inspire(e)</option>
-        <option value="Motive(e)">Motive(e)</option>
-        <option value="Confiant(e)">Confiant(e)</option>
-        <option value="Curieux(se)">Curieux(se)</option>
-        <option value="Heureux(se)">Heureux(se)</option>
-        <option value="Fier(e)">Fier(e)</option>
-        <option value="Reflexif(ve)">Reflexif(ve)</option>
-      </select>
-    </div>
-
-    <div class="vea-journal-block">
-      <label for="learned">Ce que j'ai appris aujourd'hui</label>
-      <textarea id="learned" rows="3" placeholder="Vocabulaire, tournures, remarques..." required></textarea>
-    </div>
-
-    <div class="vea-journal-block">
-      <label for="goal">Mon objectif pour la prochaine fois</label>
-      <input type="text" id="goal" placeholder="Ex. Utiliser le subjonctif, oser parler plus...">
-    </div>
-
-    <button type="submit" class="vea-button" style="width:100%;">Enregistrer ma reflexion</button>
-  </form>
-
-  <div class="vea-history-wrapper">
-    <h3>Historique de vos reflexions</h3>
-    <div id="historyList" aria-live="polite">
-      <p class="vea-journal-empty">Aucune reflexion enregistree pour le moment. Commencez des aujourd'hui !</p>
-    </div>
-  </div>
-</section>
-
-<!-- SCRIPT DE LOGICA DEL CARNET -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("sessionDate").valueAsDate = new Date();
-    renderDashboard();
-});
-
-function getReflections() {
-    return JSON.parse(localStorage.getItem("vendredi_reflections") || "[]");
-}
-
-function saveReflection(event) {
-    event.preventDefault();
-    var editingId = document.getElementById("editingId").value;
-    
-    var record = {
-        id: editingId || Date.now().toString(),
-        sessionDate: document.getElementById("sessionDate").value,
-        theme: document.getElementById("theme").value.trim(),
-        rating: parseInt(document.getElementById("rating").value),
-        emotion: document.getElementById("emotion").value,
-        learned: document.getElementById("learned").value.trim(),
-        goal: document.getElementById("goal").value.trim()
-    };
-
-    var reflections = getReflections();
-    if (editingId) {
-        reflections = reflections.map(function(r) { return r.id === editingId ? record : r; });
-    } else {
-        reflections.unshift(record);
-    }
-
-    localStorage.setItem("vendredi_reflections", JSON.stringify(reflections));
-    clearForm();
-    renderDashboard();
-}
-
-function clearForm() {
-    document.getElementById("reflectionForm").reset();
-    document.getElementById("editingId").value = "";
-    document.getElementById("sessionDate").valueAsDate = new Date();
-}
-
-function renderDashboard() {
-    var reflections = getReflections();
-    document.getElementById("totalSessions").innerText = reflections.length;
-
-    var totalRating = 0;
-    var totalWords = 0;
-
-    reflections.forEach(function(r) {
-        totalRating += r.rating;
-        totalWords += (r.learned ? r.learned.split(/\s+/).length : 0);
-    });
-
-    var avg = reflections.length ? (totalRating / reflections.length).toFixed(1) : "0.0";
-    document.getElementById("averageRating").innerText = avg;
-    document.getElementById("totalWords").innerText = totalWords;
-
-    var historyList = document.getElementById("historyList");
-    if (reflections.length === 0) {
-        historyList.innerHTML = '<p style="color: #777; text-align: center; font-style: italic;">Aucune réflexion enregistrée pour le moment. Commencez dès aujourd\'hui !</p>';
-        return;
-    }
-
-    var html = "";
-    reflections.forEach(function(r) {
-        html += '<div class="reflection" style="margin-bottom: 1.5rem; background: white; border-left: 4px solid var(--vendredi-or); border-radius: 14px; padding: 1.25rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">' +
-                '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">' +
-                '<strong style="color: var(--vendredi-bleu); font-size: 1.1rem;">📅 ' + r.sessionDate + ' — ' + escapeHtml(r.theme) + '</strong>' +
-                '<span style="background: rgba(212,160,23,0.15); padding: 2px 8px; border-radius: 8px; font-weight: 600; color: #b8860b;">⭐ ' + r.rating + '/5</span>' +
-                '</div>' +
-                (r.emotion ? '<p style="margin: 0.3rem 0; font-size: 0.9rem;"><strong>🌱 État :</strong> ' + escapeHtml(r.emotion) + '</p>' : '') +
-                '<p style="margin: 0.5rem 0;"><strong>🎓 Apprentissage :</strong> ' + escapeHtml(r.learned) + '</p>' +
-                (r.goal ? '<p style="margin: 0.5rem 0;"><strong>🎯 Objectif :</strong> ' + escapeHtml(r.goal) + '</p>' : '') +
-                '<div style="margin-top: 1rem; display: flex; gap: 0.5rem;">' +
-                '<button onclick="editReflection(\'' + r.id + '\')" class="edit-btn" style="padding: 6px 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 0.85rem;">Modifier</button>' +
-                '<button onclick="deleteReflection(\'' + r.id + '\')" class="delete-btn" style="padding: 6px 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 0.85rem;">Supprimer</button>' +
-                '</div>' +
-                '</div>';
-    });
-    historyList.innerHTML = html;
-}
-
-function editReflection(id) {
-    var reflections = getReflections();
-    var r = reflections.find(function(item) { return item.id === id; });
-    if (!r) return;
-
-    document.getElementById("editingId").value = r.id;
-    document.getElementById("sessionDate").value = r.sessionDate;
-    document.getElementById("theme").value = r.theme;
-    document.getElementById("rating").value = r.rating;
-    document.getElementById("emotion").value = r.emotion || "";
-    document.getElementById("learned").value = r.learned;
-    document.getElementById("goal").value = r.goal || "";
-
-    window.scrollTo({ top: document.getElementById("reflectionForm").offsetTop - 50, behavior: 'smooth' });
-}
-
-function deleteReflection(id) {
-    if (confirm("Êtes-vous sûr de vouloir supprimer cette réflexion ?")) {
-        var reflections = getReflections();
-        reflections = reflections.filter(function(item) { return item.id !== id; });
-        localStorage.setItem("vendredi_reflections", JSON.stringify(reflections));
-        renderDashboard();
-    }
-}
-
-function escapeHtml(text) {
-    const value = String(text ?? "");
-    return value
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-}
-</script>
-<!-- FIN MODULO CARNET REFLEXIF -->
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
