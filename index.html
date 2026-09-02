@@ -185,7 +185,209 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 </script>
+<!-- MODULO CARNET REFLEXIF PREMIUM -->
+<section id="carnet-reflexif-module" class="card" style="max-width: 900px; margin: 3rem auto; padding: 2rem;">
+    <div class="carnet-header">
+        <span class="badge">Mon parcours francophone</span>
+        <h2 style="color: var(--vendredi-bleu); margin-top: 0.5rem;">📘 Mon carnet réflexif</h2>
+        <p style="color: #666;">Chaque séance laisse une trace. Conservez vos découvertes, votre vocabulaire et votre progression.</p>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard" style="background: transparent; border: none; box-shadow: none; padding: 0; margin-bottom: 2rem;">
+        <div class="stats">
+            <div class="stat">
+                <span id="totalSessions">0</span>
+                <p style="margin: 0; font-size: 0.9rem; color: #555;">Sessions réalisées</p>
+            </div>
+            <div class="stat">
+                <span id="averageRating">0.0</span>
+                <p style="margin: 0; font-size: 0.9rem; color: #555;">Satisfaction moyenne</p>
+            </div>
+            <div class="stat">
+                <span id="totalWords">0</span>
+                <p style="margin: 0; font-size: 0.9rem; color: #555;">Mots enregistrés</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de Reflexión -->
+    <form id="reflectionForm" onsubmit="saveReflection(event)" style="background: #FFFDF8; border: 1px solid rgba(212,160,23,.2); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem;">
+        <input type="hidden" id="editingId">
+        
+        <div style="margin-bottom: 1.2rem;">
+            <label for="sessionDate" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">📅 Date de la séance :</label>
+            <input type="date" id="sessionDate" required>
+        </div>
+
+        <div style="margin-bottom: 1.2rem;">
+            <label for="theme" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">💡 Thème abordé :</label>
+            <input type="text" id="theme" placeholder="Ex. Les expressions idiomatiques, Le voyage..." required>
+        </div>
+
+        <div style="margin-bottom: 1.2rem;">
+            <label for="rating" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">⭐ Évaluation de la séance :</label>
+            <select id="rating" required>
+                <option value="5">⭐⭐⭐⭐⭐ (Excellente)</option>
+                <option value="4">⭐⭐⭐⭐ (Très enrichissante)</option>
+                <option value="3">⭐⭐⭐ (Correcte)</option>
+                <option value="2">⭐⭐ (À améliorer)</option>
+                <option value="1">⭐ (Difficile)</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom: 1.2rem;">
+            <label for="emotion" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">🌱 Comment vous sentez-vous après cette séance ?</label>
+            <select id="emotion">
+                <option value="">Sélectionnez une émotion</option>
+                <option value="✨ Inspiré(e)">✨ Inspiré(e)</option>
+                <option value="🚀 Motivé(e)">🚀 Motivé(e)</option>
+                <option value="💪 Confiant(e)">💪 Confiant(e)</option>
+                <option value="🔍 Curieux(se)">🔍 Curieux(se)</option>
+                <option value="😊 Heureux(se)">😊 Heureux(se)</option>
+                <option value="🏆 Fier(e)">🏆 Fier(e)</option>
+                <option value="📖 Réflexif(ve)">📖 Réflexif(ve)</option>
+            </select>
+        </div>
+
+        <div style="margin-bottom: 1.2rem;">
+            <label for="learned" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">🎓 Ce que j'ai appris aujourd'hui :</label>
+            <textarea id="learned" rows="3" placeholder="Vocabulaire, tournures, remarques..." required></textarea>
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+            <label for="goal" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">🎯 Mon objectif pour la prochaine fois :</label>
+            <input type="text" id="goal" placeholder="Ex. Utiliser le subjonctif, oser parler plus...">
+        </div>
+
+        <button type="submit" class="primary-btn" style="width: 100%; padding: 12px; border-radius: 12px; font-weight: 600; cursor: pointer;">Enregistrer ma réflexion</button>
+    </form>
+
+    <!-- Historial -->
+    <div class="history">
+        <h3 style="color: var(--vendredi-bleu); margin-bottom: 1rem;">📜 Historique de vos réflexions</h3>
+        <div id="historyList">
+            <p style="color: #777; text-align: center; font-style: italic;">Aucune réflexion enregistrée pour le moment. Commencez dès aujourd'hui !</p>
+        </div>
+    </div>
+</section>
+
+<!-- SCRIPT DE LOGICA DEL CARNET -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("sessionDate").valueAsDate = new Date();
+    renderDashboard();
+});
+
+function getReflections() {
+    return JSON.parse(localStorage.getItem("vendredi_reflections") || "[]");
+}
+
+function saveReflection(event) {
+    event.preventDefault();
+    var editingId = document.getElementById("editingId").value;
+    
+    var record = {
+        id: editingId || Date.now().toString(),
+        sessionDate: document.getElementById("sessionDate").value,
+        theme: document.getElementById("theme").value.trim(),
+        rating: parseInt(document.getElementById("rating").value),
+        emotion: document.getElementById("emotion").value,
+        learned: document.getElementById("learned").value.trim(),
+        goal: document.getElementById("goal").value.trim()
+    };
+
+    var reflections = getReflections();
+    if (editingId) {
+        reflections = reflections.map(function(r) { return r.id === editingId ? record : r; });
+    } else {
+        reflections.unshift(record);
+    }
+
+    localStorage.setItem("vendredi_reflections", JSON.stringify(reflections));
+    clearForm();
+    renderDashboard();
+}
+
+function clearForm() {
+    document.getElementById("reflectionForm").reset();
+    document.getElementById("editingId").value = "";
+    document.getElementById("sessionDate").valueAsDate = new Date();
+}
+
+function renderDashboard() {
+    var reflections = getReflections();
+    document.getElementById("totalSessions").innerText = reflections.length;
+
+    var totalRating = 0;
+    var totalWords = 0;
+
+    reflections.forEach(function(r) {
+        totalRating += r.rating;
+        totalWords += (r.learned ? r.learned.split(/\s+/).length : 0);
+    });
+
+    var avg = reflections.length ? (totalRating / reflections.length).toFixed(1) : "0.0";
+    document.getElementById("averageRating").innerText = avg;
+    document.getElementById("totalWords").innerText = totalWords;
+
+    var historyList = document.getElementById("historyList");
+    if (reflections.length === 0) {
+        historyList.innerHTML = '<p style="color: #777; text-align: center; font-style: italic;">Aucune réflexion enregistrée pour le moment. Commencez dès aujourd\'hui !</p>';
+        return;
+    }
+
+    var html = "";
+    reflections.forEach(function(r) {
+        html += '<div class="reflection" style="margin-bottom: 1.5rem; background: white; border-left: 4px solid var(--vendredi-or); border-radius: 14px; padding: 1.25rem; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">' +
+                '<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">' +
+                '<strong style="color: var(--vendredi-bleu); font-size: 1.1rem;">📅 ' + r.sessionDate + ' — ' + escapeHtml(r.theme) + '</strong>' +
+                '<span style="background: rgba(212,160,23,0.15); padding: 2px 8px; border-radius: 8px; font-weight: 600; color: #b8860b;">⭐ ' + r.rating + '/5</span>' +
+                '</div>' +
+                (r.emotion ? '<p style="margin: 0.3rem 0; font-size: 0.9rem;"><strong>🌱 État :</strong> ' + escapeHtml(r.emotion) + '</p>' : '') +
+                '<p style="margin: 0.5rem 0;"><strong>🎓 Apprentissage :</strong> ' + escapeHtml(r.learned) + '</p>' +
+                (r.goal ? '<p style="margin: 0.5rem 0;"><strong>🎯 Objectif :</strong> ' + escapeHtml(r.goal) + '</p>' : '') +
+                '<div style="margin-top: 1rem; display: flex; gap: 0.5rem;">' +
+                '<button onclick="editReflection(\'' + r.id + '\')" class="edit-btn" style="padding: 6px 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 0.85rem;">Modifier</button>' +
+                '<button onclick="deleteReflection(\'' + r.id + '\')" class="delete-btn" style="padding: 6px 12px; border-radius: 8px; border: none; cursor: pointer; font-size: 0.85rem;">Supprimer</button>' +
+                '</div>' +
+                '</div>';
+    });
+    historyList.innerHTML = html;
+}
+
+function editReflection(id) {
+    var reflections = getReflections();
+    var r = reflections.find(function(item) { return item.id === id; });
+    if (!r) return;
+
+    document.getElementById("editingId").value = r.id;
+    document.getElementById("sessionDate").value = r.sessionDate;
+    document.getElementById("theme").value = r.theme;
+    document.getElementById("rating").value = r.rating;
+    document.getElementById("emotion").value = r.emotion || "";
+    document.getElementById("learned").value = r.learned;
+    document.getElementById("goal").value = r.goal || "";
+
+    window.scrollTo({ top: document.getElementById("reflectionForm").offsetTop - 50, behavior: 'smooth' });
+}
+
+function deleteReflection(id) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer cette réflexion ?")) {
+        var reflections = getReflections();
+        reflections = reflections.filter(function(item) { return item.id !== id; });
+        localStorage.setItem("vendredi_reflections", JSON.stringify(reflections));
+        renderDashboard();
+    }
+}
+
+function escapeHtml(text) {
+    return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+</script>
+<!-- FIN MODULO CARNET REFLEXIF -->
 </body>
+
 
 
 
