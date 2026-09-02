@@ -99,7 +99,8 @@ select{
     box-sizing: border-box;
 }
 </style>
-<link rel="stylesheet" href="assets/design-system.css">&#10;</head>
+<link rel="stylesheet" href="assets/css/design-system.css">
+</head>
 <body>
 <header class="barra">
   <div class="barra-in">
@@ -186,90 +187,85 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 <!-- MODULO CARNET REFLEXIF PREMIUM -->
-<section id="carnet-reflexif-module" class="card" style="max-width: 900px; margin: 3rem auto; padding: 2rem;">
-    <div class="carnet-header">
-        <span class="badge">Mon parcours francophone</span>
-        <h2 style="color: var(--vendredi-bleu); margin-top: 0.5rem;">📘 Mon carnet réflexif</h2>
-        <p style="color: #666;">Chaque séance laisse une trace. Conservez vos découvertes, votre vocabulaire et votre progression.</p>
+<section id="carnet-reflexif-module" class="vea-journal">
+  <div class="vea-journal-header">
+    <span class="vea-journal-tag">Mon parcours francophone</span>
+    <h2>Mon journal de bord</h2>
+    <p class="vea-journal-date">Chaque seance laisse une trace. Conservez vos decouvertes, votre vocabulaire et votre progression.</p>
+  </div>
+
+  <div class="vea-dashboard">
+    <div class="vea-dashboard-stat">
+      <strong id="totalSessions">0</strong>
+      <p>Sessions realisees</p>
+    </div>
+    <div class="vea-dashboard-stat">
+      <strong id="averageRating">0.0</strong>
+      <p>Satisfaction moyenne</p>
+    </div>
+    <div class="vea-dashboard-stat">
+      <strong id="totalWords">0</strong>
+      <p>Mots enregistres</p>
+    </div>
+  </div>
+
+  <form id="reflectionForm" onsubmit="saveReflection(event)" class="vea-journal-form">
+    <input type="hidden" id="editingId">
+
+    <div class="vea-journal-block">
+      <label for="sessionDate">Date de la seance</label>
+      <input type="date" id="sessionDate" required>
     </div>
 
-    <!-- Dashboard -->
-    <div class="dashboard" style="background: transparent; border: none; box-shadow: none; padding: 0; margin-bottom: 2rem;">
-        <div class="stats">
-            <div class="stat">
-                <span id="totalSessions">0</span>
-                <p style="margin: 0; font-size: 0.9rem; color: #555;">Sessions réalisées</p>
-            </div>
-            <div class="stat">
-                <span id="averageRating">0.0</span>
-                <p style="margin: 0; font-size: 0.9rem; color: #555;">Satisfaction moyenne</p>
-            </div>
-            <div class="stat">
-                <span id="totalWords">0</span>
-                <p style="margin: 0; font-size: 0.9rem; color: #555;">Mots enregistrés</p>
-            </div>
-        </div>
+    <div class="vea-journal-block">
+      <label for="theme">Theme aborde</label>
+      <input type="text" id="theme" placeholder="Ex. Les expressions idiomatiques, Le voyage..." required>
     </div>
 
-    <!-- Formulario de Reflexión -->
-    <form id="reflectionForm" onsubmit="saveReflection(event)" style="background: #FFFDF8; border: 1px solid rgba(212,160,23,.2); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem;">
-        <input type="hidden" id="editingId">
-        
-        <div style="margin-bottom: 1.2rem;">
-            <label for="sessionDate" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">📅 Date de la séance :</label>
-            <input type="date" id="sessionDate" required>
-        </div>
-
-        <div style="margin-bottom: 1.2rem;">
-            <label for="theme" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">💡 Thème abordé :</label>
-            <input type="text" id="theme" placeholder="Ex. Les expressions idiomatiques, Le voyage..." required>
-        </div>
-
-        <div style="margin-bottom: 1.2rem;">
-            <label for="rating" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">⭐ Évaluation de la séance :</label>
-            <select id="rating" required>
-                <option value="5">⭐⭐⭐⭐⭐ (Excellente)</option>
-                <option value="4">⭐⭐⭐⭐ (Très enrichissante)</option>
-                <option value="3">⭐⭐⭐ (Correcte)</option>
-                <option value="2">⭐⭐ (À améliorer)</option>
-                <option value="1">⭐ (Difficile)</option>
-            </select>
-        </div>
-
-        <div style="margin-bottom: 1.2rem;">
-            <label for="emotion" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">🌱 Comment vous sentez-vous après cette séance ?</label>
-            <select id="emotion">
-                <option value="">Sélectionnez une émotion</option>
-                <option value="✨ Inspiré(e)">✨ Inspiré(e)</option>
-                <option value="🚀 Motivé(e)">🚀 Motivé(e)</option>
-                <option value="💪 Confiant(e)">💪 Confiant(e)</option>
-                <option value="🔍 Curieux(se)">🔍 Curieux(se)</option>
-                <option value="😊 Heureux(se)">😊 Heureux(se)</option>
-                <option value="🏆 Fier(e)">🏆 Fier(e)</option>
-                <option value="📖 Réflexif(ve)">📖 Réflexif(ve)</option>
-            </select>
-        </div>
-
-        <div style="margin-bottom: 1.2rem;">
-            <label for="learned" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">🎓 Ce que j'ai appris aujourd'hui :</label>
-            <textarea id="learned" rows="3" placeholder="Vocabulaire, tournures, remarques..." required></textarea>
-        </div>
-
-        <div style="margin-bottom: 1.5rem;">
-            <label for="goal" style="display: block; font-weight: 600; margin-bottom: 0.4rem; color: var(--vendredi-bleu);">🎯 Mon objectif pour la prochaine fois :</label>
-            <input type="text" id="goal" placeholder="Ex. Utiliser le subjonctif, oser parler plus...">
-        </div>
-
-        <button type="submit" class="primary-btn" style="width: 100%; padding: 12px; border-radius: 12px; font-weight: 600; cursor: pointer;">Enregistrer ma réflexion</button>
-    </form>
-
-    <!-- Historial -->
-    <div class="history">
-        <h3 style="color: var(--vendredi-bleu); margin-bottom: 1rem;">📜 Historique de vos réflexions</h3>
-        <div id="historyList">
-            <p style="color: #777; text-align: center; font-style: italic;">Aucune réflexion enregistrée pour le moment. Commencez dès aujourd'hui !</p>
-        </div>
+    <div class="vea-journal-block">
+      <label for="rating">Evaluation de la seance</label>
+      <select id="rating" required>
+        <option value="5">Excellente</option>
+        <option value="4">Tres enrichissante</option>
+        <option value="3">Correcte</option>
+        <option value="2">A ameliorer</option>
+        <option value="1">Difficile</option>
+      </select>
     </div>
+
+    <div class="vea-journal-block">
+      <label for="emotion">Comment vous sentez-vous apres cette seance ?</label>
+      <select id="emotion">
+        <option value="">Selectionnez une emotion</option>
+        <option value="Inspire(e)">Inspire(e)</option>
+        <option value="Motive(e)">Motive(e)</option>
+        <option value="Confiant(e)">Confiant(e)</option>
+        <option value="Curieux(se)">Curieux(se)</option>
+        <option value="Heureux(se)">Heureux(se)</option>
+        <option value="Fier(e)">Fier(e)</option>
+        <option value="Reflexif(ve)">Reflexif(ve)</option>
+      </select>
+    </div>
+
+    <div class="vea-journal-block">
+      <label for="learned">Ce que j'ai appris aujourd'hui</label>
+      <textarea id="learned" rows="3" placeholder="Vocabulaire, tournures, remarques..." required></textarea>
+    </div>
+
+    <div class="vea-journal-block">
+      <label for="goal">Mon objectif pour la prochaine fois</label>
+      <input type="text" id="goal" placeholder="Ex. Utiliser le subjonctif, oser parler plus...">
+    </div>
+
+    <button type="submit" class="vea-button" style="width:100%;">Enregistrer ma reflexion</button>
+  </form>
+
+  <div class="vea-history-wrapper">
+    <h3>Historique de vos reflexions</h3>
+    <div id="historyList" aria-live="polite">
+      <p class="vea-journal-empty">Aucune reflexion enregistree pour le moment. Commencez des aujourd'hui !</p>
+    </div>
+  </div>
 </section>
 
 <!-- SCRIPT DE LOGICA DEL CARNET -->
@@ -393,6 +389,9 @@ function escapeHtml(text) {
 </script>
 <!-- FIN MODULO CARNET REFLEXIF -->
 </body>
+
+
+
 
 
 
