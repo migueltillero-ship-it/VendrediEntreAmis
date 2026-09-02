@@ -1,0 +1,28 @@
+/* ════════════════════════════════════════════════
+   ACCESSIBILITY.CSS — Le Coin Sérénité
+   Controles de confort de lectura, integrados en el
+   encabezado de cada página (ver nav.js).
+════════════════════════════════════════════════ */
+
+/* ── Modo Confort ── activado con .confort / .confort-plus en <html> ── */
+html.confort{ --step: 1.2rem; --line: 1.85; }
+html.confort-plus{ --step: 1.38rem; --line: 1.95; }
+html.contraste{
+  --void:#ffffff; --deep:#ffffff; --panel:#ffffff; --text:#000000; --muted:#20291f;
+  --border: #6b4e1f; --borderx:#0d5c3d; --gold:#7a5a1e; --gold2:#5c4315; --cyan:#0a6b47;
+}
+
+.a11y-controls{ display:flex; gap:.4rem; align-items:center; }
+.a11y-controls button{
+  border:1px solid var(--border); background:var(--panel); border-radius:8px;
+  width:2.1rem; height:2.1rem; font-family:'Space Mono',monospace; font-weight:700;
+}
+.a11y-controls button[aria-pressed="true"]{ background:var(--em1); color:#fff; }
+
+#tabs a:focus-visible, .a11y-controls button:focus-visible, a:focus-visible, button:focus-visible{
+  outline:3px solid var(--gold); outline-offset:2px;
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{ scroll-behavior:auto; }
+}

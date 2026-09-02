@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le Café du Vendredi · Vendredi entre Amis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/accessibility.css">
+<script>window.PAGE_PREFIX = "../"; window.CURRENT_PAGE = "cafe"; window.DATA_PATH = "../data/semaines.json";</script>
+</head>
+<body>
+
+<header id="topbar"><div id="topbar-mount"></div></header>
+
+<main class="container">
+  <p class="eyebrow">L'activité de la semaine</p>
+  <h1>Le Café du Vendredi</h1>
+  <div class="week-picker">
+    <label for="week-select" class="muted">Choisir une semaine :</label>
+    <select id="week-select"></select>
+  </div>
+
+  <div class="destination-banner">
+    <p class="pays" id="cafe-pais"></p>
+    <h2 id="cafe-destino"></h2>
+    <p id="cafe-tema"></p>
+  </div>
+
+  <div class="level-tabs">
+    <button class="active" data-level="a1a2">🌱 Débutant · A1–A2</button>
+    <button data-level="b1b2">🌳 Avancé · B1–B2</button>
+  </div>
+
+  <div id="panel-a1a2" class="level-panel active">
+    <h3>Vocabulaire</h3>
+    <ul class="vocab-list" id="vocab-a1a2"></ul>
+    <div class="expr-card">
+      <p class="eyebrow">Expression de la semaine</p>
+      <p class="fr" id="expr-a1a2-fr"></p>
+      <p class="muted" id="expr-a1a2-es"></p>
+    </div>
+  </div>
+
+  <div id="panel-b1b2" class="level-panel">
+    <h3>Vocabulaire &amp; expressions</h3>
+    <ul class="vocab-list" id="vocab-b1b2"></ul>
+    <div class="expr-card">
+      <p class="eyebrow">Expression de la semaine</p>
+      <p class="fr" id="expr-b1b2-fr"></p>
+      <p class="muted" id="expr-b1b2-es"></p>
+    </div>
+  </div>
+
+  <div id="cultura-wrap" class="culture-card" style="margin-top:1.5rem;">
+    <p class="eyebrow">🌍 Le Coin Culture</p>
+    <p id="cultura-texto"></p>
+  </div>
+
+  <p style="margin-top:2rem;"><a class="btn secondary" href="defis.html">Voir le défi de cette semaine →</a></p>
+</main>
+
+<footer id="club-footer">Vendredi entre Amis · Un espace du professeur Miguel Tillero</footer>
+
+<script src="../assets/js/data-loader.js"></script>
+<script src="../assets/js/progression.js"></script>
+<script src="../assets/js/audio.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/page-cafe.js"></script>
+</body>
+</html>
+

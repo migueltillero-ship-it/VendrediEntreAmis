@@ -1,0 +1,3523 @@
+{
+  "total_semanas": 52,
+  "semanas": [
+    {
+      "semana": 1,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Paris",
+      "pais": "France",
+      "tema": "Se présenter dans un café parisien",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un café",
+            "es": "un café"
+          },
+          {
+            "fr": "l'addition",
+            "es": "la cuenta"
+          },
+          {
+            "fr": "s'il vous plaît",
+            "es": "por favor"
+          },
+          {
+            "fr": "la terrasse",
+            "es": "la terraza"
+          },
+          {
+            "fr": "un croissant",
+            "es": "un croissant"
+          }
+        ],
+        "expresion": {
+          "fr": "Je voudrais...",
+          "es": "Quisiera..."
+        },
+        "reto": "Graba un audio de 30 segundos pidiendo algo en un café imaginario."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "flâner",
+            "es": "pasear sin rumbo"
+          },
+          {
+            "fr": "un quartier",
+            "es": "un barrio"
+          },
+          {
+            "fr": "un habitué",
+            "es": "un cliente habitual"
+          },
+          {
+            "fr": "l'ambiance",
+            "es": "el ambiente"
+          },
+          {
+            "fr": "bavarder",
+            "es": "charlar"
+          }
+        ],
+        "expresion": {
+          "fr": "Ça vaut le détour",
+          "es": "Vale la pena el desvío / vale la pena verlo"
+        },
+        "reto": "Describe en 5 frases tu café parisino ideal: dónde está, cómo es, qué pides."
+      },
+      "cultura": "En París, pedir un café significa casi siempre un espresso; si quieres uno largo, hay que pedir 'café allongé'."
+    },
+    {
+      "semana": 2,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Lyon",
+      "pais": "France",
+      "tema": "La gastronomie lyonnaise",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un bouchon",
+            "es": "un bistró lionés"
+          },
+          {
+            "fr": "la soie",
+            "es": "la seda"
+          },
+          {
+            "fr": "un marché",
+            "es": "un mercado"
+          },
+          {
+            "fr": "délicieux",
+            "es": "delicioso"
+          },
+          {
+            "fr": "goûter",
+            "es": "probar"
+          }
+        ],
+        "expresion": {
+          "fr": "J'aime beaucoup...",
+          "es": "Me gusta mucho..."
+        },
+        "reto": "Nombra tres platillos que te gustaría probar en Lyon."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un plat typique",
+            "es": "un plato típico"
+          },
+          {
+            "fr": "copieux",
+            "es": "abundante"
+          },
+          {
+            "fr": "le terroir",
+            "es": "el territorio/producto local"
+          },
+          {
+            "fr": "une recette",
+            "es": "una receta"
+          },
+          {
+            "fr": "savoureux",
+            "es": "sabroso"
+          }
+        ],
+        "expresion": {
+          "fr": "Ça se mange sans faim",
+          "es": "Se come sin tener hambre (tan rico que se antoja igual)"
+        },
+        "reto": "Compara un plato típico de tu región con uno lionés."
+      },
+      "cultura": "Lyon es considerada la capital gastronómica de Francia y cuna de los 'bouchons', bistrós tradicionales lioneses."
+    },
+    {
+      "semana": 3,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "La Provence",
+      "pais": "France",
+      "tema": "Les couleurs et les marchés provençaux",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "le marché",
+            "es": "el mercado"
+          },
+          {
+            "fr": "la lavande",
+            "es": "la lavanda"
+          },
+          {
+            "fr": "le soleil",
+            "es": "el sol"
+          },
+          {
+            "fr": "un village",
+            "es": "un pueblo"
+          },
+          {
+            "fr": "acheter",
+            "es": "comprar"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est très joli",
+          "es": "Es muy bonito"
+        },
+        "reto": "Describe con 3 adjetivos un mercado que conozcas."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un paysage",
+            "es": "un paisaje"
+          },
+          {
+            "fr": "pittoresque",
+            "es": "pintoresco"
+          },
+          {
+            "fr": "l'artisanat",
+            "es": "la artesanía"
+          },
+          {
+            "fr": "un producteur",
+            "es": "un productor"
+          },
+          {
+            "fr": "authentique",
+            "es": "auténtico"
+          }
+        ],
+        "expresion": {
+          "fr": "Ça sent bon",
+          "es": "Huele bien"
+        },
+        "reto": "Escribe un pequeño texto sobre un paisaje que te haya marcado."
+      },
+      "cultura": "Los mercados provenzales al aire libre son famosos por la lavanda, las especias y los productos locales frescos."
+    },
+    {
+      "semana": 4,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Bruxelles",
+      "pais": "Belgique",
+      "tema": "La Belgique, ses expressions et son humour",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "une gaufre",
+            "es": "un gofre"
+          },
+          {
+            "fr": "le chocolat",
+            "es": "el chocolate"
+          },
+          {
+            "fr": "une bande dessinée",
+            "es": "una historieta"
+          },
+          {
+            "fr": "gentil",
+            "es": "amable"
+          },
+          {
+            "fr": "marrant",
+            "es": "gracioso"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est chouette !",
+          "es": "¡Qué genial!"
+        },
+        "reto": "Aprende a decir 'setenta' y 'noventa' en belga: septante, nonante."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une baraque à frites",
+            "es": "un puesto de papas fritas"
+          },
+          {
+            "fr": "le plat pays",
+            "es": "el país llano (Bélgica)"
+          },
+          {
+            "fr": "un(e) Belge",
+            "es": "un(a) belga"
+          },
+          {
+            "fr": "l'autodérision",
+            "es": "la autoironía"
+          },
+          {
+            "fr": "savoureux",
+            "es": "sabroso"
+          }
+        ],
+        "expresion": {
+          "fr": "Ça baigne",
+          "es": "Todo va bien (belgicismo)"
+        },
+        "reto": "Investiga y comparte una expresión belga que no exista en el francés de Francia."
+      },
+      "cultura": "El francés de Bélgica tiene expresiones propias, como 'septante' (setenta) en vez de 'soixante-dix'."
+    },
+    {
+      "semana": 5,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Genève",
+      "pais": "Suisse",
+      "tema": "La Suisse romande et la précision",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "une montagne",
+            "es": "una montaña"
+          },
+          {
+            "fr": "un lac",
+            "es": "un lago"
+          },
+          {
+            "fr": "le fromage",
+            "es": "el queso"
+          },
+          {
+            "fr": "propre",
+            "es": "limpio"
+          },
+          {
+            "fr": "calme",
+            "es": "tranquilo"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est très calme ici",
+          "es": "Es muy tranquilo aquí"
+        },
+        "reto": "Nombra tres cosas que asocias con Suiza."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "la ponctualité",
+            "es": "la puntualidad"
+          },
+          {
+            "fr": "un canton",
+            "es": "un cantón"
+          },
+          {
+            "fr": "multiculturel",
+            "es": "multicultural"
+          },
+          {
+            "fr": "la fondue",
+            "es": "la fondue"
+          },
+          {
+            "fr": "le brouillard",
+            "es": "la niebla"
+          }
+        ],
+        "expresion": {
+          "fr": "Il n'y a pas le feu au lac",
+          "es": "No hay prisa (expresión suiza, literalmente 'no hay fuego en el lago')"
+        },
+        "reto": "¿Qué opinas del dicho suizo sobre la calma? Da tu opinión en 3-4 frases."
+      },
+      "cultura": "Suiza tiene cuatro lenguas oficiales; el francés se habla en la región llamada 'Suisse romande'."
+    },
+    {
+      "semana": 6,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Montréal",
+      "pais": "Québec, Canada",
+      "tema": "Le français québécois",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un char",
+            "es": "un auto (quebequismo)"
+          },
+          {
+            "fr": "magasiner",
+            "es": "ir de compras"
+          },
+          {
+            "fr": "une tuque",
+            "es": "un gorro de lana"
+          },
+          {
+            "fr": "froid",
+            "es": "frío"
+          },
+          {
+            "fr": "l'hiver",
+            "es": "el invierno"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est plate",
+          "es": "Es aburrido/una lástima (quebequismo)"
+        },
+        "reto": "Aprende dos palabras quebequenses y úsalas en una frase."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "jaser",
+            "es": "platicar"
+          },
+          {
+            "fr": "un dépanneur",
+            "es": "una tiendita de barrio"
+          },
+          {
+            "fr": "bienvenue",
+            "es": "de nada (respuesta a merci, en Québec)"
+          },
+          {
+            "fr": "chum / blonde",
+            "es": "novio / novia (quebequismo)"
+          },
+          {
+            "fr": "le beau parler",
+            "es": "el buen hablar"
+          }
+        ],
+        "expresion": {
+          "fr": "Il fait frette",
+          "es": "Hace un frío intenso (quebequismo)"
+        },
+        "reto": "Compara una expresión quebequense con su equivalente en francés estándar."
+      },
+      "cultura": "El francés quebequense conserva expresiones y una pronunciación muy distintas del francés de Francia, herencia del siglo XVII."
+    },
+    {
+      "semana": 7,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Québec (ville)",
+      "pais": "Québec, Canada",
+      "tema": "Une ville historique en Amérique",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un château",
+            "es": "un castillo"
+          },
+          {
+            "fr": "les remparts",
+            "es": "las murallas"
+          },
+          {
+            "fr": "vieux",
+            "es": "antiguo/viejo"
+          },
+          {
+            "fr": "une rue",
+            "es": "una calle"
+          },
+          {
+            "fr": "visiter",
+            "es": "visitar"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est magnifique",
+          "es": "Es magnífico"
+        },
+        "reto": "Describe un lugar histórico de tu ciudad en 3 frases."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "fortifié",
+            "es": "fortificado"
+          },
+          {
+            "fr": "le patrimoine",
+            "es": "el patrimonio"
+          },
+          {
+            "fr": "un pavé",
+            "es": "un adoquín"
+          },
+          {
+            "fr": "emblématique",
+            "es": "emblemático"
+          },
+          {
+            "fr": "préserver",
+            "es": "preservar"
+          }
+        ],
+        "expresion": {
+          "fr": "Ça vaut le coup d'œil",
+          "es": "Vale la pena verlo/echarle un vistazo"
+        },
+        "reto": "Argumenta por qué preservar el patrimonio histórico es importante."
+      },
+      "cultura": "La ciudad de Québec es la única ciudad amurallada de América del Norte al norte de México."
+    },
+    {
+      "semana": 8,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Dakar",
+      "pais": "Sénégal",
+      "tema": "La chaleur humaine sénégalaise",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "la teranga",
+            "es": "la hospitalidad (wolof/francés senegalés)"
+          },
+          {
+            "fr": "le thé",
+            "es": "el té"
+          },
+          {
+            "fr": "un marché",
+            "es": "un mercado"
+          },
+          {
+            "fr": "accueillant",
+            "es": "acogedor"
+          },
+          {
+            "fr": "chaud",
+            "es": "caluroso/cálido"
+          }
+        ],
+        "expresion": {
+          "fr": "Bienvenue chez nous",
+          "es": "Bienvenido a nuestra casa"
+        },
+        "reto": "Describe cómo recibes a un invitado en tu casa."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "l'hospitalité",
+            "es": "la hospitalidad"
+          },
+          {
+            "fr": "le griot",
+            "es": "el griot (narrador/músico tradicional)"
+          },
+          {
+            "fr": "une tradition orale",
+            "es": "una tradición oral"
+          },
+          {
+            "fr": "partager",
+            "es": "compartir"
+          },
+          {
+            "fr": "convivial",
+            "es": "convivial"
+          }
+        ],
+        "expresion": {
+          "fr": "La teranga sénégalaise",
+          "es": "La hospitalidad senegalesa (expresión cultural clave)"
+        },
+        "reto": "Compara el concepto de 'teranga' con una tradición similar de tu cultura."
+      },
+      "cultura": "La 'teranga' es un valor central de la cultura senegalesa: la hospitalidad y el compartir con el otro."
+    },
+    {
+      "semana": 9,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Abidjan",
+      "pais": "Côte d'Ivoire",
+      "tema": "Le français ivoirien et le nouchi",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "l'attiéké",
+            "es": "el attiéké (plato típico)"
+          },
+          {
+            "fr": "un ami",
+            "es": "un amigo"
+          },
+          {
+            "fr": "danser",
+            "es": "bailar"
+          },
+          {
+            "fr": "la musique",
+            "es": "la música"
+          },
+          {
+            "fr": "content",
+            "es": "contento"
+          }
+        ],
+        "expresion": {
+          "fr": "On est ensemble",
+          "es": "Estamos juntos / todo bien (expresión ivoriense)"
+        },
+        "reto": "Nombra una comida que asocies con la alegría."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "le nouchi",
+            "es": "jerga urbana ivoriense"
+          },
+          {
+            "fr": "un maquis",
+            "es": "restaurante popular al aire libre"
+          },
+          {
+            "fr": "dynamique",
+            "es": "dinámico"
+          },
+          {
+            "fr": "l'ambiance",
+            "es": "el ambiente"
+          },
+          {
+            "fr": "populaire",
+            "es": "popular"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est chaud !",
+          "es": "¡Está intenso/genial! (nouchi)"
+        },
+        "reto": "Investiga otra palabra de nouchi y explica su significado."
+      },
+      "cultura": "El 'nouchi' es una jerga urbana nacida en Abiyán que hoy influye en el francés hablado en toda África occidental."
+    },
+    {
+      "semana": 10,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Tunis",
+      "pais": "Tunisie",
+      "tema": "La Méditerranée et le mélange des cultures",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "la médina",
+            "es": "la medina"
+          },
+          {
+            "fr": "le soleil",
+            "es": "el sol"
+          },
+          {
+            "fr": "la mer",
+            "es": "el mar"
+          },
+          {
+            "fr": "bleu",
+            "es": "azul"
+          },
+          {
+            "fr": "blanc",
+            "es": "blanco"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est très beau",
+          "es": "Es muy hermoso"
+        },
+        "reto": "Describe con colores un lugar junto al mar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un souk",
+            "es": "un zoco/mercado"
+          },
+          {
+            "fr": "le patrimoine",
+            "es": "el patrimonio"
+          },
+          {
+            "fr": "bilingue",
+            "es": "bilingüe"
+          },
+          {
+            "fr": "méditerranéen",
+            "es": "mediterráneo"
+          },
+          {
+            "fr": "animé",
+            "es": "animado"
+          }
+        ],
+        "expresion": {
+          "fr": "Inch'Allah",
+          "es": "Si Dios quiere (expresión muy usada, de origen árabe, en el francés tunecino)"
+        },
+        "reto": "¿Qué opinas del bilingüismo cotidiano? Da tu punto de vista."
+      },
+      "cultura": "En Túnez conviven el árabe y el francés en la vida diaria; muchos tunecinos alternan entre ambas lenguas en una misma frase."
+    },
+    {
+      "semana": 11,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Rabat",
+      "pais": "Maroc",
+      "tema": "Le Maroc, entre tradition et modernité",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "le thé à la menthe",
+            "es": "el té de menta"
+          },
+          {
+            "fr": "un tapis",
+            "es": "una alfombra"
+          },
+          {
+            "fr": "coloré",
+            "es": "colorido"
+          },
+          {
+            "fr": "beau",
+            "es": "hermoso"
+          },
+          {
+            "fr": "l'artisan",
+            "es": "el artesano"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est fait main",
+          "es": "Está hecho a mano"
+        },
+        "reto": "Describe un objeto artesanal que tengas en casa."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "le patrimoine",
+            "es": "el patrimonio"
+          },
+          {
+            "fr": "un riad",
+            "es": "un riad (casa tradicional marroquí)"
+          },
+          {
+            "fr": "négocier",
+            "es": "negociar/regatear"
+          },
+          {
+            "fr": "l'artisanat",
+            "es": "la artesanía"
+          },
+          {
+            "fr": "raffiné",
+            "es": "refinado"
+          }
+        ],
+        "expresion": {
+          "fr": "À la marocaine",
+          "es": "A la marroquí / al estilo marroquí"
+        },
+        "reto": "Explica un ritual de hospitalidad de tu propia cultura."
+      },
+      "cultura": "El té de menta es un ritual social en Marruecos: servirlo con generosidad es signo de hospitalidad."
+    },
+    {
+      "semana": 12,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "La Nouvelle-Orléans",
+      "pais": "Louisiane, USA",
+      "tema": "Le français cadien (cajun)",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "le jazz",
+            "es": "el jazz"
+          },
+          {
+            "fr": "la musique",
+            "es": "la música"
+          },
+          {
+            "fr": "danser",
+            "es": "bailar"
+          },
+          {
+            "fr": "joyeux",
+            "es": "alegre"
+          },
+          {
+            "fr": "la fête",
+            "es": "la fiesta"
+          }
+        ],
+        "expresion": {
+          "fr": "Laissez les bons temps rouler",
+          "es": "Que rueden los buenos tiempos (lema cajún)"
+        },
+        "reto": "Nombra un tipo de música que te haga bailar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "cadien / cajun",
+            "es": "cadiano/cajún"
+          },
+          {
+            "fr": "le gombo",
+            "es": "el gumbo (plato típico)"
+          },
+          {
+            "fr": "une racine",
+            "es": "una raíz (origen)"
+          },
+          {
+            "fr": "préserver",
+            "es": "preservar"
+          },
+          {
+            "fr": "métissé",
+            "es": "mestizo/mezclado"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est pas de la tarte",
+          "es": "No es nada fácil (expresión coloquial)"
+        },
+        "reto": "Investiga el origen del pueblo cadien y resúmelo en 3 frases."
+      },
+      "cultura": "El francés cajún de Luisiana desciende de los acadianos franceses expulsados de Canadá en el siglo XVIII."
+    },
+    {
+      "semana": 13,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Port-au-Prince",
+      "pais": "Haïti",
+      "tema": "Le créole et le français en Haïti",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "le créole",
+            "es": "el criollo haitiano"
+          },
+          {
+            "fr": "la couleur",
+            "es": "el color"
+          },
+          {
+            "fr": "la peinture",
+            "es": "la pintura"
+          },
+          {
+            "fr": "fier",
+            "es": "orgulloso"
+          },
+          {
+            "fr": "vivant",
+            "es": "vivo/vibrante"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est très coloré",
+          "es": "Es muy colorido"
+        },
+        "reto": "Describe con colores cómo te sientes hoy."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "bilingue",
+            "es": "bilingüe"
+          },
+          {
+            "fr": "la résilience",
+            "es": "la resiliencia"
+          },
+          {
+            "fr": "un artiste",
+            "es": "un artista"
+          },
+          {
+            "fr": "exprimer",
+            "es": "expresar"
+          },
+          {
+            "fr": "vibrant",
+            "es": "vibrante"
+          }
+        ],
+        "expresion": {
+          "fr": "Men anpil, chay pa lou",
+          "es": "Muchas manos aligeran la carga (proverbio criollo haitiano, muy citado también en francés)"
+        },
+        "reto": "Reflexiona: ¿qué significa la resiliencia para ti?"
+      },
+      "cultura": "Haití es oficialmente bilingüe: francés y criollo haitiano. El arte haitiano es reconocido mundialmente por su colorido."
+    },
+    {
+      "semana": 14,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Papeete",
+      "pais": "Tahiti, Polynésie française",
+      "tema": "Les îles du Pacifique francophone",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "une île",
+            "es": "una isla"
+          },
+          {
+            "fr": "la plage",
+            "es": "la playa"
+          },
+          {
+            "fr": "bleu turquoise",
+            "es": "azul turquesa"
+          },
+          {
+            "fr": "nager",
+            "es": "nadar"
+          },
+          {
+            "fr": "paisible",
+            "es": "apacible"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est le paradis",
+          "es": "Es el paraíso"
+        },
+        "reto": "Describe tu playa o lugar de descanso ideal."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un lagon",
+            "es": "una laguna"
+          },
+          {
+            "fr": "préserver",
+            "es": "preservar"
+          },
+          {
+            "fr": "l'océan",
+            "es": "el océano"
+          },
+          {
+            "fr": "insulaire",
+            "es": "insular"
+          },
+          {
+            "fr": "dépaysant",
+            "es": "que hace sentir en otro mundo"
+          }
+        ],
+        "expresion": {
+          "fr": "Un dépaysement total",
+          "es": "Un cambio total de ambiente/escenario"
+        },
+        "reto": "¿Qué harías si vivieras en una isla remota? Da 3 razones."
+      },
+      "cultura": "La Polinesia Francesa está formada por 118 islas; el francés convive allí con el tahitiano y otras lenguas polinesias."
+    },
+    {
+      "semana": 15,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Nouméa",
+      "pais": "Nouvelle-Calédonie",
+      "tema": "Un archipel entre deux mondes",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un archipel",
+            "es": "un archipiélago"
+          },
+          {
+            "fr": "la nature",
+            "es": "la naturaleza"
+          },
+          {
+            "fr": "le corail",
+            "es": "el coral"
+          },
+          {
+            "fr": "magnifique",
+            "es": "magnífico"
+          },
+          {
+            "fr": "loin",
+            "es": "lejos"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est très loin",
+          "es": "Está muy lejos"
+        },
+        "reto": "Nombra 3 cosas que te gustaría proteger de la naturaleza."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une barrière de corail",
+            "es": "una barrera de coral"
+          },
+          {
+            "fr": "préserver",
+            "es": "preservar"
+          },
+          {
+            "fr": "la biodiversité",
+            "es": "la biodiversidad"
+          },
+          {
+            "fr": "kanak",
+            "es": "canaco (pueblo indígena)"
+          },
+          {
+            "fr": "cohabiter",
+            "es": "convivir"
+          }
+        ],
+        "expresion": {
+          "fr": "Loin des yeux, près du cœur",
+          "es": "Lejos de los ojos, cerca del corazón"
+        },
+        "reto": "Argumenta por qué proteger la biodiversidad es importante hoy."
+      },
+      "cultura": "Nueva Caledonia alberga la segunda barrera de coral más grande del mundo, declarada patrimonio de la humanidad."
+    },
+    {
+      "semana": 16,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Beyrouth",
+      "pais": "Liban",
+      "tema": "Le français au cœur du Moyen-Orient",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "bonjour",
+            "es": "hola"
+          },
+          {
+            "fr": "merci",
+            "es": "gracias"
+          },
+          {
+            "fr": "délicieux",
+            "es": "delicioso"
+          },
+          {
+            "fr": "la mer",
+            "es": "el mar"
+          },
+          {
+            "fr": "l'histoire",
+            "es": "la historia"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est très bon",
+          "es": "Está muy bueno"
+        },
+        "reto": "Nombra 3 idiomas que te gustaría hablar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "trilingue",
+            "es": "trilingüe"
+          },
+          {
+            "fr": "résilient",
+            "es": "resiliente"
+          },
+          {
+            "fr": "un mélange",
+            "es": "una mezcla"
+          },
+          {
+            "fr": "cosmopolite",
+            "es": "cosmopolita"
+          },
+          {
+            "fr": "chaleureux",
+            "es": "cálido/afectuoso"
+          }
+        ],
+        "expresion": {
+          "fr": "Un carrefour de cultures",
+          "es": "Un cruce de culturas"
+        },
+        "reto": "¿Qué ventajas tiene ser trilingüe? Da tu opinión."
+      },
+      "cultura": "Beirut es históricamente trilingüe: árabe, francés e inglés se mezclan a menudo en una misma conversación."
+    },
+    {
+      "semana": 17,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Alger",
+      "pais": "Algérie",
+      "tema": "La Méditerranée du Maghreb",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "la casbah",
+            "es": "la casbah (ciudad antigua)"
+          },
+          {
+            "fr": "blanc",
+            "es": "blanco"
+          },
+          {
+            "fr": "la mer",
+            "es": "el mar"
+          },
+          {
+            "fr": "historique",
+            "es": "histórico"
+          },
+          {
+            "fr": "beau",
+            "es": "hermoso"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est impressionnant",
+          "es": "Es impresionante"
+        },
+        "reto": "Describe una ciudad histórica que te gustaría visitar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une médina",
+            "es": "una medina"
+          },
+          {
+            "fr": "le patrimoine",
+            "es": "el patrimonio"
+          },
+          {
+            "fr": "classé",
+            "es": "clasificado (patrimonio)"
+          },
+          {
+            "fr": "méditerranéen",
+            "es": "mediterráneo"
+          },
+          {
+            "fr": "authentique",
+            "es": "auténtico"
+          }
+        ],
+        "expresion": {
+          "fr": "Alger la Blanche",
+          "es": "Argel la Blanca (apodo de la ciudad)"
+        },
+        "reto": "¿Por qué crees que es importante proteger los centros históricos?"
+      },
+      "cultura": "La Casbah de Argel, con sus callejuelas blancas frente al Mediterráneo, es Patrimonio de la Humanidad por la UNESCO."
+    },
+    {
+      "semana": 18,
+      "temporada": 1,
+      "temporada_nombre": "Voyage en Francophonie",
+      "destino": "Kinshasa",
+      "pais": "R.D. Congo",
+      "tema": "La plus grande ville francophone du monde",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "la musique",
+            "es": "la música"
+          },
+          {
+            "fr": "danser",
+            "es": "bailar"
+          },
+          {
+            "fr": "le fleuve",
+            "es": "el río"
+          },
+          {
+            "fr": "grand",
+            "es": "grande"
+          },
+          {
+            "fr": "animé",
+            "es": "animado"
+          }
+        ],
+        "expresion": {
+          "fr": "Il y a beaucoup de monde",
+          "es": "Hay mucha gente"
+        },
+        "reto": "Nombra un género musical que te haga querer bailar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "la rumba congolaise",
+            "es": "la rumba congoleña"
+          },
+          {
+            "fr": "un fleuve",
+            "es": "un río"
+          },
+          {
+            "fr": "dynamique",
+            "es": "dinámico"
+          },
+          {
+            "fr": "la jeunesse",
+            "es": "la juventud"
+          },
+          {
+            "fr": "créatif",
+            "es": "creativo"
+          }
+        ],
+        "expresion": {
+          "fr": "Ambiance ya se!",
+          "es": "¡Qué buen ambiente! (lingala-francés urbano)"
+        },
+        "reto": "¿Qué te sorprende del dato de que Kinshasa sea la mayor ciudad francófona?"
+      },
+      "cultura": "Kinshasa es, por número de hablantes, la ciudad francófona más grande del mundo — más que París."
+    },
+    {
+      "semana": 19,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "La famille",
+      "tema_desc": "Hablar de la familia y los lazos afectivos",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "les parents",
+            "es": "los padres"
+          },
+          {
+            "fr": "un frère / une sœur",
+            "es": "un hermano / una hermana"
+          },
+          {
+            "fr": "les grands-parents",
+            "es": "los abuelos"
+          },
+          {
+            "fr": "proche",
+            "es": "cercano"
+          },
+          {
+            "fr": "uni",
+            "es": "unido"
+          }
+        ],
+        "expresion": {
+          "fr": "On est très proches",
+          "es": "Somos muy cercanos"
+        },
+        "reto": "Reflexiona sobre qué valor familiar te gustaría transmitir."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un lien",
+            "es": "un lazo"
+          },
+          {
+            "fr": "transmettre",
+            "es": "transmitir"
+          },
+          {
+            "fr": "une valeur",
+            "es": "un valor"
+          },
+          {
+            "fr": "s'entendre bien",
+            "es": "llevarse bien"
+          },
+          {
+            "fr": "hériter de",
+            "es": "heredar de"
+          }
+        ],
+        "expresion": {
+          "fr": "Être soudés",
+          "es": "Estar muy unidos (como familia)"
+        },
+        "reto": "Describe en 5 frases el lazo con un familiar importante para ti."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 20,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les souvenirs d'enfance",
+      "tema_desc": "Recordar la infancia",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un souvenir",
+            "es": "un recuerdo"
+          },
+          {
+            "fr": "jouer",
+            "es": "jugar"
+          },
+          {
+            "fr": "l'école",
+            "es": "la escuela"
+          },
+          {
+            "fr": "heureux",
+            "es": "feliz"
+          },
+          {
+            "fr": "se rappeler",
+            "es": "recordar"
+          }
+        ],
+        "expresion": {
+          "fr": "Je me souviens de...",
+          "es": "Recuerdo..."
+        },
+        "reto": "Comparte un recuerdo feliz de tu infancia en 2-3 frases."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "nostalgique",
+            "es": "nostálgico"
+          },
+          {
+            "fr": "évoquer",
+            "es": "evocar"
+          },
+          {
+            "fr": "une anecdote",
+            "es": "una anécdota"
+          },
+          {
+            "fr": "marquant",
+            "es": "marcante/memorable"
+          },
+          {
+            "fr": "innocent",
+            "es": "inocente"
+          }
+        ],
+        "expresion": {
+          "fr": "Ça me rappelle des souvenirs",
+          "es": "Eso me trae recuerdos"
+        },
+        "reto": "Narra una anécdota de tu infancia usando el passé composé y el imparfait."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 21,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les métiers et vocations",
+      "tema_desc": "Hablar de la profesión y la vocación",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un métier",
+            "es": "un oficio/profesión"
+          },
+          {
+            "fr": "travailler",
+            "es": "trabajar"
+          },
+          {
+            "fr": "aimer",
+            "es": "gustar/amar"
+          },
+          {
+            "fr": "difficile",
+            "es": "difícil"
+          },
+          {
+            "fr": "intéressant",
+            "es": "interesante"
+          }
+        ],
+        "expresion": {
+          "fr": "J'aime mon travail",
+          "es": "Me gusta mi trabajo"
+        },
+        "reto": "Describe en pocas palabras tu oficio o el que te gustaría tener."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une vocation",
+            "es": "una vocación"
+          },
+          {
+            "fr": "s'épanouir",
+            "es": "realizarse plenamente"
+          },
+          {
+            "fr": "un défi",
+            "es": "un desafío"
+          },
+          {
+            "fr": "évoluer",
+            "es": "evolucionar"
+          },
+          {
+            "fr": "la reconversion",
+            "es": "el cambio de carrera"
+          }
+        ],
+        "expresion": {
+          "fr": "Trouver sa voie",
+          "es": "Encontrar su camino/vocación"
+        },
+        "reto": "Argumenta si crees que hay que 'amar' el trabajo o basta con hacerlo bien."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 22,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les voyages qui ont marqué",
+      "tema_desc": "Contar un viaje memorable",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un voyage",
+            "es": "un viaje"
+          },
+          {
+            "fr": "visiter",
+            "es": "visitar"
+          },
+          {
+            "fr": "beau",
+            "es": "hermoso"
+          },
+          {
+            "fr": "content",
+            "es": "contento"
+          },
+          {
+            "fr": "découvrir",
+            "es": "descubrir"
+          }
+        ],
+        "expresion": {
+          "fr": "C'était magnifique",
+          "es": "Fue magnífico"
+        },
+        "reto": "Nombra un lugar que sueñas con visitar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "dépayser",
+            "es": "hacer sentir en otro lugar"
+          },
+          {
+            "fr": "un souvenir inoubliable",
+            "es": "un recuerdo inolvidable"
+          },
+          {
+            "fr": "s'aventurer",
+            "es": "aventurarse"
+          },
+          {
+            "fr": "enrichissant",
+            "es": "enriquecedor"
+          },
+          {
+            "fr": "un imprévu",
+            "es": "un imprevisto"
+          }
+        ],
+        "expresion": {
+          "fr": "Un voyage inoubliable",
+          "es": "Un viaje inolvidable"
+        },
+        "reto": "Narra en pasado un viaje que te haya marcado."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 23,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les amitiés",
+      "tema_desc": "Hablar de la amistad",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un ami / une amie",
+            "es": "un amigo / una amiga"
+          },
+          {
+            "fr": "fidèle",
+            "es": "fiel"
+          },
+          {
+            "fr": "s'aider",
+            "es": "ayudarse"
+          },
+          {
+            "fr": "rigoler",
+            "es": "reírse"
+          },
+          {
+            "fr": "sincère",
+            "es": "sincero"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est un(e) très bon(ne) ami(e)",
+          "es": "Es un(a) muy buen(a) amigo(a)"
+        },
+        "reto": "Describe con 3 adjetivos a un buen amigo."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "la confiance",
+            "es": "la confianza"
+          },
+          {
+            "fr": "précieux",
+            "es": "valioso/precioso"
+          },
+          {
+            "fr": "compter sur quelqu'un",
+            "es": "contar con alguien"
+          },
+          {
+            "fr": "durable",
+            "es": "duradero"
+          },
+          {
+            "fr": "réciproque",
+            "es": "recíproco"
+          }
+        ],
+        "expresion": {
+          "fr": "Être là l'un pour l'autre",
+          "es": "Estar el uno para el otro"
+        },
+        "reto": "Reflexiona sobre qué hace que una amistad dure en el tiempo."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 24,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les passions et loisirs",
+      "tema_desc": "Hablar de gustos, hobbies y pasiones",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un loisir",
+            "es": "un pasatiempo"
+          },
+          {
+            "fr": "aimer",
+            "es": "gustar"
+          },
+          {
+            "fr": "le sport",
+            "es": "el deporte"
+          },
+          {
+            "fr": "la lecture",
+            "es": "la lectura"
+          },
+          {
+            "fr": "passionnant",
+            "es": "apasionante"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est ma passion",
+          "es": "Es mi pasión"
+        },
+        "reto": "Nombra tu pasatiempo favorito en una frase."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "se passionner pour",
+            "es": "apasionarse por"
+          },
+          {
+            "fr": "se détendre",
+            "es": "relajarse"
+          },
+          {
+            "fr": "consacrer du temps à",
+            "es": "dedicar tiempo a"
+          },
+          {
+            "fr": "épanouissant",
+            "es": "gratificante"
+          },
+          {
+            "fr": "un hobby",
+            "es": "un pasatiempo"
+          }
+        ],
+        "expresion": {
+          "fr": "Se ressourcer",
+          "es": "Recargar energías"
+        },
+        "reto": "Explica cómo un pasatiempo te ayuda a equilibrar tu vida."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 25,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les rêves et projets",
+      "tema_desc": "Hablar de sueños y proyectos de vida",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un rêve",
+            "es": "un sueño"
+          },
+          {
+            "fr": "un projet",
+            "es": "un proyecto"
+          },
+          {
+            "fr": "espérer",
+            "es": "esperar/desear"
+          },
+          {
+            "fr": "un jour",
+            "es": "algún día"
+          },
+          {
+            "fr": "réaliser",
+            "es": "realizar"
+          }
+        ],
+        "expresion": {
+          "fr": "J'espère que...",
+          "es": "Espero que..."
+        },
+        "reto": "Comparte un sueño o proyecto que tengas."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un objectif",
+            "es": "un objetivo"
+          },
+          {
+            "fr": "se fixer un but",
+            "es": "fijarse una meta"
+          },
+          {
+            "fr": "concrétiser",
+            "es": "concretar"
+          },
+          {
+            "fr": "ambitieux",
+            "es": "ambicioso"
+          },
+          {
+            "fr": "à long terme",
+            "es": "a largo plazo"
+          }
+        ],
+        "expresion": {
+          "fr": "Réaliser ses rêves",
+          "es": "Realizar sus sueños"
+        },
+        "reto": "Describe los pasos que planeas seguir para lograr un objetivo."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 26,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les traditions familiales",
+      "tema_desc": "Hablar de tradiciones y celebraciones familiares",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "une fête",
+            "es": "una fiesta"
+          },
+          {
+            "fr": "célébrer",
+            "es": "celebrar"
+          },
+          {
+            "fr": "ensemble",
+            "es": "juntos"
+          },
+          {
+            "fr": "une tradition",
+            "es": "una tradición"
+          },
+          {
+            "fr": "préparer",
+            "es": "preparar"
+          }
+        ],
+        "expresion": {
+          "fr": "On se réunit en famille",
+          "es": "Nos reunimos en familia"
+        },
+        "reto": "Nombra una celebración familiar importante para ti."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "perpétuer",
+            "es": "perpetuar"
+          },
+          {
+            "fr": "un rituel",
+            "es": "un ritual"
+          },
+          {
+            "fr": "hérité",
+            "es": "heredado"
+          },
+          {
+            "fr": "symbolique",
+            "es": "simbólico"
+          },
+          {
+            "fr": "transmettre",
+            "es": "transmitir"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est une vraie tradition",
+          "es": "Es toda una tradición"
+        },
+        "reto": "Describe una tradición de tu familia y explica su origen."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 27,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Le temps qui passe",
+      "tema_desc": "Reflexionar sobre el paso del tiempo",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "le temps",
+            "es": "el tiempo"
+          },
+          {
+            "fr": "passer vite",
+            "es": "pasar rápido"
+          },
+          {
+            "fr": "changer",
+            "es": "cambiar"
+          },
+          {
+            "fr": "avant",
+            "es": "antes"
+          },
+          {
+            "fr": "maintenant",
+            "es": "ahora"
+          }
+        ],
+        "expresion": {
+          "fr": "Le temps passe vite",
+          "es": "El tiempo pasa rápido"
+        },
+        "reto": "¿Qué ha cambiado en tu vida en los últimos 5 años? Menciona una cosa."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "évoluer",
+            "es": "evolucionar"
+          },
+          {
+            "fr": "prendre du recul",
+            "es": "tomar distancia/perspectiva"
+          },
+          {
+            "fr": "un tournant",
+            "es": "un punto de inflexión"
+          },
+          {
+            "fr": "profiter de l'instant",
+            "es": "aprovechar el momento"
+          },
+          {
+            "fr": "irréversible",
+            "es": "irreversible"
+          }
+        ],
+        "expresion": {
+          "fr": "Le temps file",
+          "es": "El tiempo vuela"
+        },
+        "reto": "Reflexiona sobre cómo tu percepción del tiempo ha cambiado con la edad."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 28,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les changements de vie",
+      "tema_desc": "Hablar de decisiones y cambios importantes",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un changement",
+            "es": "un cambio"
+          },
+          {
+            "fr": "déménager",
+            "es": "mudarse"
+          },
+          {
+            "fr": "décider",
+            "es": "decidir"
+          },
+          {
+            "fr": "nouveau",
+            "es": "nuevo"
+          },
+          {
+            "fr": "recommencer",
+            "es": "recomenzar"
+          }
+        ],
+        "expresion": {
+          "fr": "J'ai décidé de...",
+          "es": "Decidí..."
+        },
+        "reto": "Menciona un cambio que te gustaría hacer en tu vida."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un tournant",
+            "es": "un punto de inflexión"
+          },
+          {
+            "fr": "oser",
+            "es": "atreverse"
+          },
+          {
+            "fr": "s'adapter",
+            "es": "adaptarse"
+          },
+          {
+            "fr": "prendre un risque",
+            "es": "tomar un riesgo"
+          },
+          {
+            "fr": "se réinventer",
+            "es": "reinventarse"
+          }
+        ],
+        "expresion": {
+          "fr": "Tourner la page",
+          "es": "Pasar la página"
+        },
+        "reto": "Narra una decisión importante que hayas tomado y por qué."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 29,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les objets qui comptent",
+      "tema_desc": "Hablar de objetos con valor sentimental",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un objet",
+            "es": "un objeto"
+          },
+          {
+            "fr": "précieux",
+            "es": "valioso"
+          },
+          {
+            "fr": "garder",
+            "es": "guardar"
+          },
+          {
+            "fr": "un cadeau",
+            "es": "un regalo"
+          },
+          {
+            "fr": "important",
+            "es": "importante"
+          }
+        ],
+        "expresion": {
+          "fr": "Ça compte beaucoup pour moi",
+          "es": "Eso significa mucho para mí"
+        },
+        "reto": "Describe un objeto que atesoras y por qué."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une valeur sentimentale",
+            "es": "un valor sentimental"
+          },
+          {
+            "fr": "un héritage",
+            "es": "una herencia"
+          },
+          {
+            "fr": "symboliser",
+            "es": "simbolizar"
+          },
+          {
+            "fr": "chérir",
+            "es": "apreciar/atesorar"
+          },
+          {
+            "fr": "irremplaçable",
+            "es": "irremplazable"
+          }
+        ],
+        "expresion": {
+          "fr": "Y tenir comme à la prunelle de ses yeux",
+          "es": "Cuidarlo como a las niñas de sus ojos"
+        },
+        "reto": "Explica el valor simbólico de un objeto heredado en tu familia."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 30,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les livres qui ont marqué",
+      "tema_desc": "Hablar de lecturas significativas",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un livre",
+            "es": "un libro"
+          },
+          {
+            "fr": "lire",
+            "es": "leer"
+          },
+          {
+            "fr": "aimer",
+            "es": "gustar"
+          },
+          {
+            "fr": "une histoire",
+            "es": "una historia"
+          },
+          {
+            "fr": "intéressant",
+            "es": "interesante"
+          }
+        ],
+        "expresion": {
+          "fr": "J'ai adoré ce livre",
+          "es": "Me encantó este libro"
+        },
+        "reto": "Nombra un libro que te haya gustado (sin citar frases textuales)."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un personnage",
+            "es": "un personaje"
+          },
+          {
+            "fr": "marquant",
+            "es": "marcante"
+          },
+          {
+            "fr": "une intrigue",
+            "es": "una trama"
+          },
+          {
+            "fr": "captivant",
+            "es": "cautivador"
+          },
+          {
+            "fr": "une réflexion",
+            "es": "una reflexión"
+          }
+        ],
+        "expresion": {
+          "fr": "Un livre qui change une vie",
+          "es": "Un libro que cambia una vida"
+        },
+        "reto": "Explica, sin citar el texto, por qué un libro te marcó."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 31,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les films préférés",
+      "tema_desc": "Hablar de cine, sin citar diálogos",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un film",
+            "es": "una película"
+          },
+          {
+            "fr": "regarder",
+            "es": "ver"
+          },
+          {
+            "fr": "drôle",
+            "es": "gracioso"
+          },
+          {
+            "fr": "triste",
+            "es": "triste"
+          },
+          {
+            "fr": "l'acteur / l'actrice",
+            "es": "el actor / la actriz"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est mon film préféré",
+          "es": "Es mi película favorita"
+        },
+        "reto": "Nombra una película que te haga reír o llorar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un réalisateur",
+            "es": "un director"
+          },
+          {
+            "fr": "une intrigue",
+            "es": "una trama"
+          },
+          {
+            "fr": "émouvant",
+            "es": "conmovedor"
+          },
+          {
+            "fr": "un chef-d'œuvre",
+            "es": "una obra maestra"
+          },
+          {
+            "fr": "le scénario",
+            "es": "el guion"
+          }
+        ],
+        "expresion": {
+          "fr": "Un vrai chef-d'œuvre",
+          "es": "Una verdadera obra maestra"
+        },
+        "reto": "Describe, con tus propias palabras, la trama de una película que te marcó."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 32,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "La musique de ma vie",
+      "tema_desc": "Hablar de música, sin citar letras",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "la musique",
+            "es": "la música"
+          },
+          {
+            "fr": "écouter",
+            "es": "escuchar"
+          },
+          {
+            "fr": "un chanteur / une chanteuse",
+            "es": "un cantante / una cantante"
+          },
+          {
+            "fr": "aimer",
+            "es": "gustar"
+          },
+          {
+            "fr": "danser",
+            "es": "bailar"
+          }
+        ],
+        "expresion": {
+          "fr": "J'adore cette musique",
+          "es": "Me encanta esta música"
+        },
+        "reto": "Nombra un género musical que te acompañe en tu día a día."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un genre musical",
+            "es": "un género musical"
+          },
+          {
+            "fr": "une mélodie",
+            "es": "una melodía"
+          },
+          {
+            "fr": "évoquer",
+            "es": "evocar"
+          },
+          {
+            "fr": "un concert",
+            "es": "un concierto"
+          },
+          {
+            "fr": "nostalgique",
+            "es": "nostálgico"
+          }
+        ],
+        "expresion": {
+          "fr": "Ça me met de bonne humeur",
+          "es": "Eso me pone de buen humor"
+        },
+        "reto": "Describe qué recuerdos evoca en ti una canción, sin citar su letra."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 33,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les recettes de famille",
+      "tema_desc": "Hablar de comida y recetas familiares",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "une recette",
+            "es": "una receta"
+          },
+          {
+            "fr": "cuisiner",
+            "es": "cocinar"
+          },
+          {
+            "fr": "délicieux",
+            "es": "delicioso"
+          },
+          {
+            "fr": "un plat",
+            "es": "un platillo"
+          },
+          {
+            "fr": "préparer",
+            "es": "preparar"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est un plat de famille",
+          "es": "Es un platillo familiar"
+        },
+        "reto": "Nombra un plato típico de tu familia."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un ingrédient",
+            "es": "un ingrediente"
+          },
+          {
+            "fr": "mijoter",
+            "es": "cocinar a fuego lento"
+          },
+          {
+            "fr": "un secret de famille",
+            "es": "un secreto de familia"
+          },
+          {
+            "fr": "savoureux",
+            "es": "sabroso"
+          },
+          {
+            "fr": "transmettre",
+            "es": "transmitir"
+          }
+        ],
+        "expresion": {
+          "fr": "Un plat qui réchauffe le cœur",
+          "es": "Un platillo que calienta el corazón"
+        },
+        "reto": "Describe cómo se prepara un platillo tradicional de tu familia."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 34,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Les lieux du cœur",
+      "tema_desc": "Hablar de lugares con significado personal",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un lieu",
+            "es": "un lugar"
+          },
+          {
+            "fr": "aimer",
+            "es": "querer/gustar"
+          },
+          {
+            "fr": "calme",
+            "es": "tranquilo"
+          },
+          {
+            "fr": "se sentir bien",
+            "es": "sentirse bien"
+          },
+          {
+            "fr": "retourner",
+            "es": "regresar"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est mon endroit préféré",
+          "es": "Es mi lugar favorito"
+        },
+        "reto": "Describe tu lugar favorito para relajarte."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un refuge",
+            "es": "un refugio"
+          },
+          {
+            "fr": "apaisant",
+            "es": "apaciguador"
+          },
+          {
+            "fr": "ressourçant",
+            "es": "que recarga energías"
+          },
+          {
+            "fr": "un attachement",
+            "es": "un apego"
+          },
+          {
+            "fr": "emblématique",
+            "es": "emblemático"
+          }
+        ],
+        "expresion": {
+          "fr": "Se ressourcer",
+          "es": "Recargar energías (en un lugar querido)"
+        },
+        "reto": "Explica por qué un lugar en particular tiene un significado especial para ti."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 35,
+      "temporada": 2,
+      "temporada_nombre": "Parler de soi",
+      "destino": null,
+      "pais": null,
+      "tema": "Bilan et gratitude",
+      "tema_desc": "Cerrar la temporada con un balance personal",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "merci",
+            "es": "gracias"
+          },
+          {
+            "fr": "content",
+            "es": "contento"
+          },
+          {
+            "fr": "apprendre",
+            "es": "aprender"
+          },
+          {
+            "fr": "progresser",
+            "es": "progresar"
+          },
+          {
+            "fr": "fier",
+            "es": "orgulloso"
+          }
+        ],
+        "expresion": {
+          "fr": "Je suis content(e) de...",
+          "es": "Estoy contento(a) de..."
+        },
+        "reto": "Menciona algo que aprendiste este trimestre."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un bilan",
+            "es": "un balance"
+          },
+          {
+            "fr": "la gratitude",
+            "es": "la gratitud"
+          },
+          {
+            "fr": "progresser",
+            "es": "progresar"
+          },
+          {
+            "fr": "un accomplissement",
+            "es": "un logro"
+          },
+          {
+            "fr": "reconnaissant",
+            "es": "agradecido"
+          }
+        ],
+        "expresion": {
+          "fr": "Faire le point",
+          "es": "Hacer un balance/repasar"
+        },
+        "reto": "Haz un pequeño balance de tu progreso en francés hasta ahora."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 36,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "La technologie et nous",
+      "tema_desc": "Hablar del impacto de la tecnología",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un ordinateur",
+            "es": "una computadora"
+          },
+          {
+            "fr": "un téléphone",
+            "es": "un teléfono"
+          },
+          {
+            "fr": "utiliser",
+            "es": "usar"
+          },
+          {
+            "fr": "pratique",
+            "es": "práctico"
+          },
+          {
+            "fr": "moderne",
+            "es": "moderno"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est très pratique",
+          "es": "Es muy práctico"
+        },
+        "reto": "Nombra una aplicación que uses todos los días."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "le numérique",
+            "es": "lo digital"
+          },
+          {
+            "fr": "dépendant",
+            "es": "dependiente"
+          },
+          {
+            "fr": "un outil",
+            "es": "una herramienta"
+          },
+          {
+            "fr": "l'intelligence artificielle",
+            "es": "la inteligencia artificial"
+          },
+          {
+            "fr": "un impact",
+            "es": "un impacto"
+          }
+        ],
+        "expresion": {
+          "fr": "Être connecté en permanence",
+          "es": "Estar conectado permanentemente"
+        },
+        "reto": "Da tu opinión: ¿la tecnología nos acerca o nos aleja?"
+      },
+      "cultura": null
+    },
+    {
+      "semana": 37,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "L'environnement",
+      "tema_desc": "Hablar del medio ambiente",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "la nature",
+            "es": "la naturaleza"
+          },
+          {
+            "fr": "protéger",
+            "es": "proteger"
+          },
+          {
+            "fr": "polluer",
+            "es": "contaminar"
+          },
+          {
+            "fr": "recycler",
+            "es": "reciclar"
+          },
+          {
+            "fr": "important",
+            "es": "importante"
+          }
+        ],
+        "expresion": {
+          "fr": "Il faut protéger la nature",
+          "es": "Hay que proteger la naturaleza"
+        },
+        "reto": "Nombra un gesto pequeño que haces por el medio ambiente."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "le réchauffement climatique",
+            "es": "el calentamiento global"
+          },
+          {
+            "fr": "durable",
+            "es": "sostenible"
+          },
+          {
+            "fr": "réduire",
+            "es": "reducir"
+          },
+          {
+            "fr": "une empreinte écologique",
+            "es": "una huella ecológica"
+          },
+          {
+            "fr": "s'engager",
+            "es": "comprometerse"
+          }
+        ],
+        "expresion": {
+          "fr": "Agir pour la planète",
+          "es": "Actuar por el planeta"
+        },
+        "reto": "Propón dos medidas concretas para reducir el impacto ambiental."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 38,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "L'éducation",
+      "tema_desc": "Hablar de la educación y el aprendizaje",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "l'école",
+            "es": "la escuela"
+          },
+          {
+            "fr": "apprendre",
+            "es": "aprender"
+          },
+          {
+            "fr": "un professeur",
+            "es": "un profesor"
+          },
+          {
+            "fr": "étudier",
+            "es": "estudiar"
+          },
+          {
+            "fr": "difficile",
+            "es": "difícil"
+          }
+        ],
+        "expresion": {
+          "fr": "J'aime apprendre",
+          "es": "Me gusta aprender"
+        },
+        "reto": "Menciona algo nuevo que aprendiste recientemente."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "la pédagogie",
+            "es": "la pedagogía"
+          },
+          {
+            "fr": "s'épanouir",
+            "es": "desarrollarse plenamente"
+          },
+          {
+            "fr": "un système éducatif",
+            "es": "un sistema educativo"
+          },
+          {
+            "fr": "acquérir des compétences",
+            "es": "adquirir competencias"
+          },
+          {
+            "fr": "bienveillant",
+            "es": "comprensivo/amable"
+          }
+        ],
+        "expresion": {
+          "fr": "Apprendre tout au long de la vie",
+          "es": "Aprender durante toda la vida"
+        },
+        "reto": "Da tu opinión sobre el aprendizaje a lo largo de toda la vida."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 39,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "La gastronomie française",
+      "tema_desc": "Hablar de la cocina francesa",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "le pain",
+            "es": "el pan"
+          },
+          {
+            "fr": "le fromage",
+            "es": "el queso"
+          },
+          {
+            "fr": "le vin",
+            "es": "el vino"
+          },
+          {
+            "fr": "délicieux",
+            "es": "delicioso"
+          },
+          {
+            "fr": "goûter",
+            "es": "probar"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est délicieux",
+          "es": "Está delicioso"
+        },
+        "reto": "Nombra un platillo francés que te gustaría probar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un terroir",
+            "es": "un territorio/producto local"
+          },
+          {
+            "fr": "raffiné",
+            "es": "refinado"
+          },
+          {
+            "fr": "une spécialité",
+            "es": "una especialidad"
+          },
+          {
+            "fr": "savourer",
+            "es": "saborear"
+          },
+          {
+            "fr": "un accord mets-vins",
+            "es": "un maridaje"
+          }
+        ],
+        "expresion": {
+          "fr": "Un régal pour les papilles",
+          "es": "Un festín para el paladar"
+        },
+        "reto": "Compara la gastronomía francesa con la de tu país."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 40,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "Le cinéma francophone",
+      "tema_desc": "Hablar de cine francófono (sin citar diálogos)",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un film",
+            "es": "una película"
+          },
+          {
+            "fr": "un acteur",
+            "es": "un actor"
+          },
+          {
+            "fr": "regarder",
+            "es": "ver"
+          },
+          {
+            "fr": "célèbre",
+            "es": "famoso"
+          },
+          {
+            "fr": "intéressant",
+            "es": "interesante"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est un film connu",
+          "es": "Es una película conocida"
+        },
+        "reto": "Nombra una película francófona que conozcas."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "le septième art",
+            "es": "el séptimo arte (el cine)"
+          },
+          {
+            "fr": "un réalisateur",
+            "es": "un director"
+          },
+          {
+            "fr": "primé",
+            "es": "premiado"
+          },
+          {
+            "fr": "engagé",
+            "es": "comprometido (socialmente)"
+          },
+          {
+            "fr": "un festival",
+            "es": "un festival"
+          }
+        ],
+        "expresion": {
+          "fr": "Un classique du cinéma",
+          "es": "Un clásico del cine"
+        },
+        "reto": "Investiga y presenta brevemente a un director francófono famoso."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 41,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "La mode et le style",
+      "tema_desc": "Hablar de moda y estilo personal",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un vêtement",
+            "es": "una prenda"
+          },
+          {
+            "fr": "porter",
+            "es": "llevar puesto"
+          },
+          {
+            "fr": "élégant",
+            "es": "elegante"
+          },
+          {
+            "fr": "confortable",
+            "es": "cómodo"
+          },
+          {
+            "fr": "à la mode",
+            "es": "de moda"
+          }
+        ],
+        "expresion": {
+          "fr": "J'aime bien ce style",
+          "es": "Me gusta este estilo"
+        },
+        "reto": "Describe tu estilo de vestir en tres palabras."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "le chic",
+            "es": "la elegancia/el chic"
+          },
+          {
+            "fr": "intemporel",
+            "es": "atemporal"
+          },
+          {
+            "fr": "une tendance",
+            "es": "una tendencia"
+          },
+          {
+            "fr": "s'habiller",
+            "es": "vestirse"
+          },
+          {
+            "fr": "l'élégance à la française",
+            "es": "la elegancia a la francesa"
+          }
+        ],
+        "expresion": {
+          "fr": "Avoir du style",
+          "es": "Tener estilo"
+        },
+        "reto": "Da tu opinión sobre la frase 'la elegancia a la francesa'."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 42,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "Les médias et l'information",
+      "tema_desc": "Hablar de medios de comunicación",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "les nouvelles",
+            "es": "las noticias"
+          },
+          {
+            "fr": "regarder",
+            "es": "ver"
+          },
+          {
+            "fr": "lire",
+            "es": "leer"
+          },
+          {
+            "fr": "s'informer",
+            "es": "informarse"
+          },
+          {
+            "fr": "important",
+            "es": "importante"
+          }
+        ],
+        "expresion": {
+          "fr": "Je m'informe tous les jours",
+          "es": "Me informo todos los días"
+        },
+        "reto": "Menciona una fuente de noticias que consultas habitualmente."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une source fiable",
+            "es": "una fuente confiable"
+          },
+          {
+            "fr": "vérifier",
+            "es": "verificar"
+          },
+          {
+            "fr": "la désinformation",
+            "es": "la desinformación"
+          },
+          {
+            "fr": "un point de vue",
+            "es": "un punto de vista"
+          },
+          {
+            "fr": "objectif",
+            "es": "objetivo"
+          }
+        ],
+        "expresion": {
+          "fr": "Prendre du recul",
+          "es": "Tomar distancia/perspectiva"
+        },
+        "reto": "Da tu opinión sobre cómo verificar la información hoy en día."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 43,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "La santé et le bien-être",
+      "tema_desc": "Hablar de salud y bienestar general",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "la santé",
+            "es": "la salud"
+          },
+          {
+            "fr": "faire du sport",
+            "es": "hacer deporte"
+          },
+          {
+            "fr": "se reposer",
+            "es": "descansar"
+          },
+          {
+            "fr": "important",
+            "es": "importante"
+          },
+          {
+            "fr": "dormir",
+            "es": "dormir"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est bon pour la santé",
+          "es": "Es bueno para la salud"
+        },
+        "reto": "Menciona un hábito saludable que practiques."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "l'équilibre",
+            "es": "el equilibrio"
+          },
+          {
+            "fr": "prendre soin de soi",
+            "es": "cuidarse a sí mismo"
+          },
+          {
+            "fr": "le bien-être",
+            "es": "el bienestar"
+          },
+          {
+            "fr": "une habitude saine",
+            "es": "un hábito saludable"
+          },
+          {
+            "fr": "se ressourcer",
+            "es": "recargar energías"
+          }
+        ],
+        "expresion": {
+          "fr": "Prendre soin de soi",
+          "es": "Cuidarse a uno mismo"
+        },
+        "reto": "Comparte una rutina que te ayude a mantener el equilibrio."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 44,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "Le travail et l'équilibre de vie",
+      "tema_desc": "Hablar de trabajo y balance de vida",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "le travail",
+            "es": "el trabajo"
+          },
+          {
+            "fr": "le temps libre",
+            "es": "el tiempo libre"
+          },
+          {
+            "fr": "se reposer",
+            "es": "descansar"
+          },
+          {
+            "fr": "organiser",
+            "es": "organizar"
+          },
+          {
+            "fr": "occupé",
+            "es": "ocupado"
+          }
+        ],
+        "expresion": {
+          "fr": "Je suis très occupé(e)",
+          "es": "Estoy muy ocupado(a)"
+        },
+        "reto": "Nombra una actividad que haces para desconectarte del trabajo."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "l'équilibre vie pro-perso",
+            "es": "el equilibrio vida laboral-personal"
+          },
+          {
+            "fr": "une priorité",
+            "es": "una prioridad"
+          },
+          {
+            "fr": "gérer son temps",
+            "es": "administrar el tiempo"
+          },
+          {
+            "fr": "le télétravail",
+            "es": "el teletrabajo"
+          },
+          {
+            "fr": "déconnecter",
+            "es": "desconectarse"
+          }
+        ],
+        "expresion": {
+          "fr": "Trouver un juste équilibre",
+          "es": "Encontrar un justo equilibrio"
+        },
+        "reto": "Da tu opinión sobre el equilibrio entre vida laboral y personal."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 45,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "Les traditions et fêtes",
+      "tema_desc": "Hablar de fiestas y tradiciones culturales",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "une fête",
+            "es": "una fiesta"
+          },
+          {
+            "fr": "célébrer",
+            "es": "celebrar"
+          },
+          {
+            "fr": "un défilé",
+            "es": "un desfile"
+          },
+          {
+            "fr": "joyeux",
+            "es": "alegre"
+          },
+          {
+            "fr": "ensemble",
+            "es": "juntos"
+          }
+        ],
+        "expresion": {
+          "fr": "On fête ça ensemble",
+          "es": "Lo celebramos juntos"
+        },
+        "reto": "Nombra una fiesta tradicional que te guste celebrar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une coutume",
+            "es": "una costumbre"
+          },
+          {
+            "fr": "perpétuer",
+            "es": "perpetuar"
+          },
+          {
+            "fr": "un héritage culturel",
+            "es": "un patrimonio cultural"
+          },
+          {
+            "fr": "commémorer",
+            "es": "conmemorar"
+          },
+          {
+            "fr": "populaire",
+            "es": "popular"
+          }
+        ],
+        "expresion": {
+          "fr": "Une fête incontournable",
+          "es": "Una fiesta imprescindible"
+        },
+        "reto": "Describe el origen de una fiesta tradicional de tu país."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 46,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "L'art et les musées",
+      "tema_desc": "Hablar de arte, sin describir obras específicas con detalle",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un tableau",
+            "es": "un cuadro"
+          },
+          {
+            "fr": "un musée",
+            "es": "un museo"
+          },
+          {
+            "fr": "beau",
+            "es": "hermoso"
+          },
+          {
+            "fr": "visiter",
+            "es": "visitar"
+          },
+          {
+            "fr": "regarder",
+            "es": "mirar"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est très beau",
+          "es": "Es muy hermoso"
+        },
+        "reto": "Nombra un museo que te gustaría visitar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une exposition",
+            "es": "una exposición"
+          },
+          {
+            "fr": "un artiste",
+            "es": "un artista"
+          },
+          {
+            "fr": "contempler",
+            "es": "contemplar"
+          },
+          {
+            "fr": "évocateur",
+            "es": "evocador"
+          },
+          {
+            "fr": "un courant artistique",
+            "es": "una corriente artística"
+          }
+        ],
+        "expresion": {
+          "fr": "Un chef-d'œuvre",
+          "es": "Una obra maestra"
+        },
+        "reto": "Describe qué sientes al ver una obra de arte que te gusta."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 47,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "La littérature francophone",
+      "tema_desc": "Hablar de literatura, sin citar textos",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un livre",
+            "es": "un libro"
+          },
+          {
+            "fr": "un auteur",
+            "es": "un autor"
+          },
+          {
+            "fr": "lire",
+            "es": "leer"
+          },
+          {
+            "fr": "une histoire",
+            "es": "una historia"
+          },
+          {
+            "fr": "célèbre",
+            "es": "famoso"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est un auteur connu",
+          "es": "Es un autor conocido"
+        },
+        "reto": "Nombra un autor francófono que conozcas (aunque no hayas leído su obra)."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une œuvre",
+            "es": "una obra"
+          },
+          {
+            "fr": "un style d'écriture",
+            "es": "un estilo de escritura"
+          },
+          {
+            "fr": "engagé",
+            "es": "comprometido"
+          },
+          {
+            "fr": "captivant",
+            "es": "cautivador"
+          },
+          {
+            "fr": "un classique",
+            "es": "un clásico"
+          }
+        ],
+        "expresion": {
+          "fr": "Une plume remarquable",
+          "es": "Una pluma notable (buen estilo de escritura)"
+        },
+        "reto": "Presenta, sin citar textos, a un autor francófono y su importancia."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 48,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "Le sport",
+      "tema_desc": "Hablar de deportes y su valor social",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "le sport",
+            "es": "el deporte"
+          },
+          {
+            "fr": "jouer",
+            "es": "jugar"
+          },
+          {
+            "fr": "une équipe",
+            "es": "un equipo"
+          },
+          {
+            "fr": "gagner",
+            "es": "ganar"
+          },
+          {
+            "fr": "s'entraîner",
+            "es": "entrenar"
+          }
+        ],
+        "expresion": {
+          "fr": "J'aime regarder le sport",
+          "es": "Me gusta ver deporte"
+        },
+        "reto": "Nombra tu deporte favorito para ver o practicar."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "la compétition",
+            "es": "la competencia"
+          },
+          {
+            "fr": "l'esprit d'équipe",
+            "es": "el espíritu de equipo"
+          },
+          {
+            "fr": "se dépasser",
+            "es": "superarse"
+          },
+          {
+            "fr": "un exploit",
+            "es": "una hazaña"
+          },
+          {
+            "fr": "la performance",
+            "es": "el rendimiento"
+          }
+        ],
+        "expresion": {
+          "fr": "Se dépasser",
+          "es": "Superarse a sí mismo"
+        },
+        "reto": "Da tu opinión sobre el valor del deporte en equipo."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 49,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "Les inventions françaises",
+      "tema_desc": "Hablar de inventos e innovación francófona",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "une invention",
+            "es": "un invento"
+          },
+          {
+            "fr": "inventer",
+            "es": "inventar"
+          },
+          {
+            "fr": "utile",
+            "es": "útil"
+          },
+          {
+            "fr": "célèbre",
+            "es": "famoso"
+          },
+          {
+            "fr": "important",
+            "es": "importante"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est une invention utile",
+          "es": "Es un invento útil"
+        },
+        "reto": "Nombra un invento que consideres muy útil."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un(e) inventeur/inventrice",
+            "es": "un(a) inventor(a)"
+          },
+          {
+            "fr": "révolutionner",
+            "es": "revolucionar"
+          },
+          {
+            "fr": "un brevet",
+            "es": "una patente"
+          },
+          {
+            "fr": "l'innovation",
+            "es": "la innovación"
+          },
+          {
+            "fr": "marquant",
+            "es": "marcante"
+          }
+        ],
+        "expresion": {
+          "fr": "Une avancée majeure",
+          "es": "Un avance importante"
+        },
+        "reto": "Investiga y presenta brevemente un invento de origen francófono."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 50,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "La francophonie dans le monde",
+      "tema_desc": "Reflexionar sobre la diversidad de la Francofonía",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "la francophonie",
+            "es": "la Francofonía"
+          },
+          {
+            "fr": "parler français",
+            "es": "hablar francés"
+          },
+          {
+            "fr": "un pays",
+            "es": "un país"
+          },
+          {
+            "fr": "le monde",
+            "es": "el mundo"
+          },
+          {
+            "fr": "divers",
+            "es": "diverso"
+          }
+        ],
+        "expresion": {
+          "fr": "On parle français dans le monde entier",
+          "es": "Se habla francés en todo el mundo"
+        },
+        "reto": "Nombra tres países donde se hable francés."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "une organisation internationale",
+            "es": "una organización internacional"
+          },
+          {
+            "fr": "la diversité culturelle",
+            "es": "la diversidad cultural"
+          },
+          {
+            "fr": "un continent",
+            "es": "un continente"
+          },
+          {
+            "fr": "partager une langue",
+            "es": "compartir un idioma"
+          },
+          {
+            "fr": "rassembler",
+            "es": "reunir"
+          }
+        ],
+        "expresion": {
+          "fr": "Un pont entre les cultures",
+          "es": "Un puente entre culturas"
+        },
+        "reto": "Reflexiona sobre qué significa para ti pertenecer a la comunidad francófona."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 51,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "L'humour français",
+      "tema_desc": "Hablar del humor, sin citar chistes textuales",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "rire",
+            "es": "reír"
+          },
+          {
+            "fr": "drôle",
+            "es": "gracioso"
+          },
+          {
+            "fr": "une blague",
+            "es": "un chiste"
+          },
+          {
+            "fr": "sourire",
+            "es": "sonreír"
+          },
+          {
+            "fr": "amusant",
+            "es": "divertido"
+          }
+        ],
+        "expresion": {
+          "fr": "C'est très drôle",
+          "es": "Es muy gracioso"
+        },
+        "reto": "Comparte, sin citarlo textualmente, un tipo de humor que te guste."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "l'autodérision",
+            "es": "la autoironía"
+          },
+          {
+            "fr": "un jeu de mots",
+            "es": "un juego de palabras"
+          },
+          {
+            "fr": "l'ironie",
+            "es": "la ironía"
+          },
+          {
+            "fr": "un comique",
+            "es": "un cómico"
+          },
+          {
+            "fr": "le second degré",
+            "es": "el sentido irónico/no literal"
+          }
+        ],
+        "expresion": {
+          "fr": "Avoir de l'humour",
+          "es": "Tener sentido del humor"
+        },
+        "reto": "Explica, con tus palabras, una diferencia de humor entre culturas que conozcas."
+      },
+      "cultura": null
+    },
+    {
+      "semana": 52,
+      "temporada": 3,
+      "temporada_nombre": "Société et Culture",
+      "destino": null,
+      "pais": null,
+      "tema": "Bilan de l'année et projets futurs",
+      "tema_desc": "Cerrar el año con un balance y nuevas metas",
+      "a1a2": {
+        "vocabulario": [
+          {
+            "fr": "un an",
+            "es": "un año"
+          },
+          {
+            "fr": "apprendre",
+            "es": "aprender"
+          },
+          {
+            "fr": "progresser",
+            "es": "progresar"
+          },
+          {
+            "fr": "content",
+            "es": "contento"
+          },
+          {
+            "fr": "continuer",
+            "es": "continuar"
+          }
+        ],
+        "expresion": {
+          "fr": "J'ai beaucoup progressé",
+          "es": "He progresado mucho"
+        },
+        "reto": "Menciona un logro del que te sientas orgulloso este año."
+      },
+      "b1b2": {
+        "vocabulario": [
+          {
+            "fr": "un bilan",
+            "es": "un balance"
+          },
+          {
+            "fr": "un accomplissement",
+            "es": "un logro"
+          },
+          {
+            "fr": "se fixer de nouveaux objectifs",
+            "es": "fijarse nuevas metas"
+          },
+          {
+            "fr": "la persévérance",
+            "es": "la perseverancia"
+          },
+          {
+            "fr": "continuer sur sa lancée",
+            "es": "seguir con el impulso ganado"
+          }
+        ],
+        "expresion": {
+          "fr": "Continuer sur sa lancée",
+          "es": "Seguir con el mismo impulso"
+        },
+        "reto": "Escribe tus metas de francés para el próximo año."
+      },
+      "cultura": null
+    }
+  ]
+}

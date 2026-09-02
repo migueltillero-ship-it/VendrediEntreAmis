@@ -1,0 +1,142 @@
+/* ════════════════════════════════════════════════
+   COMPONENTS.CSS — Vendredi entre Amis
+   Tarjetas, botones, listas de vocabulario, formularios.
+════════════════════════════════════════════════ */
+
+/* ═══ HERO / ACCUEIL ═══ */
+.hero{
+  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+  padding:2rem; margin-bottom:1.5rem;
+}
+.mot-miguel{
+  display:flex; gap:1.25rem; align-items:flex-start; margin-top:1rem;
+}
+.mot-miguel .avatar{
+  width:64px; height:64px; border-radius:50%; flex:none;
+  background:var(--goldx); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold2);
+}
+.mot-miguel blockquote{ font-style:italic; color:var(--text); }
+.mot-miguel footer{ margin-top:.5rem; font-family:'Space Mono',monospace; font-size:.85rem; color:var(--muted); }
+
+.progress-wrap{ margin-top:1.5rem; }
+.progress-bar{
+  height:10px; border-radius:999px; background:var(--goldx); overflow:hidden; border:1px solid var(--border);
+}
+.progress-bar > span{ display:block; height:100%; background:linear-gradient(90deg,var(--cyan),var(--gold)); }
+.progress-label{ font-family:'Space Mono',monospace; font-size:.85rem; color:var(--muted); margin-top:.4rem; }
+
+.grid-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1.5rem; }
+.card{
+  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem;
+}
+.card .icon{ font-size:1.6rem; }
+.card p{ margin-top:.35rem; }
+.btn{
+  display:inline-block; margin-top:.75rem; background:var(--em1); color:#fff;
+  border-radius:999px; padding:.55rem 1.1rem; font-size:.9rem; border:none;
+}
+.btn:hover{ background:var(--em2); }
+.btn.secondary{ background:transparent; color:var(--em1); border:1px solid var(--border); }
+
+.timeline-3{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+.timeline-3 .card{ text-align:center; }
+.timeline-3 .tag{ font-family:'Space Mono',monospace; font-size:.75rem; color:var(--gold2); }
+
+@media(max-width:720px){
+  .timeline-3{ grid-template-columns:1fr; }
+}
+
+/* ═══ LE CAFÉ DU VENDREDI ═══ */
+.week-picker{ display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; margin:1rem 0 1.5rem; }
+.week-picker select{
+  font-family:inherit; font-size:.95rem; padding:.5rem .7rem; border-radius:8px; border:1px solid var(--border); background:#fff;
+}
+.destination-banner{
+  background:linear-gradient(120deg,var(--em1),var(--em2)); color:#fff; border-radius:var(--radius);
+  padding:1.75rem; margin-bottom:1.5rem;
+}
+.destination-banner h2{ color:#fff; margin-bottom:.15rem; }
+.destination-banner .pays{ font-family:'Space Mono',monospace; opacity:.85; font-size:.85rem; }
+
+.level-tabs{ display:flex; gap:.5rem; margin-bottom:1.25rem; }
+.level-tabs button{
+  flex:1; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+  padding:.75rem; font-size:1rem; font-weight:600;
+}
+.level-tabs button.active{ background:var(--em1); color:#fff; }
+
+.level-panel{ display:none; }
+.level-panel.active{ display:block; }
+
+.vocab-list{ list-style:none; display:grid; gap:.6rem; }
+.vocab-list li{
+  display:flex; align-items:center; justify-content:space-between; gap:.75rem;
+  background:var(--panel); border:1px solid var(--borderx); border-radius:10px; padding:.7rem 1rem;
+}
+.vocab-fr{ font-weight:600; }
+.vocab-es{ color:var(--muted); font-size:.92rem; }
+.say-btn{
+  background:var(--cyanx); border:1px solid var(--borderx); border-radius:50%;
+  width:2.1rem; height:2.1rem; flex:none; font-size:1rem;
+}
+.say-btn:hover{ background:var(--goldx); }
+
+.expr-card, .culture-card{
+  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-top:1rem;
+}
+.expr-card .fr{ font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--em1); }
+
+.reto-card{
+  background:var(--goldx); border:1px dashed var(--gold); border-radius:var(--radius); padding:1.25rem; margin-top:1.25rem;
+}
+.reto-card label{ display:flex; gap:.6rem; align-items:flex-start; cursor:pointer; }
+.reto-card input[type="checkbox"]{ width:1.2rem; height:1.2rem; margin-top:.2rem; flex:none; }
+
+/* ═══ CARNET / EXPRESSIONS / CULTURE / DÉFIS — listas ═══ */
+.toolbar{ display:flex; gap:.6rem; flex-wrap:wrap; margin-bottom:1.25rem; }
+.toolbar input, .toolbar select{
+  font-family:inherit; padding:.55rem .8rem; border-radius:8px; border:1px solid var(--border); font-size:.95rem;
+}
+.toolbar input{ flex:1; min-width:180px; }
+.pill-filters{ display:flex; gap:.4rem; flex-wrap:wrap; }
+.pill-filters button{
+  border:1px solid var(--border); background:#fff; border-radius:999px; padding:.4rem .9rem; font-size:.85rem;
+}
+.pill-filters button.active{ background:var(--em1); color:#fff; }
+
+.entry-form{
+  display:grid; gap:.6rem; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:1.5rem;
+}
+.entry-form input, .entry-form textarea, .entry-form select{
+  font-family:inherit; font-size:1rem; padding:.6rem .8rem; border-radius:8px; border:1px solid var(--border);
+}
+.entry-form textarea{ min-height:80px; resize:vertical; }
+
+.entry-list{ display:grid; gap:.75rem; }
+.entry{
+  background:var(--panel); border:1px solid var(--borderx); border-radius:10px; padding:1rem 1.1rem;
+  display:flex; justify-content:space-between; gap:1rem; align-items:flex-start;
+}
+.entry .del{ background:transparent; border:none; color:var(--muted); font-size:1.1rem; }
+.entry .del:hover{ color:#a33; }
+.empty-state{ text-align:center; color:var(--muted); padding:2rem 1rem; border:1px dashed var(--border); border-radius:var(--radius); }
+
+/* ═══ ENTRE AMIS ═══ */
+.question-card{
+  background:linear-gradient(120deg,var(--em1),var(--em2)); color:#fff; border-radius:var(--radius); padding:1.75rem; margin-bottom:1.25rem;
+}
+.question-card h2{ color:#fff; }
+.share-row{ display:flex; gap:.6rem; margin-top:1rem; flex-wrap:wrap; }
+.share-row .btn.whatsapp{ background:#1f7a52; }
+
+/* ═══ PASSEPORT FRANCOPHONE ═══ */
+.passport-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:.75rem; margin-top:1rem; }
+.stamp{
+  border:1px dashed var(--border); border-radius:12px; padding:.9rem; text-align:center; background:var(--panel);
+}
+.stamp.done{ border-style:solid; border-color:var(--cyan); background:var(--cyanx); }
+.stamp .flag{ font-size:1.5rem; }
+.stamp .nom{ font-size:.85rem; margin-top:.3rem; }
+.stamp .estado{ font-family:'Space Mono',monospace; font-size:.72rem; color:var(--muted); margin-top:.2rem; }

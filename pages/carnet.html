@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Carnet de Voyage · Vendredi entre Amis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/accessibility.css">
+<script>window.PAGE_PREFIX = "../"; window.CURRENT_PAGE = "carnet";</script>
+</head>
+<body>
+
+<header id="topbar"><div id="topbar-mount"></div></header>
+
+<main class="container">
+  <p class="eyebrow">Personnel &amp; privé — visible seulement sur cet appareil</p>
+  <h1>Mon Carnet de Voyage</h1>
+  <p class="muted" style="max-width:60ch;margin:.5rem 0 1.5rem;">Note ici les mots nouveaux, les expressions qui te plaisent, ou une simple réflexion sur ton apprentissage.</p>
+
+  <form id="carnet-form" class="entry-form">
+    <textarea id="carnet-texto" placeholder="Écris un mot, une expression ou une réflexion..." required></textarea>
+    <select id="carnet-tipo">
+      <option value="Mot nouveau">Mot nouveau</option>
+      <option value="Expression favorite">Expression favorite</option>
+      <option value="Découverte culturelle">Découverte culturelle</option>
+      <option value="Réflexion">Réflexion</option>
+    </select>
+    <button type="submit" class="btn">Ajouter à mon carnet</button>
+  </form>
+
+  <div class="entry-list" id="carnet-list"></div>
+</main>
+
+<footer id="club-footer">Vendredi entre Amis · Un espace du professeur Miguel Tillero</footer>
+
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/carnet.js"></script>
+<script src="../assets/js/page-carnet.js"></script>
+</body>
+</html>
+

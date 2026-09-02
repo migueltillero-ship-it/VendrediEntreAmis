@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendredi entre amis · Accueil</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo-dinamico.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header class="barra">
+  <div class="barra-in">
+    <a class="marca" href="../index.html">Miguel <b>Tillero</b></a>
+    <nav class="nav-scroll">
+      <a href="index.html" class="on">Accueil</a>
+      <a href="pourquoi.html">Le Concept</a>
+      <a href="animateur.html">L'Animateur</a>
+      <a href="niveles.html">Pédagogie</a>
+      <a href="recursos.html">Ressources</a>
+      <a href="comunidad.html">Communauté</a>
+      <a href="ideas.html">Contact</a>
+    </nav>
+    <a class="btn-oro" href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis" target="_blank"><i class="fa-brands fa-whatsapp"></i> Rejoindre</a>
+  </div>
+</header>
+<main class="contenedor-slide" style="text-align:center; max-width:900px;">
+  <span style="font-family:'Syne'; font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-claro);">Un proyecto independiente de Miguel Tillero</span>
+  <h1 style="font-size:clamp(2.5rem, 5vw, 4.5rem); margin:0.5rem 0 0.5rem;">Vendredi <em style="color:var(--gold); font-style:normal;">entre amis</em></h1>
+  <p style="font-size:1.4rem; font-family:'Syne', sans-serif; font-weight:600; color:var(--gold-claro); margin-bottom:1rem;">Club de conversation francophone</p>
+  
+  <p style="font-size:1.15rem; line-height:1.7; max-width:750px; margin:0 auto 2rem; color:rgba(255,255,255,0.9);">Parlez français avec confiance, authenticité et plaisir. Un espacio diseñado para practicar francés en un ambiente cálido, respetuoso e inclusivo, donde cada conversación se convierte en una oportunidad para progresar.</p>
+  
+  <div style="margin-bottom:3rem; padding:1.5rem; border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <p style="font-size:1.3rem; font-style:italic; margin:0; color:#fff;">"Ici, l'erreur n'est pas un obstacle. C'est une étape naturelle de l'apprentissage."</p>
+  </div>
+
+  <h2 style="font-size:2rem; margin-bottom:1rem;">Découvrez l'esprit du club</h2>
+  <p style="margin-bottom:1.5rem; color:rgba(255,255,255,0.85);">Le français est avant tout une langue de rencontre. Regardez cette courte présentation et découvrez pourquoi tant d'apprenants choisissent de vivre le français autrement.</p>
+  
+  <div style="position:relative; width:100%; border-radius:8px; overflow:hidden; box-shadow:var(--sombra); border:2px solid var(--gold); margin-bottom:3rem;">
+    <video controls style="width:100%; display:block;" poster="../assets/club/hero-bienvenue.jpg">
+      <source src="../assets/club-video-bienvenida.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div style="text-align:left; background:rgba(255,255,255,0.05); padding:2rem; border-radius:8px; margin-bottom:2rem;">
+    <h2 style="margin-top:0; color:var(--gold-claro);">Bienvenue dans notre communauté</h2>
+    <p style="line-height:1.7;">Aprender una lengua implica mucho más que dominar estructuras gramaticales. Implica desarrollar confianza, descubrir culturas, compartir experiencias y sentirse parte de una comunidad. <em>Vendredi entre amis</em> nació precisamente con ese propósito: crear un espacio donde el francés se viva de manera auténtica.</p>
+  </div>
+
+  <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+    <a href="pourquoi.html" class="btn-oro">Siguiente: ¿Por qué participar? <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</main>
+<footer><p>© 2026 Miguel Tillero · Vendredi entre amis</p></footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('video');
+    const audios = document.querySelectorAll('audio');
+    
+    if (video) {
+        video.addEventListener('play', () => {
+            audios.forEach(audio => {
+                if (!audio.paused) {
+                    audio.dataset.wasPlaying = 'true';
+                    audio.pause();
+                }
+            });
+        });
+        video.addEventListener('pause', () => {
+            audios.forEach(audio => {
+                if (audio.dataset.wasPlaying === 'true') {
+                    audio.play().catch(e => console.log("Audio resume prevented:", e));
+                    audio.dataset.wasPlaying = 'false';
+                }
+            });
+        });
+        video.addEventListener('ended', () => {
+            audios.forEach(audio => {
+                if (audio.dataset.wasPlaying === 'true') {
+                    audio.play().catch(e => console.log("Audio resume prevented:", e));
+                    audio.dataset.wasPlaying = 'false';
+                }
+            });
+        });
+    }
+});
+</script>
+</body>
+
+
+
+

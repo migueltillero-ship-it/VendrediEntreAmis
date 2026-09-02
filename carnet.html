@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Carnet · Vendredi entre amis</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo-dinamico.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header class="barra"><div class="barra-in"><a class="marca" href="../index.html">Miguel <b>Tillero</b></a><nav><a href="index.html">Accueil</a><a href="recursos.html" class="on"><i class="fa-solid fa-arrow-left"></i> Retour</a></nav></div></header>
+<main class="contenedor-slide" style="max-width:900px; padding:3rem;">
+  
+  <div style="text-align:center; margin-bottom:2.5rem;">
+    <span style="font-family:'Syne'; font-size:0.9rem; background:var(--gold); color:#0b3327; padding:0.3rem 0.8rem; border-radius:20px; font-weight:700;">Espace Personnel</span>
+    <h1 style="font-size:3rem; margin:1rem 0 1rem;">Mon Carnet de Voyage</h1>
+    <p style="font-size:1.1rem; color:var(--gold-claro); font-style:italic; max-width:600px; margin:0 auto;">Retrouvez ici tout le vocabulaire sauvegardé lors de vos explorations dans la bibliothèque.</p>
+  </div>
+
+  <div style="background:rgba(255,255,255,0.05); padding:2rem; border-radius:8px; border-left:3px solid var(--gold); margin-bottom:3rem;">
+    <h3 style="margin-top:0; color:#fff;"><i class="fa-solid fa-book-bookmark" style="color:var(--gold);"></i> Mots et expressions</h3>
+    <div id="lista-carnet" style="display:grid; gap:1rem; margin-top:1.5rem;">
+      <!-- El JavaScript inyectará el vocabulario aquí -->
+    </div>
+  </div>
+
+  <!-- Passeport Gamification -->
+  <div style="background:rgba(0,0,0,0.3); border:1px dashed var(--gold-claro); padding:2rem; border-radius:8px; text-align:center;">
+     <h3 style="color:#fff; margin-top:0; font-size:1.8rem;"><i class="fa-solid fa-passport" style="color:var(--gold);"></i> Passeport Francophone</h3>
+     <p style="color:rgba(255,255,255,0.85); margin-bottom:2rem;">Participez à nos sessions pour débloquer les tampons de vos destinations.</p>
+     <div style="display:flex; justify-content:center; gap:2rem; flex-wrap:wrap;">
+        <div style="width:100px; height:100px; border-radius:50%; border:3px solid var(--gold); display:flex; align-items:center; justify-content:center; color:var(--gold); font-family:'Syne'; font-weight:700; opacity:0.4; transform:rotate(-15deg);">PARIS</div>
+        <div style="width:100px; height:100px; border-radius:50%; border:3px solid var(--gold); display:flex; align-items:center; justify-content:center; color:var(--gold); font-family:'Syne'; font-weight:700; opacity:0.4; transform:rotate(10deg);">QUÉBEC</div>
+        <div style="width:100px; height:100px; border-radius:50%; border:3px solid var(--gold); display:flex; align-items:center; justify-content:center; color:var(--gold); font-family:'Syne'; font-weight:700; opacity:0.1; transform:rotate(-5deg);">?</div>
+     </div>
+  </div>
+
+</main>
+
+<script src="assets/js/carnet.js"></script>
+<script>
+  function renderizarCarnet() {
+    const cont = document.getElementById('lista-carnet');
+    const lista = leerCarnet();
+    cont.innerHTML = '';
+    if (lista.length === 0) {
+      cont.innerHTML = '<p style="color:rgba(255,255,255,0.6); font-style:italic;">Ton carnet est vide. Explorez la Bibliothèque pour sauvegarder du vocabulaire.</p>';
+      return;
+    }
+    // Mostrar del más reciente al más antiguo
+    lista.reverse().forEach((item, idx) => {
+      const div = document.createElement('div');
+      div.style.cssText = 'display:flex; justify-content:space-between; align-items:center; background:rgba(0,0,0,0.4); padding:1rem 1.5rem; border-radius:4px;';
+      div.innerHTML = <div><strong style="color:var(--gold-claro); font-size:1.1rem;"> + item.texto + </strong> <span style="font-size:0.85rem; color:rgba(255,255,255,0.6); margin-left:1rem; font-family:'Syne'; text-transform:uppercase;"> + item.tipo +  ·  + item.fecha + </span></div> <button onclick="eliminarDelCarnet( + idx + )" style="background:none; border:none; color:var(--muted); cursor:pointer; font-size:1.2rem; transition:0.3s;" onmouseover="this.style.color='#ff4444'" onmouseout="this.style.color='var(--muted)'" title="Supprimer"><i class="fa-solid fa-trash"></i></button>;
+      cont.appendChild(div);
+    });
+  }
+  
+  function eliminarDelCarnet(indexRev) {
+    const lista = leerCarnet();
+    // Calcular el índice real ya que invertimos el array para la visualización
+    const realIndex = lista.length - 1 - indexRev;
+    lista.splice(realIndex, 1);
+    guardarCarnet(lista);
+    renderizarCarnet();
+  }
+  
+  document.addEventListener('DOMContentLoaded', renderizarCarnet);
+</script>
+</body>
+</html>
+

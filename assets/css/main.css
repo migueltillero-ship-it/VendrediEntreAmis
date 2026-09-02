@@ -1,0 +1,79 @@
+/* ════════════════════════════════════════════════
+   MAIN.CSS — Vendredi entre Amis
+   Base : colores, tipografía, layout, topbar.
+   Hereda la paleta esmeralda/oro de migueltillero.com
+════════════════════════════════════════════════ */
+:root{
+  --void:    #cfe6d9;
+  --deep:    #e9f1e7;
+  --panel:   rgba(255,255,255,0.92);
+  --gold:    #a5824a;
+  --gold2:   #86673a;
+  --goldx:   rgba(201,169,110,0.16);
+  --cyan:    #0d7f57;
+  --cyanx:   rgba(15,138,95,0.10);
+  --white:   #12291c;
+  --text:    rgba(18,41,28,0.92);
+  --muted:   rgba(18,41,28,0.62);
+  --border:  rgba(165,130,74,0.38);
+  --borderx: rgba(15,138,95,0.18);
+  --em1:     #0d3b2e;
+  --em2:     #1a5c45;
+  --bg-grad: radial-gradient(ellipse 80% 80% at 50% 20%, #dcefe3 0%, #cfe6d9 55%, #bfdccb 100%);
+  --radius:  14px;
+  --step:    1rem;         /* tamaño base de fuente, lo mueve el modo Confort */
+  --line:    1.6;
+}
+
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background: var(--void);
+  color: var(--text);
+  font-family:'Syne', sans-serif;
+  font-size: var(--step);
+  line-height: var(--line);
+  min-height:100vh;
+}
+a{ color:inherit; text-decoration:none; }
+button{ font-family:inherit; cursor:pointer; }
+img{ max-width:100%; display:block; }
+::selection{ background:var(--gold); color:#fff; }
+
+.container{ max-width:1080px; margin:0 auto; padding:0 1.5rem; }
+h1,h2,h3{ font-family:'Cormorant Garamond', serif; font-weight:600; color:var(--em1); }
+h1{ font-size:clamp(2.1rem, 4vw, 3.1rem); line-height:1.15; }
+h2{ font-size:clamp(1.5rem, 2.6vw, 2rem); margin-bottom:.75rem; }
+h3{ font-size:1.25rem; margin-bottom:.4rem; }
+.eyebrow{ font-family:'Space Mono', monospace; font-size:.78rem; letter-spacing:.04em; color:var(--gold2); }
+.muted{ color:var(--muted); }
+
+/* ═══ TOPBAR ═══ */
+#topbar{
+  position:sticky; top:0; z-index:50;
+  background:var(--panel); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.topbar-inner{
+  max-width:1080px; margin:0 auto; padding:.85rem 1.5rem;
+  display:flex; align-items:center; gap:1.25rem; flex-wrap:wrap;
+}
+.brand{ font-family:'Cormorant Garamond', serif; font-size:1.35rem; font-weight:600; color:var(--em1); white-space:nowrap; }
+.brand span{ color:var(--gold); }
+#tabs{ display:flex; gap:.35rem; flex-wrap:wrap; flex:1; }
+#tabs a{
+  display:inline-block; border:1px solid transparent; border-radius:999px;
+  padding:.5rem 1rem; font-size:.92rem; color:var(--text);
+}
+#tabs a:hover{ border-color:var(--border); }
+#tabs a.active{ background:var(--em1); color:#fff; }
+
+main{ padding:2.5rem 0 5rem; }
+
+footer#club-footer{
+  text-align:center; padding:2.5rem 1rem; color:var(--muted); font-size:.85rem; border-top:1px solid var(--border); margin-top:2rem;
+}
+
+@media(max-width:720px){
+  .mot-miguel{ flex-direction:column; }
+}
