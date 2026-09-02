@@ -385,14 +385,17 @@ function escapeHtml(text) {
     const value = String(text ?? "");
     return value
         .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
+        .replace(/(<)/g, "&lt;")
+        .replace(/(>)/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
 }
 </script>
 <!-- FIN MODULO CARNET REFLEXIF -->
 </body>
+
+
+
 
 
 
