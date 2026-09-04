@@ -24,7 +24,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: var(--font-texte); background-color: var(--creme); color: var(--bleu-encre); line-height: 1.7; overflow-x: hidden; }
         
-        /* ---------- HERO CINÉMATIQUE (Estilo Pantalla Completa) ---------- */
+        /* ---------- HERO CINÉMATIQUE CON AUDIO ---------- */
         .hero-cinematico { 
             position: relative; 
             min-height: 100vh; 
@@ -53,6 +53,33 @@
         .hero-cinematico h1 span { font-style: normal; font-weight: 600; color: var(--or-clair); }
         .hero-cinematico p { max-width: 600px; margin: 0 auto; font-size: 1.15rem; color: rgba(250,246,238,0.85); font-weight: 300; }
 
+        /* Botón de control de audio sobre el hero */
+        .btn-audio-control {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 20;
+            background: rgba(20, 17, 13, 0.5);
+            border: 1px solid rgba(200, 164, 77, 0.5);
+            color: var(--papier);
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            font-family: var(--font-texte);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .btn-audio-control:hover {
+            background: var(--or-clair);
+            color: var(--noir-chaud);
+            border-color: var(--or-clair);
+        }
+
         /* Panneau vitré — prochaine séance */
         .panneau-seance { max-width: 440px; margin: 2rem auto 0; background: rgba(250,246,238,0.08); border: 1px solid rgba(200,164,77,0.35); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-radius: 4px; padding: 1.2rem 1.6rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; text-align: left; }
         .panneau-seance .etiquette { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--or-clair); margin-bottom: 0.2rem; }
@@ -60,7 +87,6 @@
         .panneau-seance .theme-actuel { font-size: 0.8rem; color: rgba(250,246,238,0.7); margin-top: 0.2rem; }
         .panneau-seance a { flex-shrink: 0; font-size: 0.8rem; font-weight: 600; color: var(--noir-chaud); background: var(--or-clair); padding: 0.5rem 1rem; border-radius: 3px; text-decoration: none; }
 
-        /* Conteneur principal y secciones editoriales */
         .conteneur { max-width: 1100px; margin: -3rem auto 0; padding: 0 2rem; position: relative; z-index: 10; }
         
         .section-animateur { 
@@ -83,7 +109,6 @@
         .carte-hub h2 { font-family: var(--font-titre); color: var(--bleu-encre); font-size: 1.8rem; margin-bottom: 1rem; }
         .carte-hub p { color: rgba(31,53,94,0.75); margin-bottom: 1.5rem; font-size: 1rem; }
 
-        /* Botón circular flotante */
         .cta-flottant { position: fixed; right: 2rem; bottom: 2rem; z-index: 50; width: 96px; height: 96px; border-radius: 50%; background: var(--vert-profond); border: 1px solid rgba(200,164,77,0.6); color: var(--papier); font-size: 0.75rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.5rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s ease, background 0.3s ease; }
         .cta-flottant:hover { background: var(--or-clair); color: var(--noir-chaud); transform: scale(1.05); }
 
@@ -99,9 +124,8 @@
 </head>
 <body>
 
-    <!-- ================= HERO CINÉMATIQUE ================= -->
     <header class="hero-cinematico">
-        <video class="header-video" autoplay muted loop playsinline poster="assets/images/poster-bienvenue.jpg">
+        <video id="heroVideo" class="header-video" autoplay muted loop playsinline poster="assets/images/poster-bienvenue.jpg">
             <source src="assets/club-de-conversacion.mp4" type="video/mp4">
         </video>
         <div class="header-scrim"></div>
@@ -129,13 +153,14 @@
                 <a href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis" target="_blank">Rejoindre</a>
             </div>
         </div>
-        <div></div>
+
+        <!-- Botón para activar/silenciar el audio -->
+        <button id="audioToggleBtn" class="btn-audio-control" onclick="toggleAudio()">
+            <i id="audioIcon" class="fa-solid fa-volume-xmark"></i> <span id="audioText">Activer le son</span>
+        </button>
     </header>
 
-    <!-- ================= CONTENEDOR PRINCIPAL ================= -->
     <div class="conteneur">
-        
-        <!-- Bloque L'Animateur con tu Retrato Real -->
         <section id="animateur" class="section-animateur">
             <img src="assets/images/portrait-miguel-sin-titulo.jpg" alt="Miguel Tillero — Spécialiste FLE">
             <div>
@@ -145,7 +170,6 @@
             </div>
         </section>
 
-        <!-- Tarjetas Principales del Hub -->
         <div class="grille-hub">
             <a href="pages/cafe.html" class="carte-hub">
                 <div>
@@ -171,5 +195,23 @@
 
     <a class="cta-flottant" href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis" target="_blank">Rejoindre<br>la table</a>
 
+    <script>
+        function toggleAudio() {
+            const video = document.getElementById('heroVideo');
+            const icon = document.getElementById('audioIcon');
+            const text = document.getElementById('audioText');
+            
+            if (video.muted) {
+                video.muted = false;
+                video.volume = 0.8;
+                icon.className = "fa-solid fa-volume-high";
+                text.textContent = "Couper le son";
+            } else {
+                video.muted = true;
+                icon.className = "fa-solid fa-volume-xmark";
+                text.textContent = "Activer le son";
+            }
+        }
+    </script>
 </body>
 </html>
