@@ -55,11 +55,13 @@
         }
         .btn-audio-control:hover { background: var(--or-clair); color: var(--noir-chaud); border-color: var(--or-clair); }
 
-        .panneau-seance { max-width: 440px; margin: 2rem auto 0; background: rgba(250,246,238,0.08); border: 1px solid rgba(200,164,77,0.35); backdrop-filter: blur(14px); border-radius: 4px; padding: 1.2rem 1.6rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; text-align: left; }
+        .panneau-seance { max-width: 480px; margin: 2rem auto 0; background: rgba(250,246,238,0.08); border: 1px solid rgba(200,164,77,0.35); backdrop-filter: blur(14px); border-radius: 4px; padding: 1.2rem 1.6rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; text-align: left; }
         .panneau-seance .etiquette { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--or-clair); margin-bottom: 0.2rem; }
         .panneau-seance .destination { font-family: var(--font-titre); font-size: 1.2rem; font-weight: 600; color: var(--papier); }
         .panneau-seance .theme-actuel { font-size: 0.8rem; color: rgba(250,246,238,0.7); margin-top: 0.2rem; }
-        .panneau-seance a { flex-shrink: 0; font-size: 0.8rem; font-weight: 600; color: var(--noir-chaud); background: var(--or-clair); padding: 0.5rem 1rem; border-radius: 3px; text-decoration: none; }
+        .panneau-acciones { display: flex; gap: 0.5rem; flex-shrink: 0; }
+        .panneau-seance a { font-size: 0.75rem; font-weight: 600; color: var(--noir-chaud); background: var(--or-clair); padding: 0.5rem 0.8rem; border-radius: 3px; text-decoration: none; text-align: center; }
+        .panneau-seance a.btn-zoom { background: #0A84FF; color: white; }
 
         .conteneur { max-width: 1100px; margin: -3rem auto 0; padding: 0 2rem; position: relative; z-index: 10; }
         
@@ -70,7 +72,6 @@
         .section-animateur img { width: 220px; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px; border: 1px solid var(--or); }
         .section-animateur h2 { font-family: var(--font-titre); font-size: 2.2rem; color: var(--bleu-encre); margin-bottom: 1rem; }
 
-        /* ---------- SECCIÓN PRINCIPAL & CARRUSEL VISUAL DE FUNCIONES ---------- */
         .seccion-editorial { margin-bottom: 4rem; }
         .titulo-editorial { font-family: var(--font-titre); font-size: 2.4rem; color: var(--bleu-encre); text-align: center; margin-bottom: 2.5rem; }
         
@@ -87,7 +88,6 @@
         .carte-hub h2 { font-family: var(--font-titre); color: var(--bleu-encre); font-size: 1.8rem; margin-bottom: 1rem; }
         .carte-hub p { color: rgba(31,53,94,0.75); margin-bottom: 1.5rem; font-size: 1rem; }
 
-        /* Manifiesto Institucional Estilo Carta */
         .manifesto-box {
             background: var(--papier); border: 1px solid var(--or); border-radius: 8px; padding: 3.5rem; 
             margin-bottom: 4rem; box-shadow: var(--shadow-subtile); text-align: center;
@@ -113,7 +113,7 @@
 <body>
 
     <header class="hero-cinematico">
-        <video id="heroVideo" class="header-video" autoplay muted loop playsinline poster="assets/images/hero-bienvenue.jpg">
+        <video id="heroVideo" class="header-video" autoplay muted loop playsinline poster="assets/images/poster-bienvenue.jpg">
             <source src="assets/club-de-conversacion.mp4" type="video/mp4">
         </video>
         <div class="header-scrim"></div>
@@ -134,11 +134,14 @@
             
             <div class="panneau-seance">
                 <div>
-                    <div class="etiquette">Prochaine séance</div>
+                    <div class="etiquette">Accès direct aux sessions</div>
                     <div class="destination">En ligne</div>
-                    <div class="theme-actuel">Cercle de conversation francophone</div>
+                    <div class="theme-actuel">WhatsApp & Salle Zoom</div>
                 </div>
-                <a href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis" target="_blank">Rejoindre</a>
+                <div class="panneau-acciones">
+                    <a href="https://chat.whatsapp.com/DtYaNnlHWktLobKA0tEEdB" target="_blank" title="Unirse al grupo de WhatsApp">WhatsApp</a>
+                    <a href="https://us02web.zoom.us/j/2368165321" target="_blank" class="btn-zoom" title="Entrar a la reunión de Zoom">Zoom</a>
+                </div>
             </div>
         </div>
 
@@ -166,7 +169,7 @@
             <div class="manifesto-signature">Miguel David Tillero Álvarez</div>
         </section>
 
-        <!-- Sección Principal Integrada: Funciones con Elementos Visuales Oficiales -->
+        <!-- Sección Principal Integrada -->
         <section id="cafe" class="seccion-editorial">
             <h2 class="titulo-editorial">Le Café du Vendredi & Ressources</h2>
             <div class="grille-hub">
@@ -199,7 +202,7 @@
         © 2026 Vendredi entre amis &nbsp;|&nbsp; Direction Artistique & Pédagogique : Miguel Tillero
     </footer>
 
-    <a class="cta-flottant" href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis" target="_blank">Rejoindre<br>la table</a>
+    <a class="cta-flottant" href="https://us02web.zoom.us/j/2368165321" target="_blank" title="Entrer à la réunion Zoom">Réunion</a>
 
     <script>
         function toggleAudio() {
