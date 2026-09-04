@@ -26,15 +26,8 @@
         
         /* ---------- HERO CINÉMATIQUE ---------- */
         .hero-cinematico { 
-            position: relative; 
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            padding: 3rem 2rem 5rem; 
-            text-align: center; 
-            color: var(--papier); 
-            overflow: hidden; 
+            position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; 
+            padding: 3rem 2rem 5rem; text-align: center; color: var(--papier); overflow: hidden; 
             background: linear-gradient(160deg, var(--bleu-encre) 0%, var(--vert-profond) 55%, var(--noir-chaud) 100%);
         }
         .header-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.55; }
@@ -77,9 +70,10 @@
         .section-animateur img { width: 220px; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px; border: 1px solid var(--or); }
         .section-animateur h2 { font-family: var(--font-titre); font-size: 2.2rem; color: var(--bleu-encre); margin-bottom: 1rem; }
 
-        /* ---------- CARRUSEL DE FUNCIONES INTEGRADO ---------- */
-        .carrusel-seccion { margin-bottom: 4rem; }
-        .carrusel-titulo { font-family: var(--font-titre); font-size: 2.2rem; color: var(--bleu-encre); text-align: center; margin-bottom: 2rem; }
+        /* ---------- SECCIÓN PRINCIPAL & CARRUSEL VISUAL DE FUNCIONES ---------- */
+        .seccion-editorial { margin-bottom: 4rem; }
+        .titulo-editorial { font-family: var(--font-titre); font-size: 2.4rem; color: var(--bleu-encre); text-align: center; margin-bottom: 2.5rem; }
+        
         .grille-hub { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
         
         .carte-hub { 
@@ -88,10 +82,19 @@
             text-decoration: none; color: inherit; transition: transform 0.4s ease, box-shadow 0.4s;
         }
         .carte-hub:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(11,51,39,0.12); }
-        .carte-hub img { width: 100%; height: 200px; object-fit: cover; border-bottom: 1px solid var(--or); }
+        .carte-hub img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid var(--or); }
         .carte-hub-content { padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
         .carte-hub h2 { font-family: var(--font-titre); color: var(--bleu-encre); font-size: 1.8rem; margin-bottom: 1rem; }
         .carte-hub p { color: rgba(31,53,94,0.75); margin-bottom: 1.5rem; font-size: 1rem; }
+
+        /* Manifiesto Institucional Estilo Carta */
+        .manifesto-box {
+            background: var(--papier); border: 1px solid var(--or); border-radius: 8px; padding: 3.5rem; 
+            margin-bottom: 4rem; box-shadow: var(--shadow-subtile); text-align: center;
+        }
+        .manifesto-box h3 { font-family: var(--font-titre); font-size: 2rem; color: var(--bleu-encre); margin-bottom: 1.5rem; font-style: italic; }
+        .manifesto-box p { font-size: 1.1rem; color: rgba(31,53,94,0.85); max-width: 800px; margin: 0 auto 1.5rem; line-height: 1.8; }
+        .manifesto-signature { font-family: var(--font-titre); font-size: 1.3rem; color: var(--or); margin-top: 2rem; }
 
         .cta-flottant { position: fixed; right: 2rem; bottom: 2rem; z-index: 50; width: 96px; height: 96px; border-radius: 50%; background: var(--vert-profond); border: 1px solid rgba(200,164,77,0.6); color: var(--papier); font-size: 0.75rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.5rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s ease, background 0.3s ease; }
         .cta-flottant:hover { background: var(--or-clair); color: var(--noir-chaud); transform: scale(1.05); }
@@ -103,13 +106,14 @@
             .section-animateur img { width: 180px; }
             .panneau-seance { flex-direction: column; align-items: flex-start; }
             .nav-links { display: none; }
+            .manifesto-box { padding: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <header class="hero-cinematico">
-        <video id="heroVideo" class="header-video" autoplay muted loop playsinline poster="assets/images/poster-bienvenue.jpg">
+        <video id="heroVideo" class="header-video" autoplay muted loop playsinline poster="assets/images/hero-bienvenue.jpg">
             <source src="assets/club-de-conversacion.mp4" type="video/mp4">
         </video>
         <div class="header-scrim"></div>
@@ -117,7 +121,7 @@
         <div class="top-bar">
             <a href="index.html" class="marca">Vendredi <b>entre amis</b></a>
             <ul class="nav-links">
-                <li><a href="pages/cafe.html">Café</a></li>
+                <li><a href="#cafe">Le Café</a></li>
                 <li><a href="pages/carnet.html">Carnet</a></li>
                 <li><a href="#animateur">L'Animateur</a></li>
             </ul>
@@ -126,7 +130,7 @@
         <div class="hero-content">
             <div class="titre-professeur">Un espace indépendant par Miguel Tillero</div>
             <h1>Vendredi entre amis</h1>
-            <p>« Chaque vendredi, une conversation. Chaque semaine, une progression. » Ici, on parle français sans peur, entre pairs et passionnés.</p>
+            <p>« Chaque vendredi, une conversation. Chaque semaine, une progression. » Pratiquons le français ensemble.</p>
             
             <div class="panneau-seance">
                 <div>
@@ -144,7 +148,7 @@
     </header>
 
     <div class="conteneur">
-        <!-- Bloque L'Animateur con el Retrato Oficial -->
+        <!-- Bloque L'Animateur -->
         <section id="animateur" class="section-animateur">
             <img src="assets/images/portrait-miguel-sin-titulo.jpg" alt="Miguel Tillero — Spécialiste FLE">
             <div>
@@ -154,27 +158,35 @@
             </div>
         </section>
 
-        <!-- Sección Principal: Carrusel / Funciones del Café y el Carnet integradas visiblemente -->
-        <section class="carrusel-seccion">
-            <h2 class="carrusel-titulo">Espaces de la Semaine</h2>
+        <!-- Manifiesto Estético e Institucional -->
+        <section class="manifesto-box">
+            <h3>Soyez les bienvenus à Vendredi entre amis</h3>
+            <p>« Apprendre une langue transcende la simple maîtrise d'une syntaxe ou d'un lexique ; c'est embrasser une altérité féconde et affiner son regard sur le monde. Chaque effort consenti viendra consolider l'édifice de notre compréhension mutuelle. »</p>
+            <p>Nous nous retrouvons régulièrement les vendredis, tout en conservant une souplesse pour nous adapter aux imprévus de chacun. Cultivons l'art du don et de la conversation authentique.</p>
+            <div class="manifesto-signature">Miguel David Tillero Álvarez</div>
+        </section>
+
+        <!-- Sección Principal Integrada: Funciones con Elementos Visuales Oficiales -->
+        <section id="cafe" class="seccion-editorial">
+            <h2 class="titulo-editorial">Le Café du Vendredi & Ressources</h2>
             <div class="grille-hub">
                 <a href="pages/cafe.html" class="carte-hub">
-                    <img src="assets/images/poster-bienvenue.jpg" alt="Café du Vendredi">
+                    <img src="assets/images/hero-cafe.jpg" alt="Café du Vendredi">
                     <div class="carte-hub-content">
                         <div>
-                            <h2>Café du Vendredi</h2>
-                            <p>Accédez aux activités principales de chaque semaine, aux amorces de débat et aux exercices thématiques par niveau, conçus pour stimuler l'expression orale.</p>
+                            <h2>Le Café du Vendredi</h2>
+                            <p>Retrouvez la structure de nos séances, les thématiques transversales, les ateliers par niveau (A1-A2 et B1-B2) et les activités complémentaires issues des plateformes officielles.</p>
                         </div>
-                        <span style="font-size: 0.85rem; font-weight: 700; color: var(--or); text-transform: uppercase; letter-spacing: 0.1em;">Entrer au café →</span>
+                        <span style="font-size: 0.85rem; font-weight: 700; color: var(--or); text-transform: uppercase; letter-spacing: 0.1em;">Accéder au café →</span>
                     </div>
                 </a>
 
                 <a href="pages/carnet.html" class="carte-hub">
-                    <img src="assets/images/portrait-miguel-sin-titulo.jpg" alt="Carnet de Voyage">
+                    <img src="assets/images/invitation-livres.jpg" alt="Carnet de Voyage">
                     <div class="carte-hub-content">
                         <div>
                             <h2>Carnet de Voyage</h2>
-                            <p>Consignez vos réflexions, interactions et le vocabulaire découvert au fil des séances dans votre journal personnel avec toute la rigueur éditoriale requise.</p>
+                            <p>Consignez vos réflexions, interactions et le vocabulaire découvert au fil des séances dans votre journal personnel avec toute la rigueur et l'élégance requises.</p>
                         </div>
                         <span style="font-size: 0.85rem; font-weight: 700; color: var(--or); text-transform: uppercase; letter-spacing: 0.1em;">Ouvrir le carnet →</span>
                     </div>
