@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Espace Virtuel d'Excellence - Français A1">
+    <meta name="description" content="Vendredi entre amis — Club de conversation en français. Un espace intime, interactif et d'exigence éditoriale.">
     <title>Vendredi entre amis | Espace de Conversation Miguel Tillero</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         :root {
-            --graphite: #1F355E;
-            --ivoire: #FAF6EE;
-            --bleu-institutionnel: #1F355E;
-            --sauge: #0B3327;
-            --gris-doux: #EAE6E1;
-            --texte-clair: #FFFDF8;
-            --texte-sombre: #1F355E;
+            --bleu-encre: #1F355E;
+            --vert-profond: #0B3327;
+            --creme: #FAF6EE;
+            --papier: #FFFDF8;
             --or: #C8A44D;
             --or-clair: #E8C87A;
             --noir-chaud: #14110D;
@@ -24,112 +22,152 @@
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: var(--font-texte); background-color: var(--ivoire); color: var(--texte-sombre); line-height: 1.7; overflow-x: hidden; transition: background-color 0.3s, color 0.3s; }
+        body { font-family: var(--font-texte); background-color: var(--creme); color: var(--bleu-encre); line-height: 1.7; overflow-x: hidden; }
         
-        .vue { display: none; opacity: 0; transition: opacity 0.6s ease; min-height: 100vh; padding-bottom: 5rem; }
-        .vue.active { display: block; opacity: 1; animation: fadeIn 0.6s forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        header { background: linear-gradient(135deg, var(--sauge) 0%, #1F355E 100%); color: var(--texte-clair); padding: 5rem 2rem 7rem; text-align: center; border-bottom: 4px solid var(--or); position: relative; overflow: hidden; }
+        /* ---------- HERO CINÉMATIQUE (Estilo Pantalla Completa) ---------- */
+        .hero-cinematico { 
+            position: relative; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            padding: 3rem 2rem 5rem; 
+            text-align: center; 
+            color: var(--papier); 
+            overflow: hidden; 
+            background: linear-gradient(160deg, var(--bleu-encre) 0%, var(--vert-profond) 55%, var(--noir-chaud) 100%);
+        }
         .header-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.55; }
-        .header-scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(11,51,39,0.35) 0%, rgba(20,17,13,0.55) 60%, rgba(20,17,13,0.8) 100%); }
-        header > * { position: relative; z-index: 2; }
+        .header-scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(11,51,39,0.4) 0%, rgba(20,17,13,0.6) 60%, rgba(20,17,13,0.85) 100%); }
+        .hero-cinematico > * { position: relative; z-index: 2; }
+
+        .top-bar { display: flex; justify-content: space-between; align-items: center; max-width: 1180px; margin: 0 auto; width: 100%; }
+        .marca { font-family: var(--font-titre); font-size: 1.4rem; color: var(--or-clair); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; }
+        .nav-links a { color: var(--papier); text-decoration: none; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--or-clair); }
+
+        .hero-content { max-width: 800px; margin: auto; padding: 4rem 0; }
+        .titre-professeur { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--or-clair); margin-bottom: 1.5rem; font-weight: 600; }
+        .hero-cinematico h1 { font-family: var(--font-titre); font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 500; font-style: italic; line-height: 1.1; margin-bottom: 1.5rem; }
+        .hero-cinematico h1 span { font-style: normal; font-weight: 600; color: var(--or-clair); }
+        .hero-cinematico p { max-width: 600px; margin: 0 auto; font-size: 1.15rem; color: rgba(250,246,238,0.85); font-weight: 300; }
 
         /* Panneau vitré — prochaine séance */
-        .panneau-seance { position: relative; z-index: 2; max-width: 460px; margin: 2.5rem auto 0; background: rgba(255,253,248,0.08); border: 1px solid rgba(200,164,77,0.4); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-radius: 6px; padding: 1.4rem 1.8rem; display: flex; justify-content: space-between; align-items: center; gap: 1.2rem; text-align: left; }
-        .panneau-seance .etiquette { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--or-clair); margin-bottom: 0.3rem; }
-        .panneau-seance .destination { font-family: var(--font-titre); font-size: 1.3rem; font-weight: 600; }
-        .panneau-seance .theme-actuel { font-size: 0.85rem; color: rgba(250,246,238,0.75); margin-top: 0.2rem; }
-        .panneau-seance a { flex-shrink: 0; font-size: 0.85rem; font-weight: 700; color: var(--texte-sombre); background: var(--or-clair); padding: 0.6rem 1.1rem; border-radius: 4px; text-decoration: none; white-space: nowrap; }
+        .panneau-seance { max-width: 440px; margin: 2rem auto 0; background: rgba(250,246,238,0.08); border: 1px solid rgba(200,164,77,0.35); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-radius: 4px; padding: 1.2rem 1.6rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; text-align: left; }
+        .panneau-seance .etiquette { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--or-clair); margin-bottom: 0.2rem; }
+        .panneau-seance .destination { font-family: var(--font-titre); font-size: 1.2rem; font-weight: 600; color: var(--papier); }
+        .panneau-seance .theme-actuel { font-size: 0.8rem; color: rgba(250,246,238,0.7); margin-top: 0.2rem; }
+        .panneau-seance a { flex-shrink: 0; font-size: 0.8rem; font-weight: 600; color: var(--noir-chaud); background: var(--or-clair); padding: 0.5rem 1rem; border-radius: 3px; text-decoration: none; }
 
-        /* Bouton flottant — seul accent de mouvement */
-        .cta-flottant { position: fixed; right: 2rem; bottom: 2rem; z-index: 50; width: 92px; height: 92px; border-radius: 50%; background: var(--sauge); border: 1px solid rgba(200,164,77,0.6); color: var(--texte-clair); font-family: var(--font-texte); font-size: 0.75rem; font-weight: 700; text-align: center; line-height: 1.3; display: flex; align-items: center; justify-content: center; padding: 0.5rem; text-decoration: none; transition: transform 0.3s ease, background 0.3s ease; }
-        .cta-flottant::after { content: ""; position: absolute; inset: -8px; border-radius: 50%; border: 1px solid rgba(200,164,77,0.35); animation: pulse-oro 3.2s ease-out infinite; }
-        @keyframes pulse-oro { 0% { transform: scale(0.94); opacity: 0.9; } 70% { transform: scale(1.3); opacity: 0; } 100% { opacity: 0; } }
-        .cta-flottant:hover { background: var(--or-clair); color: var(--texte-sombre); transform: scale(1.05); }
-        @media (max-width: 600px) { .panneau-seance { flex-direction: column; align-items: flex-start; } .cta-flottant { width: 76px; height: 76px; font-size: 0.68rem; right: 1.2rem; bottom: 1.2rem; } }
-        .titre-professeur { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 4px; color: var(--or); margin-bottom: 1.5rem; font-weight: 700; }
-        header h1 { font-family: var(--font-titre); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem; }
-        header p { max-width: 800px; margin: 0 auto; font-size: 1.15rem; color: #D1D5D2; font-weight: 300; }
+        /* Conteneur principal y secciones editoriales */
+        .conteneur { max-width: 1100px; margin: -3rem auto 0; padding: 0 2rem; position: relative; z-index: 10; }
         
-        .btn-retour { position: absolute; top: 2rem; left: 2rem; background: rgba(255,255,255,0.05); color: var(--or); border: 1px solid var(--or); padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; font-weight: 700; backdrop-filter: blur(5px); }
-        .btn-retour:hover { background: var(--or); color: var(--texte-clair); }
-        
-        .conteneur { max-width: 1100px; margin: -4rem auto 0; padding: 0 2rem; position: relative; z-index: 10; }
-        .grille-hub { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
-        
-        .carte-hub { background: #FFFFFF; border-radius: 8px; padding: 3rem 2.5rem; box-shadow: var(--shadow-subtile); border-top: 6px solid var(--graphite); cursor: pointer; transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
-        .carte-hub:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
-        .carte-hub.assignations { border-top-color: var(--or); grid-column: 1 / -1; }
-        
-        .carte-hub h2 { font-family: var(--font-titre); color: var(--graphite); font-size: 1.7rem; margin-bottom: 1.2rem; }
-        .carte-hub p { color: #5C5C5C; margin-bottom: 1.5rem; font-size: 1.05rem; }
-        
-        .btn-prim { background: var(--graphite); color: var(--texte-clair); border: none; padding: 1.2rem 2rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: background 0.3s; border-radius: 4px; width: 100%; font-weight: 700; font-family: var(--font-texte); margin-top: 1rem; }
-        .btn-prim:hover { background: var(--sauge); }
-        .assignations .btn-prim { background: var(--sauge); color: white; max-width: 400px; margin: 1rem auto 0; display: block; }
-        
-        /* Sección de Retrato de Autor */
-        .section-animateur { background: #FFFDF8; border: 1px solid var(--or); padding: 3rem; margin-bottom: 3rem; border-radius: 8px; display: flex; gap: 2rem; align-items: center; }
+        .section-animateur { 
+            background: var(--papier); 
+            border: 1px solid var(--or); 
+            padding: 3rem; 
+            margin-bottom: 3rem; 
+            border-radius: 8px; 
+            display: flex; 
+            gap: 2.5rem; 
+            align-items: center; 
+            box-shadow: var(--shadow-subtile);
+        }
         .section-animateur img { width: 220px; aspect-ratio: 3/4; object-fit: cover; border-radius: 4px; border: 1px solid var(--or); }
+        .section-animateur h2 { font-family: var(--font-titre); font-size: 2.2rem; color: var(--bleu-encre); margin-bottom: 1rem; }
 
-        footer { text-align: center; padding: 5rem 1rem 3rem; color: #888; font-size: 0.95rem; }
-        .barre-outils { position: fixed; top: 1.5rem; right: 1.5rem; z-index: 100; display: flex; gap: 0.6rem; }
-        .btn-outil { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); color: #fff; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; }
+        .grille-hub { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 4rem; }
+        .carte-hub { background: var(--papier); border-radius: 8px; padding: 3rem 2.5rem; box-shadow: var(--shadow-subtile); border-top: 6px solid var(--bleu-encre); cursor: pointer; transition: transform 0.4s ease, box-shadow 0.4s; display: flex; flex-direction: column; justify-content: space-between; text-decoration: none; color: inherit; }
+        .carte-hub:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(11,51,39,0.12); }
+        .carte-hub h2 { font-family: var(--font-titre); color: var(--bleu-encre); font-size: 1.8rem; margin-bottom: 1rem; }
+        .carte-hub p { color: rgba(31,53,94,0.75); margin-bottom: 1.5rem; font-size: 1rem; }
+
+        /* Botón circular flotante */
+        .cta-flottant { position: fixed; right: 2rem; bottom: 2rem; z-index: 50; width: 96px; height: 96px; border-radius: 50%; background: var(--vert-profond); border: 1px solid rgba(200,164,77,0.6); color: var(--papier); font-size: 0.75rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.5rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: transform 0.3s ease, background 0.3s ease; }
+        .cta-flottant:hover { background: var(--or-clair); color: var(--noir-chaud); transform: scale(1.05); }
+
+        footer { text-align: center; padding: 4rem 1rem 3rem; color: rgba(31,53,94,0.6); font-size: 0.9rem; border-top: 1px solid rgba(200,164,77,0.2); }
+        
+        @media (max-width: 768px) {
+            .section-animateur { flex-direction: column; text-align: center; }
+            .section-animateur img { width: 180px; }
+            .panneau-seance { flex-direction: column; align-items: flex-start; }
+            .nav-links { display: none; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="barre-outils">
-        <button class="btn-outil" onclick="alert('Vendredi entre amis — Direction Miguel Tillero')">ℹ️</button>
-    </div>
+    <!-- ================= HERO CINÉMATIQUE ================= -->
+    <header class="hero-cinematico">
+        <video class="header-video" autoplay muted loop playsinline poster="assets/images/poster-bienvenue.jpg">
+            <source src="assets/club-de-conversacion.mp4" type="video/mp4">
+        </video>
+        <div class="header-scrim"></div>
+        
+        <div class="top-bar">
+            <a href="index.html" class="marca">Vendredi <b>entre amis</b></a>
+            <ul class="nav-links">
+                <li><a href="pages/cafe.html">Café</a></li>
+                <li><a href="pages/carnet.html">Carnet</a></li>
+                <li><a href="#animateur">L'Animateur</a></li>
+            </ul>
+        </div>
 
-    <!-- ================= ACCUEIL ================= -->
-    <div id="vue-hub" class="vue active">
-        <header>
-            <video class="header-video" autoplay muted loop playsinline poster="assets/images/poster-bienvenue.jpg">
-                <source src="assets/club-de-conversacion.mp4" type="video/mp4">
-            </video>
-            <div class="header-scrim"></div>
-            <div class="titre-professeur">Espace Indépendant — Miguel Tillero</div>
-            <h1>Vendredi entre amis</h1>
-            <p>« Chaque vendredi, une conversation. Chaque semaine, une progression. » Un espace intime, interactif et d'exigence éditoriale.</p>
+        <div class="hero-content">
+            <div class="titre-professeur">Un espace indépendant par Miguel Tillero</div>
+            <h1>Vendredi<br><span>entre amis</span></h1>
+            <p>« Chaque vendredi, une conversation. Chaque semaine, une progression. » Ici, on parle français sans peur, entre pairs et passionnés.</p>
+            
             <div class="panneau-seance">
                 <div>
-                    <div class="etiquette">Temporada 1 · Voyage en Francophonie</div>
-                    <div class="destination">Paris, France</div>
-                    <div class="theme-actuel">Se présenter dans un café parisien</div>
+                    <div class="etiquette">Prochaine séance</div>
+                    <div class="destination">En ligne</div>
+                    <div class="theme-actuel">Cercle de conversation francophone</div>
                 </div>
                 <a href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis" target="_blank">Rejoindre</a>
             </div>
-        </header>
-
-        <div class="conteneur">
-            
-            <!-- Bloque L'Animateur con tu Retrato Real Integrado -->
-            <div class="section-animateur">
-                <img src="club/assets/images/portrait-miguel.jpg" alt="Miguel Tillero — Spécialiste FLE">
-                <div>
-                    <h2 style="font-family: var(--font-titre); font-size: 2rem; color: var(--graphite); margin-bottom: 1rem;">L'Animateur</h2>
-                    <p style="margin-bottom: 1rem;">Spécialiste en FLE avec 13 ans de trayectoria internacional y ex-directeur general d'institutions culturelles. Conçu pour un apprentissage vivant, horizontal et affranchi des structures corporatives.</p>
-                    <p style="font-style: italic; font-size: 0.95rem; color: var(--sauge);">« Ici, on parle français sans peur, entre pairs et passionnés. »</p>
-                </div>
-            </div>
-
-            <div class="grille-hub">
-                <div class="carte-hub assignations" onclick="alert('Journal de bord activé')">
-                    <div style="text-align: center;">
-                        <h2>Carnet de Voyage & Journal de bord</h2>
-                        <p>Consignez vos réflexions, interactions et notes personnelles avec l'esthétique du carnet physique et la puissance de Firestore.</p>
-                    </div>
-                    <button class="btn-prim">Ouvrir le Carnet</button>
-                </div>
-            </div>
         </div>
-        <footer>
-            © 2026 Vendredi entre amis &nbsp;|&nbsp; Direction Artistique & Pédagogique : Miguel Tillero
-        </footer>
+        <div></div>
+    </header>
+
+    <!-- ================= CONTENEDOR PRINCIPAL ================= -->
+    <div class="conteneur">
+        
+        <!-- Bloque L'Animateur con tu Retrato Real -->
+        <section id="animateur" class="section-animateur">
+            <img src="assets/images/portrait-miguel-sin-titulo.jpg" alt="Miguel Tillero — Spécialiste FLE">
+            <div>
+                <h2>L'Animateur</h2>
+                <p style="margin-bottom: 1rem; font-size: 1.05rem;">Spécialiste en FLE avec 13 ans de trayectoria internacional y ex-directeur général d'institutions culturelles. Conçu pour un apprentissage vivant, horizontal et affranchi des structures corporatives rigides.</p>
+                <p style="font-style: italic; font-size: 1.05rem; color: var(--vert-profond);">« Apprendre une langue, c'est embrasser une altérité féconde et affiner son regard sur le monde. »</p>
+            </div>
+        </section>
+
+        <!-- Tarjetas Principales del Hub -->
+        <div class="grille-hub">
+            <a href="pages/cafe.html" class="carte-hub">
+                <div>
+                    <h2>Café du Vendredi ☕</h2>
+                    <p>Accédez aux activités principales de chaque semaine, aux amorces de débat et aux exercices thématiques par niveau.</p>
+                </div>
+                <span style="font-size: 0.85rem; font-weight: 700; color: var(--or); text-transform: uppercase; letter-spacing: 0.1em;">Entrer au café →</span>
+            </a>
+
+            <a href="pages/carnet.html" class="carte-hub">
+                <div>
+                    <h2>Carnet de Voyage 📘</h2>
+                    <p>Consignez vos réflexions, interactions et le vocabulaire découvert au fil des séances dans votre journal personnel.</p>
+                </div>
+                <span style="font-size: 0.85rem; font-weight: 700; color: var(--or); text-transform: uppercase; letter-spacing: 0.1em;">Ouvrir le carnet →</span>
+            </a>
+        </div>
     </div>
+
+    <footer>
+        © 2026 Vendredi entre amis &nbsp;|&nbsp; Direction Artistique & Pédagogique : Miguel Tillero
+    </footer>
 
     <a class="cta-flottant" href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis" target="_blank">Rejoindre<br>la table</a>
 
