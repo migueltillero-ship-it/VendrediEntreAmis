@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#bcdcc9">
+<meta name="description" content="Club de Conversación Vendredi entre amis. Recursos, actividades por nivel y espacio de ideas para practicar francés cada semana.">
+<title>Club de Conversación · Vendredi entre amis · Miguel Tillero</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --void: #cfe6d9;
+  --deep: #e9f1e7;
+  --panel: rgba(255,255,255,0.92);
+  --gold: #a5824a;
+  --gold2: #86673a;
+  --goldx: rgba(201,169,110,0.16);
+  --cyan: #0d7f57;
+  --white: #12291c;
+  --text: rgba(18,41,28,0.92);
+  --muted: rgba(18,41,28,0.62);
+  --border: rgba(165,130,74,0.38);
+  --sombra: 0 4px 20px rgba(20,45,32,0.07);
+  --serif: 'Cormorant Garamond', serif;
+  --mono: 'Space Mono', monospace;
+  --syne: 'Syne', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #FAF6EE; color: var(--text); font-family: var(--syne); line-height: 1.7; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+
+.barra {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  padding: 1rem 2rem; background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px); border-bottom: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.marca { font-family: var(--serif); font-size: 1.25rem; color: var(--white); }
+.marca b { color: var(--gold); }
+.barra nav { display: flex; gap: 2rem; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; }
+.barra nav a:hover, .barra nav a.on { color: var(--gold); }
+
+.club-hero {
+  position: relative; min-height: 80vh; display: flex; align-items: flex-end;
+  background: linear-gradient(180deg, rgba(11,51,39,0.4) 0%, rgba(11,51,39,0.7) 60%, rgba(11,51,39,0.92) 100%),
+             url('assets/club/hero-cafe.jpg') center/cover no-repeat;
+  color: #fff; padding-top: 6rem;
+}
+.club-hero-in { max-width: 1120px; margin: 0 auto; padding: 3rem 1.5rem 4rem; width: 100%; }
+.eyebrow { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+.club-hero h1 { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.1; margin-bottom: 1rem; }
+.club-hero h1 em { font-style: normal; color: var(--gold); }
+.club-hero p.lead { max-width: 580px; font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,0.9); margin-bottom: 2rem; }
+
+.btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2rem; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase; cursor: pointer; border-radius: 999px; transition: all 0.3s; border: none; font-weight: 700; }
+.btn-oro { background: var(--gold2); color: #fff; box-shadow: 0 0 30px rgba(201,169,110,0.3); }
+.btn-oro:hover { background: #6f552f; transform: translateY(-2px); }
+.btn-claro { background: rgba(255,255,255,0.9); color: var(--white); border: 1px solid var(--border); }
+.btn-claro:hover { background: #fff; border-color: var(--gold); }
+
+.seccion { padding: 5rem 1.5rem; max-width: 1120px; margin: 0 auto; }
+.wrap-sm { max-width: 780px; margin: 0 auto; }
+.centro { text-align: center; }
+
+.marca-club { display: flex; align-items: center; gap: 1.2rem; justify-content: center; padding: 2rem; background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--sombra); }
+.marca-club img { width: 72px; height: 72px; object-fit: cover; border-radius: 50%; border: 2px solid var(--gold); }
+.marca-club .txt { font-family: var(--serif); font-size: 1.15rem; color: var(--muted); }
+.marca-club .txt b { color: var(--white); }
+
+.cita { background: #fff; border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--sombra); padding: 3rem 2.5rem; position: relative; }
+.cita .marca-cita { font-family: var(--serif); font-size: 4rem; color: var(--gold); line-height: 0; position: absolute; top: 1.5rem; left: 1.8rem; opacity: 0.4; }
+.cita p { font-size: 1.15rem; line-height: 1.9; font-style: italic; margin-bottom: 1.2rem; }
+.cita .firma { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold2); font-style: normal; }
+
+.rejilla { display: grid; gap: 1.5rem; }
+.rejilla-3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 2.2rem; box-shadow: var(--sombra); transition: transform 0.3s ease; }
+.card:hover { transform: translateY(-4px); }
+.card h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 600; color: var(--white); margin-bottom: 0.8rem; }
+.chico { font-size: 0.88rem; line-height: 1.7; color: var(--muted); }
+
+.como-icono { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--white), var(--cyan)); color: #fff; font-size: 1rem; margin-bottom: 1.2rem; }
+
+.nivel-tarjeta { background: #fff; border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: var(--sombra); display: flex; flex-direction: column; }
+.nivel-cabeza { padding: 2rem; border-bottom: 1px solid var(--border); background: rgba(13,89,58,0.03); }
+.nivel-badge { display: inline-block; font-family: var(--mono); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; background: var(--white); padding: 0.35rem 0.8rem; border-radius: 4px; margin-bottom: 0.8rem; }
+.nivel-cuerpo { padding: 2rem; flex: 1; }
+.nivel-cuerpo ul { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+.nivel-cuerpo li { display: flex; gap: 0.8rem; font-size: 0.95rem; color: var(--muted); }
+.nivel-cuerpo li i { color: var(--gold); margin-top: 0.3rem; flex-shrink: 0; }
+
+.mosaico-identidad { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.mosaico-identidad figure { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--sombra); aspect-ratio: 3/4; position: relative; }
+.mosaico-identidad img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.mosaico-identidad figure:hover img { transform: scale(1.05); }
+
+@media (max-width: 600px) {
+  .barra { padding: 0.8rem 1rem; }
+  .barra nav { display: none; }
+  .club-hero { min-height: 70vh; }
+  .club-hero-in { padding: 2rem 1rem; }
+  .cita { padding: 2rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="marca">Miguel <b>Tillero</b></div>
+  <nav>
+    <a href="index.html">Sitio principal</a>
+    <a href="club.html" class="on">Le Club</a>
+  </nav>
+  <a class="btn btn-oro" style="padding:0.5rem 1rem; font-size:0.5rem" href="https://wa.me/529673424456?text=Hola%20Miguel%2C%20quiero%20unirme%20a%20Vendredi%20entre%20amis" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i> Unirme
+  </a>
+</header>
+
+<section class="club-hero">
+  <div class="club-hero-in">
+    <div class="eyebrow">Club de conversación · Alliance Française San Cristóbal de Las Casas</div>
+    <h1>Vendredi <em>entre amis</em></h1>
+    <p class="lead">Cada viernes, un espacio para practicar el francés hablado en un ambiente cálido y sin miedo al error: ideas, juegos, lecturas y conversación real, clasificados por nivel.</p>
+    <div class="acciones">
+      <a class="btn btn-oro" href="https://wa.me/529673424456?text=Hola%20Miguel%2C%20quiero%20unirme%20a%20Vendredi%20entre%20amis" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Reservar mi lugar
+      </a>
+      <a class="btn btn-claro" href="#niveles">Ver actividades por nivel</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="marca-club">
+    <img src="assets/club/marque-identite.jpg" alt="Vendredi entre amis">
+    <div class="txt"><b>Pratiquons le français ensemble.</b><br>Club de conversation en ligne et en présentiel · sous la tutelle de M. Miguel Tillero</div>
+  </div>
+</section>
+
+<section class="seccion wrap-sm">
+  <div class="cita">
+    <span class="marca-cita">&#8220;</span>
+    <p>Apprendre une langue transcende la simple maîtrise d'une syntaxe ou d'un lexique : c'est embrasser une altérité féconde et affiner son regard sur le monde. Chaque effort consenti, chaque hésitation surmontée et chaque progrès que nous célébrerons lors de nos rencontres hebdomadaires viendront consolider l'édifice de notre compréhension mutuelle.</p>
+    <p>C'est un honneur pour moi de vous guider à través ce périple à la fois intellectuel et humain. Puisse chacune de nos séances s'ériger en un sanctuaire de découverte, de respect partagé et, par-dessus tout, d'épanouissement linguistique.</p>
+    <p class="firma">— Miguel David Tillero Álvarez</p>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="eyebrow centro">La carta de nuestro club</div>
+  <h2 class="centro" style="font-family:var(--serif); font-size:2.5rem; font-weight:300; margin-bottom:0.6rem">Cómo funciona Vendredi entre amis</h2>
+  <p class="muted centro" style="max-width:640px; margin:0 auto 3rem">Los acuerdos que compartimos cada sesión con el grupo, para que todos sepan qué esperar del club.</p>
+
+  <div class="rejilla rejilla-3">
+    <div class="card">
+      <div class="como-icono"><i class="fa-solid fa-calendar-week"></i></div>
+      <h3>Ritmo y flexibilidad</h3>
+      <p class="chico">Nos reunimos regularmente los viernes por la tarde, conservando cierta flexibilidad para adaptarnos a los imprevistos de cada quien.</p>
+    </div>
+    <div class="card">
+      <div class="como-icono"><i class="fa-solid fa-comments"></i></div>
+      <h3>Temática transversal</h3>
+      <p class="chico">Para enriquecer nuestros intercambios, se define una temática central que se comunica con anticipación antes de cada sesión.</p>
+    </div>
+    <div class="card">
+      <div class="como-icono"><i class="fa-solid fa-hand-holding-heart"></i></div>
+      <h3>La cultura del compartir</h3>
+      <p class="chico">Cada miembro está invitado a traer una contribución libre: un libro, una melodía, una obra, una anécdota o un deseo. El arte de dar es un pilar de nuestro aprendizaje.</p>
+    </div>
+    <div class="card">
+      <div class="como-icono"><i class="fa-solid fa-book-open"></i></div>
+      <h3>Actividades complementarias</h3>
+      <p class="chico">Entre sesión y sesión, seguimos practicando con actividades enviadas por el profesor, principalmente de TV5Monde y plataformas oficiales.</p>
+    </div>
+    <div class="card">
+      <div class="como-icono"><i class="fa-solid fa-envelope-open-text"></i></div>
+      <h3>Disponibilidad</h3>
+      <p class="chico">Miguel permanece disponible para toda pregunta o aclaración, durante las sesiones o por mensaje privado.</p>
+    </div>
+  </div>
+</section>
+
+<section class="seccion" id="niveles">
+  <div class="eyebrow centro">Actividades del taller</div>
+  <h2 class="centro" style="font-family:var(--serif); font-size:2.5rem; font-weight:300; margin-bottom:0.6rem">Recursos y dinámicas por nivel</h2>
+  <p class="muted centro" style="max-width:640px; margin:0 auto 3rem">Todos los niveles son bienvenidos. Cada sesión se adapta al grupo según el MCER.</p>
+
+  <div class="rejilla rejilla-3" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+    <div class="nivel-tarjeta">
+      <div class="nivel-cabeza">
+        <span class="nivel-badge">A1 · A2 — Découverte</span>
+        <h3>Primeros pasos y rompehielos</h3>
+      </div>
+      <div class="nivel-cuerpo">
+        <ul>
+          <li><i class="fa-solid fa-icicles"></i> Rompehielos y presentaciones guiadas para perder el miedo a hablar.</li>
+          <li><i class="fa-solid fa-masks-theater"></i> Juegos de rol de situaciones cotidianas: el mercado, el café, el transporte.</li>
+          <li><i class="fa-solid fa-layer-group"></i> Tarjetas de vocabulario interactivo y asociación de imágenes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nivel-tarjeta">
+      <div class="nivel-cabeza">
+        <span class="nivel-badge">B1 · B2 — Approfondissement</span>
+        <h3>Debate, cine y argumentación</h3>
+      </div>
+      <div class="nivel-cuerpo">
+        <ul>
+          <li><i class="fa-solid fa-clapperboard"></i> Análisis de fragmentos de cine francófono con conversación posterior.</li>
+          <li><i class="fa-solid fa-feather"></i> Exploración de textos poéticos y lectura compartida.</li>
+          <li><i class="fa-solid fa-scale-balanced"></i> Pautas para el debate y la argumentación estructurada.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seccion wrap-sm">
+  <div class="card" style="text-align:center; background:linear-gradient(0deg, rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('assets/club/invitation-livres.jpg') center/cover">
+    <div class="eyebrow centro" style="justify-content:center">Rejoins notre</div>
+    <h2 style="font-family:var(--serif); font-size:2.5rem; font-weight:300; margin-bottom:0.8rem">Vendredi entre amis</h2>
+    <p class="muted" style="max-width:480px; margin:0 auto 1.5rem">Cada viernes, retrouvons-nous para practicar el francés en un ambiente convivial y distendido. Todos los niveles son bienvenidos.</p>
+    <a class="btn btn-oro" href="https://wa.me/529673424456?text=Hola%20Miguel%2C%20quiero%20unirme%20a%20Vendredi%20entre%20amis" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i> Escribir a Miguel
+    </a>
+  </div>
+</section>
+
+<section class="seccion">
+  <div class="eyebrow centro">Notre identité</div>
+  <h2 class="centro" style="font-family:var(--serif); font-size:2.5rem; font-weight:300; margin-bottom:2rem">Vendredi entre amis en imágenes</h2>
+  <div class="mosaico-identidad">
+    <figure><img src="assets/club/hero-bienvenue.jpg" loading="lazy" alt="Bienvenida al club"></figure>
+    <figure><img src="assets/club/marque-identite.jpg" loading="lazy" alt="Marca del club"></figure>
+    <figure><img src="assets/club/hero-cafe.jpg" loading="lazy" alt="Ambiente de café"></figure>
+    <figure><img src="assets/club/invitation-livres.jpg" loading="lazy" alt="Invitación entre libros"></figure>
+    <figure><img src="assets/club/citation-mains.jpg" loading="lazy" alt="Cita de bienvenida"></figure>
+    <figure><img src="assets/club/lettre-macarons.jpg" loading="lazy" alt="Carta de bienvenida"></figure>
+    <figure><img src="assets/club/structure-papier.jpg" loading="lazy" alt="Estructura del club"></figure>
+  </div>
+</section>
+
+<footer class="seccion centro" style="border-top:1px solid var(--border); padding:3rem 1.5rem">
+  <p style="font-family:var(--serif); font-size:1.3rem; margin-bottom:0.4rem">Vendredi <span style="color:var(--gold)">entre amis</span></p>
+  <p class="chico muted">Club de conversación · Alliance Française de San Cristóbal de Las Casas</p>
+  <p class="chico muted" style="margin-top:0.6rem">© 2026 Miguel Tillero · <a href="index.html" style="text-decoration:underline">Volver al sitio principal</a></p>
+</footer>
+
+</body>
+</html>
