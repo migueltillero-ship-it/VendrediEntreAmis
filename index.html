@@ -3,75 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendredi entre amis | Le Cercle de Conversation de Miguel Tillero</title>
-    <meta name="description" content="Un espace curatif et indépendant pour pratiquer le Français Langue Étrangère (FLE). Animé par Miguel Tillero, fort de 13 ans d'expérience.">
-
-    <!-- Fuentes de Marca -->
+    <title>Vendredi entre amis | Miguel Tillero</title>
+    <!-- Importación de fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Syne:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS de Choque Inyectado: Diseño Rive Gauche garantizado -->
+    <style>
+        :root {
+            --vea-encre: #1F355E;
+            --vea-vert: #0B3327;
+            --vea-creme: #FAF6EE;
+            --vea-papier: #FFFDF8;
+            --vea-or: #C8A44D;
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
 
-    <!-- CSS Dinámico Definitivo -->
-    <link rel="stylesheet" href="assets/css/estilo-dinamico.css">
+        body {
+            background-color: var(--vea-creme);
+            color: var(--vea-encre);
+            font-family: var(--font-sans);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .kicker {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--vea-or);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 5vw, 4.5rem);
+            color: var(--vea-vert);
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+            line-height: 1.1;
+        }
+
+        .manifesto {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--vea-encre);
+            margin-bottom: 3rem;
+        }
+
+        /* Contenedor estético del video/imagen */
+        .media-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 4rem auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(11, 51, 39, 0.08);
+            border: 1px solid var(--vea-or);
+            background: var(--vea-papier);
+            padding: 0.5rem;
+        }
+
+        .media-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--vea-encre);
+            color: var(--vea-papier);
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--vea-vert);
+        }
+    </style>
 </head>
 <body>
 
-    <!-- HERO -->
-    <section class="section-wrapper" style="text-align: center; padding-top: 8rem;">
-        <span class="eyebrow">Un espace indépendant par Miguel Tillero</span>
+    <main class="hero-section">
+        <span class="kicker">Un espace indépendant par Miguel Tillero</span>
         <h1>Vendredi entre amis</h1>
-        <p style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: var(--em2); margin-top: 1rem;">
-            « Chaque vendredi, une conversation. Chaque semaine, une progression. »
-        </p>
-    </section>
+        <p class="manifesto">« Chaque vendredi, une conversation. Chaque semaine, une progression. »</p>
 
-    <!-- VIDEO INTEGRADO (Ruta corregida al archivo real) -->
-    <section class="section-wrapper" style="padding-top: 0;">
-        <div class="video-wrapper">
-            <video id="vid-bienvenida" class="video-player" controls playsinline preload="metadata" poster="assets/images/poster-bienvenue.jpg">
-                <source src="assets/club-de-conversacion.mp4" type="video/mp4">
-                Votre navigateur ne supporte pas la lecture de cette vidéo.
-            </video>
+        <!-- El póster que descargamos se mostrará aquí de forma elegante -->
+        <div class="media-container">
+            <img src="club/assets/images/poster-bienvenue.jpg" alt="Atmosphère Vendredi entre amis">
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
-            <a href="#inscription" class="btn-primary">Rejoindre le cercle (Places limitées)</a>
-        </div>
-    </section>
 
-    <!-- L'ANIMATEUR (MARCA PERSONAL) -->
-    <section class="section-wrapper" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-        <div>
-            <h2>L'Animateur</h2>
-            <p>Fort de 13 ans d'expérience dans l'enseignement du FLE et de mon parcours à la direction générale d'institutions culturelles francophones au Mexique, j'ai conçu ce cercle indépendant pour redonner à la parole toute sa liberté.</p>
-            <p>Ici, on parle français — peu importe le niveau. On apprend tous, ensemble.</p>
-            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; margin-top: 2rem; color: var(--em1);">Miguel Tillero</p>
-        </div>
-        <div style="background-color: var(--panel); padding: 1rem; border: 1px solid var(--line-borde); box-shadow: var(--sombra);">
-            <div style="width: 100%; aspect-ratio: 3/4; background-color: var(--deep); display: flex; align-items: center; justify-content: center; color: var(--muted);">
-                [Insérer portrait-miguel.jpg]
-            </div>
-        </div>
-    </section>
-
-    <!-- RSVP / INSCRIPCIÓN (FORMSPREE) -->
-    <section id="inscription" class="section-wrapper">
-        <div class="rsvp-card" style="max-width: 600px; margin: 0 auto;">
-            <h2 style="text-align: center; margin-top: 0;">Confirmer sa présence</h2>
-            <form action="https://formspree.io/f/mqkenvzw" method="POST">
-                <input type="text" name="nom" class="input-ligne" placeholder="Votre nom complet" required>
-                <input type="email" name="email" class="input-ligne" placeholder="Courriel de contact" required>
-                <input type="text" name="attentes" class="input-ligne" placeholder="Qu'attendez-vous de cette séance ?" required>
-                <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Envoyer ma demande</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- FOOTER INDEPENDIENTE -->
-    <footer class="footer-independant">
-        <p>&copy; 2026 Miguel Tillero. Tous droits réservés.</p>
-        <p>Espace pédagogique et culturel indépendant.</p>
-    </footer>
+        <a href="#inscription" class="cta-button">Rejoindre le cercle</a>
+    </main>
 
 </body>
 </html>
-
