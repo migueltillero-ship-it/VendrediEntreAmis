@@ -2,38 +2,27 @@
    COMMUNITY-DATA.JS
    Charge le contenu communautaire d'« Entre Amis » depuis des
    Google Sheets publiées en CSV (réponses de Google Forms).
-
-   ▶ CONFIGURATION (à faire une seule fois, voir
-     CONFIGURATION-FORMULAIRES.md pour le pas-à-pas) :
-   Pour chaque section, remplace les deux valeurs :
-     - form : le lien du formulaire Google Forms (bouton "Participer")
-     - csv  : le lien "Publier sur le web → CSV" de l'onglet
-              de réponses correspondant dans Google Sheets
-   Tant que csv n'est pas renseigné, la section affiche
-   simplement un état vide — rien ne casse.
 ════════════════════════════════════════════════ */
 const COMMUNITY_CONFIG = {
   portrait: {
-    form: "COLLE_ICI_LE_LIEN_DU_FORMULAIRE_PORTRAIT",
-    csv:  "COLLE_ICI_LE_LIEN_CSV_PORTRAIT",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSc7WAWrr0LtcELDtU8NEDru-HM4Q4VQcGtuFhX-QKSUqKNhBQ/viewform",
+    csv:  "https://docs.google.com/spreadsheets/d/e/2PACX-1vT8TUIQaTfaBqRl9jH0vwUFseiw_4MnX4hNlr4NlGDY0GpjmKxDppGJ1OKXnLi5mABiGOfiBaxDs2_B/pub?output=csv",
   },
   carte: {
-    form: "COLLE_ICI_LE_LIEN_DU_FORMULAIRE_CARTE",
-    csv:  "COLLE_ICI_LE_LIEN_CSV_CARTE",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSdDGOyUvbW45sqOq11UiNG53_A1TeW-e7wG025RdTP83mzSHQ/viewform",
+    csv:  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRASm3DpRiGzYUHsIM4GNAwjrB3ncr5tHPFgsqs2AFkxgQ61VWTrK9VGyJBrwU5UT2PhykhoSNooW37/pub?output=csv",
   },
   reussites: {
-    form: "COLLE_ICI_LE_LIEN_DU_FORMULAIRE_REUSSITES",
-    csv:  "COLLE_ICI_LE_LIEN_CSV_REUSSITES",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSex1AYKefbtkaisTD-eOITJoQIx4Oo1Nv3bIwKHNV3acjkZig/viewform",
+    csv:  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRub5b6a3l1xzErgVVjS-1U9e8ZzARJI9smbXCVV2T6XdA4_1jgWX4huG88zJujERNitlm-8dBlCSty/pub?output=csv",
   },
   journal: {
-    form: "COLLE_ICI_LE_LIEN_DU_FORMULAIRE_JOURNAL",
-    csv:  "COLLE_ICI_LE_LIEN_CSV_JOURNAL",
+    form: "https://docs.google.com/forms/d/e/1FAIpQLSegXjj0LXpawgVWwyHNsJsRL4zWkwmJJJxvjHYHoTbtW1-Uyw/viewform",
+    csv:  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRFam0LrK_KXMXhUQxxcydkll6jLSfOvPgS50bECxe81RohK4pFoPqiM8uVLmVbvvCxaE5qkcNZWMeD/pub?output=csv",
   },
 };
 
-/* Parseur CSV minimal (gère les champs entre guillemets,
-   avec virgules ou retours à la ligne à l'intérieur) —
-   suffisant pour un export Google Sheets propre. */
+/* Parseur CSV minimal */
 function parseCSV(texte) {
   const lignes = [];
   let ligne = [], champ = '', dansGuillemets = false;
