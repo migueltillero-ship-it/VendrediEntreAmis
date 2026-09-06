@@ -14,33 +14,32 @@
 <link rel="stylesheet" href="assets/css/accessibility.css">
 <script>window.PAGE_PREFIX = ""; window.CURRENT_PAGE = "accueil"; window.DATA_PATH = "data/semaines.json";</script>
 <style>
-  /* Hero compacto para no obstaculizar el vídeo de fondo */
-  .hero-video-wrap { 
-    position: relative; border-radius: var(--radius); overflow: hidden; margin-bottom: 1.5rem; 
-    min-height: 65vh; display: flex; flex-direction: column; justify-content: center; align-items: center; 
-    text-align: center; padding: 2.5rem 1.5rem; 
+  /* Contenedor del video limpio, sin capas oscuras ni textos encima */
+  .hero-video-only { 
+    position: relative; border-radius: var(--radius); overflow: hidden; margin-bottom: 2.5rem; 
+    width: 100%; height: 55vh; min-height: 400px; background: #000; box-shadow: 0 8px 30px rgba(0,0,0,0.08);
   }
-  .hero-video-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-  .hero-video-wrap .scrim { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(10,20,15,0.3) 0%, rgba(10,20,15,0.65) 60%, rgba(10,20,15,0.88) 100%); }
-  .hero-video-wrap > *:not(video):not(.scrim) { position: relative; z-index: 2; max-width: 800px; }
+  .hero-video-only video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
   
-  .hero-video-wrap h1 { color: #fff; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 300; margin-bottom: 0.5rem; }
-  .hero-video-wrap .eyebrow { color: var(--gold); font-family: 'Space Mono', monospace; letter-spacing: 0.25em; text-transform: uppercase; font-size: 0.6rem; margin-bottom: 0.8rem; }
-  .hero-video-wrap .manifeste { color: rgba(255,255,255,0.9); font-style: italic; font-size: 0.95rem; margin-bottom: 1.2rem; line-height: 1.5; max-width: 55ch; }
-  
-  .reuniones-bar { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 0.5rem; }
-  .btn-reunion { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.1rem; border-radius: 20px; font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
-  .btn-reunion.whatsapp { background: #25D366; color: #fff; }
-  .btn-reunion.zoom { background: #0A84FF; color: #fff; }
-  .btn-reunion:hover { transform: translateY(-2px); opacity: 0.9; }
-
   .btn-audio-video { 
-    position: absolute; bottom: 1rem; left: 1rem; z-index: 3; 
+    position: absolute; bottom: 1.5rem; left: 1.5rem; z-index: 3; 
     background: rgba(10,20,15,0.6); border: 1px solid rgba(201,169,110,0.6); 
-    color: #fff; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.75rem; 
+    color: #fff; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.75rem; 
     cursor: pointer; backdrop-filter: blur(8px); font-family: 'Syne', sans-serif; transition: all 0.3s; 
   }
   .btn-audio-video:hover { background: var(--gold); color: #12291c; }
+
+  /* Bloque de textos independiente y desplazado hacia abajo */
+  .hero-text-below { text-align: center; max-width: 800px; margin: 0 auto 4rem; padding: 0 1.5rem; }
+  .hero-text-below h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 300; margin-bottom: 0.5rem; color: inherit; }
+  .hero-text-below .eyebrow { color: var(--gold); font-family: 'Space Mono', monospace; letter-spacing: 0.25em; text-transform: uppercase; font-size: 0.65rem; margin-bottom: 1rem; }
+  .hero-text-below .manifeste { font-style: italic; font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.6; color: var(--text); opacity: 0.85; }
+  
+  .reuniones-bar { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-reunion { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1.4rem; border-radius: 30px; font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
+  .btn-reunion.whatsapp { background: #25D366; color: #fff; }
+  .btn-reunion.zoom { background: #0A84FF; color: #fff; }
+  .btn-reunion:hover { transform: translateY(-2px); opacity: 0.9; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
   
   .video-cta-flottant { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 50; width: 88px; height: 88px; border-radius: 50%; background: var(--em1); border: 1px solid var(--gold); color: #fff; font-size: 0.72rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.4rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s; }
   .video-cta-flottant:hover { background: var(--gold); color: #12291c; transform: scale(1.05); }
@@ -53,11 +52,16 @@
 
 <main class="container">
 
-  <section class="hero-video-wrap">
+  <!-- Contenedor del video completamente limpio -->
+  <section class="hero-video-only">
     <video id="headerVideo" autoplay muted loop playsinline poster="assets/images/poster-bienvenue.jpg">
       <source src="assets/club-de-conversacion.mp4" type="video/mp4">
     </video>
-    <div class="scrim"></div>
+    <button class="btn-audio-video" id="btnAudioVideo" onclick="basculerAudioVideo()">🔇 Son</button>
+  </section>
+
+  <!-- Textos y botones desplazados abajo -->
+  <section class="hero-text-below">
     <p class="eyebrow">Un espace indépendant — Miguel Tillero</p>
     <h1>Vendredi entre amis</h1>
     <p class="manifeste">« Chaque vendredi, une conversation. Chaque semaine, une progression. » Ici, on parle français sans peur, comme entre amis.</p>
@@ -70,10 +74,9 @@
         <i class="fa-solid fa-video"></i> Zoom
       </a>
     </div>
-
-    <button class="btn-audio-video" id="btnAudioVideo" onclick="basculerAudioVideo()">🔇 Son</button>
   </section>
 
+  <!-- Sección de progreso de las sesiones -->
   <div class="hero">
     <p class="eyebrow" id="accueil-temporada"></p>
     <h2><span id="accueil-tema-actual"></span> · <span id="accueil-semana-num"></span></h2>
@@ -92,6 +95,7 @@
     </div>
   </div>
 
+  <!-- Cartas principales -->
   <div class="grid-cards">
     <div class="card">
       <img src="assets/images/portrait-miguel-sin-titulo.jpg" alt="Miguel Tillero" style="border-radius:var(--radius); margin-bottom:.75rem; aspect-ratio:3/4; object-fit:cover; width:100%;">
