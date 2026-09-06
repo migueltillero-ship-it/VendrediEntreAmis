@@ -14,34 +14,58 @@
 <link rel="stylesheet" href="assets/css/accessibility.css">
 <script>window.PAGE_PREFIX = ""; window.CURRENT_PAGE = "accueil"; window.DATA_PATH = "data/semaines.json";</script>
 <style>
-  /* Contenedor del video limpio, sin capas oscuras ni textos encima */
-  .hero-video-only { 
-    position: relative; border-radius: var(--radius); overflow: hidden; margin-bottom: 2.5rem; 
-    width: 100%; height: 55vh; min-height: 400px; background: #000; box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  /* 1. BLOQUE EXCLUSIVO DEL VÍDEO (Sin nada encima) */
+  .bloque-video-oficial {
+      position: relative !important;
+      display: block !important;
+      width: 100% !important;
+      height: 60vh !important;
+      min-height: 450px !important;
+      border-radius: 12px !important;
+      overflow: hidden !important;
+      margin-top: 90px !important; /* Despeja la barra superior */
+      margin-bottom: 2rem !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+      background: #000;
   }
-  .hero-video-only video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
-  
-  .btn-audio-video { 
-    position: absolute; bottom: 1.5rem; left: 1.5rem; z-index: 3; 
-    background: rgba(10,20,15,0.6); border: 1px solid rgba(201,169,110,0.6); 
-    color: #fff; padding: 0.5rem 1.2rem; border-radius: 30px; font-size: 0.75rem; 
-    cursor: pointer; backdrop-filter: blur(8px); font-family: 'Syne', sans-serif; transition: all 0.3s; 
+  .bloque-video-oficial video {
+      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;
+  }
+  .btn-audio-video {
+      position: absolute; bottom: 1.5rem; left: 1.5rem; z-index: 10;
+      background: rgba(10,20,15,0.7); border: 1px solid rgba(201,169,110,0.7);
+      color: #fff; padding: 0.6rem 1.2rem; border-radius: 30px; font-size: 0.8rem;
+      cursor: pointer; backdrop-filter: blur(8px); font-family: 'Syne', sans-serif; transition: all 0.3s;
   }
   .btn-audio-video:hover { background: var(--gold); color: #12291c; }
 
-  /* Bloque de textos independiente y desplazado hacia abajo */
-  .hero-text-below { text-align: center; max-width: 800px; margin: 0 auto 4rem; padding: 0 1.5rem; }
-  .hero-text-below h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 300; margin-bottom: 0.5rem; color: inherit; }
-  .hero-text-below .eyebrow { color: var(--gold); font-family: 'Space Mono', monospace; letter-spacing: 0.25em; text-transform: uppercase; font-size: 0.65rem; margin-bottom: 1rem; }
-  .hero-text-below .manifeste { font-style: italic; font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.6; color: var(--text); opacity: 0.85; }
-  
+  /* 2. BLOQUE DE TEXTO DESPLAZADO HACIA ABAJO */
+  .bloque-texto-debajo {
+      position: relative !important;
+      display: block !important;
+      text-align: center !important;
+      max-width: 800px !important;
+      margin: 0 auto 4rem auto !important;
+      padding: 1rem 1.5rem !important;
+      clear: both !important;
+  }
+  .bloque-texto-debajo h1 {
+      font-family: 'Cormorant Garamond', serif !important;
+      font-size: clamp(3rem, 6vw, 4.5rem) !important;
+      font-weight: 600 !important;
+      margin-bottom: 0.5rem !important;
+      color: #1F355E !important; /* Azul tinta forzado para garantizar legibilidad */
+  }
+  .bloque-texto-debajo .eyebrow { color: var(--gold); font-family: 'Space Mono', monospace; letter-spacing: 0.25em; text-transform: uppercase; font-size: 0.7rem; margin-bottom: 1rem; }
+  .bloque-texto-debajo .manifeste { font-style: italic; font-size: 1.15rem; margin-bottom: 2.5rem; line-height: 1.6; color: #14110D !important; opacity: 0.85; }
+
   .reuniones-bar { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn-reunion { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1.4rem; border-radius: 30px; font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
+  .btn-reunion { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.6rem; border-radius: 30px; font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
   .btn-reunion.whatsapp { background: #25D366; color: #fff; }
   .btn-reunion.zoom { background: #0A84FF; color: #fff; }
-  .btn-reunion:hover { transform: translateY(-2px); opacity: 0.9; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-  
-  .video-cta-flottant { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 50; width: 88px; height: 88px; border-radius: 50%; background: var(--em1); border: 1px solid var(--gold); color: #fff; font-size: 0.72rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.4rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s; }
+  .btn-reunion:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+  .video-cta-flottant { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 50; width: 88px; height: 88px; border-radius: 50%; background: #0B3327; border: 1px solid var(--gold); color: #fff; font-size: 0.72rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.4rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s; }
   .video-cta-flottant:hover { background: var(--gold); color: #12291c; transform: scale(1.05); }
   @media(max-width:720px){ .video-cta-flottant{ width:72px; height:72px; font-size:0.62rem; } }
 </style>
@@ -52,16 +76,16 @@
 
 <main class="container">
 
-  <!-- Contenedor del video completamente limpio -->
-  <section class="hero-video-only">
+  <!-- BLOQUE 1: EL VÍDEO COMPLETAMENTE LIMPIO Y SEPARADO -->
+  <section class="bloque-video-oficial">
     <video id="headerVideo" autoplay muted loop playsinline poster="assets/images/poster-bienvenue.jpg">
       <source src="assets/club-de-conversacion.mp4" type="video/mp4">
     </video>
     <button class="btn-audio-video" id="btnAudioVideo" onclick="basculerAudioVideo()">🔇 Son</button>
   </section>
 
-  <!-- Textos y botones desplazados abajo -->
-  <section class="hero-text-below">
+  <!-- BLOQUE 2: LOS TEXTOS Y LOS BOTONES EN SU PROPIO ESPACIO -->
+  <section class="bloque-texto-debajo">
     <p class="eyebrow">Un espace indépendant — Miguel Tillero</p>
     <h1>Vendredi entre amis</h1>
     <p class="manifeste">« Chaque vendredi, une conversation. Chaque semaine, une progression. » Ici, on parle français sans peur, comme entre amis.</p>
@@ -76,7 +100,7 @@
     </div>
   </section>
 
-  <!-- Sección de progreso de las sesiones -->
+  <!-- EL RESTO DE LA PÁGINA -->
   <div class="hero">
     <p class="eyebrow" id="accueil-temporada"></p>
     <h2><span id="accueil-tema-actual"></span> · <span id="accueil-semana-num"></span></h2>
@@ -95,7 +119,6 @@
     </div>
   </div>
 
-  <!-- Cartas principales -->
   <div class="grid-cards">
     <div class="card">
       <img src="assets/images/portrait-miguel-sin-titulo.jpg" alt="Miguel Tillero" style="border-radius:var(--radius); margin-bottom:.75rem; aspect-ratio:3/4; object-fit:cover; width:100%;">
