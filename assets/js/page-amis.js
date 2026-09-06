@@ -1,4 +1,4 @@
-/* ════════════════════════════════════════════════
+﻿/* ════════════════════════════════════════════════
    PAGE-AMIS.JS — Entre Amis
    Une question par semaine. Si la semaine actuelle n'a pas
    de question spécifique ci-dessous, une question générique
@@ -21,7 +21,7 @@ const PREGUNTAS_ENTRE_AMIS = {
   textarea.addEventListener('input', () => localStorage.setItem(key, textarea.value));
 
   document.getElementById('entre-amis-whatsapp').addEventListener('click', () => {
-    const texto = encodeURIComponent(`${pregunta}\n\n${textarea.value}`);
-    window.open(`https://wa.me/?text=${texto}`, '_blank');
+    const texto = encodeURIComponent(${pregunta}\n\n);
+    window.open(https://wa.me/?text=, '_blank');
   });
 })();

@@ -27,13 +27,115 @@
   <div class="share-row">
     <button class="btn whatsapp" id="entre-amis-whatsapp">Partager sur WhatsApp</button>
   </div>
+
+  <!-- ═══ DÉFI DES AMIS (teaser vers défis.html) ═══ -->
+  <section class="section-head">
+    <div class="txt">
+      <p class="eyebrow">🎯 Défi des amis</p>
+      <h2 style="margin-bottom:.15rem;">Un petit défi, par niveau</h2>
+      <p class="muted">Le vrai défi de la semaine — avec les niveaux A1 à C2 — t'attend sur sa propre page. Relève-le, puis publie ta réponse dans le Journal des amis si tu veux la partager.</p>
+    </div>
+  </section>
+  <p style="margin-top:.75rem;display:flex;gap:.6rem;flex-wrap:wrap;">
+    <a class="btn secondary" href="defis.html">Voir le défi de cette semaine →</a>
+    <a class="btn secondary" id="btn-form-journal-defi" data-form="journal" href="#" target="_blank" rel="noopener">Publier ma réponse dans le Journal</a>
+  </p>
+
+  <!-- ═══ PORTRAIT DE LA SEMAINE ═══ -->
+  <section class="section-head">
+    <div class="txt">
+      <p class="eyebrow">👋 Portrait de la semaine</p>
+      <h2 style="margin-bottom:.15rem;">Un membre de la communauté</h2>
+      <p class="muted">Chaque semaine, un(e) participant(e) se présente — pour mettre un visage et une histoire sur nos conversations.</p>
+    </div>
+    <a class="btn secondary" data-form="portrait" href="#" target="_blank" rel="noopener">Je me présente →</a>
+  </section>
+  <div id="portrait-wrap" style="margin-top:1rem;"></div>
+
+  <!-- ═══ CARTE DU MONDE DES AMIS ═══ -->
+  <section class="section-head">
+    <div class="txt">
+      <p class="eyebrow">🗺️ Carte du monde des amis</p>
+      <h2 style="margin-bottom:.15rem;">Notre communauté à travers le monde</h2>
+      <p class="muted">D'où venons-nous, et qu'est-ce qui nous passionne ? Rejoins la carte en quelques lignes.</p>
+    </div>
+    <a class="btn secondary" data-form="carte" href="#" target="_blank" rel="noopener">Rejoindre la carte →</a>
+  </section>
+  <div id="carte-wrap" class="carte-grid"></div>
+
+  <!-- ═══ MUR DES RÉUSSITES ═══ -->
+  <section class="section-head">
+    <div class="txt">
+      <p class="eyebrow">🏆 Mur des réussites</p>
+      <h2 style="margin-bottom:.15rem;">Célébrons chaque progrès</h2>
+      <p class="muted">Un DELF réussi, un premier livre terminé, une présentation en français... aucun progrès n'est trop petit pour être célébré.</p>
+    </div>
+    <a class="btn secondary" data-form="reussites" href="#" target="_blank" rel="noopener">Partager ma réussite →</a>
+  </section>
+  <div id="reussites-wrap" class="reussite-grid"></div>
+
+  <!-- ═══ JOURNAL DE LA COMMUNAUTÉ ═══ -->
+  <section class="section-head">
+    <div class="txt">
+      <p class="eyebrow">📔 Journal de la communauté</p>
+      <h2 style="margin-bottom:.15rem;">Le Journal des amis</h2>
+      <p class="muted">Témoignages, recommandations, réflexions culturelles — l'espace où la communauté prend la plume.</p>
+    </div>
+    <a class="btn secondary" data-form="journal" href="#" target="_blank" rel="noopener">Écrire un article →</a>
+  </section>
+  <div id="journal-wrap"></div>
+
+  <!-- ═══ RESSOURCES EXTERNES ═══ -->
+  <section style="margin-top:2.5rem;">
+    <p class="eyebrow">Pour nourrir la conversation</p>
+    <h2 style="margin-bottom:.35rem;">L'actualité francophone de la semaine</h2>
+    <p class="muted" style="max-width:640px;">Avant vendredi, lisez ou écoutez une petite nouvelle en français — cela donne toujours un peu plus de matière pour discuter entre amis.</p>
+
+    <div class="grid-cards">
+      <div class="card">
+        <span class="icon">📺</span>
+        <h3 style="margin:.5rem 0 0;">TV5MONDE — Apprendre</h3>
+        <p>Des vidéos et reportages d'actualité, avec des exercices pour tous les niveaux, du débutant à l'avancé.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://apprendre.tv5monde.com/fr" target="_blank" rel="noopener">Visiter →</a></p>
+      </div>
+
+      <div class="card">
+        <span class="icon">📻</span>
+        <h3 style="margin:.5rem 0 0;">Le français facile avec RFI</h3>
+        <p>Le « Journal en français facile » : l'actualité internationale du jour, racontée avec des mots simples et une transcription.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://francaisfacile.rfi.fr/" target="_blank" rel="noopener">Visiter →</a></p>
+      </div>
+
+      <div class="card">
+        <span class="icon">🗞️</span>
+        <h3 style="margin:.5rem 0 0;">France 24</h3>
+        <p>L'actualité internationale en français « authentique » — un bon défi pour les niveaux B2 et plus.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://www.france24.com/fr/" target="_blank" rel="noopener">Visiter →</a></p>
+      </div>
+
+      <div class="card">
+        <span class="icon">🧒</span>
+        <h3 style="margin:.5rem 0 0;">1jour1actu</h3>
+        <p>L'actualité expliquée avec des mots très simples. Parfait pour préparer son vocabulaire avant de se lancer, quel que soit son niveau.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://www.1jour1actu.com" target="_blank" rel="noopener">Visiter →</a></p>
+      </div>
+
+      <div class="card">
+        <span class="icon">🍁</span>
+        <h3 style="margin:.5rem 0 0;">ICI Radio-Canada</h3>
+        <p>Pour entendre un autre français : les nouvelles vues du Québec, avec ses expressions bien à elles.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://ici.radio-canada.ca/" target="_blank" rel="noopener">Visiter →</a></p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer id="club-footer">Vendredi entre Amis · Un espace du professeur Miguel Tillero</footer>
 
 <script src="../assets/js/progression.js"></script>
+<script src="../assets/js/community-data.js"></script>
 <script src="../assets/js/nav.js"></script>
 <script src="../assets/js/page-amis.js"></script>
+<script src="../assets/js/page-amis-communaute.js"></script>
 </body>
 </html>
-
