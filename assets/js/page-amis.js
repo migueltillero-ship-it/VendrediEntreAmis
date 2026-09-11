@@ -21,7 +21,7 @@ const PREGUNTAS_ENTRE_AMIS = {
   textarea.addEventListener('input', () => localStorage.setItem(key, textarea.value));
 
   document.getElementById('entre-amis-whatsapp').addEventListener('click', () => {
-    const texto = encodeURIComponent(${pregunta}\n\n);
-    window.open(https://wa.me/?text=, '_blank');
+    const texto = encodeURIComponent(`${pregunta}\n\n${textarea.value}`);
+    window.open(`https://wa.me/?text=${texto}`, '_blank');
   });
 })();

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jeux de vocabulaire et liens vers des jeux en français pour pratiquer entre deux séances de Vendredi entre Amis.">
+<title>Jeux · Vendredi entre Amis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/accessibility.css">
+<script>window.PAGE_PREFIX = "../"; window.CURRENT_PAGE = "jeux"; window.DATA_PATH = "../data/semaines.json";</script>
+</head>
+<body>
+
+<header id="topbar"><div id="topbar-mount"></div></header>
+
+<main class="container">
+  <p class="eyebrow">Apprendre en s'amusant</p>
+  <h1>Jeux</h1>
+  <p class="muted" style="max-width:60ch;margin:.5rem 0 1.5rem;">Un quiz de vocabulaire tiré de toutes les semaines déjà vues au club, et une sélection de jeux en ligne pour continuer à jouer en français entre deux vendredis.</p>
+
+  <div class="toolbar">
+    <div class="pill-filters" id="quiz-filtros">
+      <button class="active" data-nivel="todos">Tous niveaux</button>
+      <button data-nivel="a1a2">A1–A2</button>
+      <button data-nivel="b1b2">B1–B2</button>
+    </div>
+  </div>
+
+  <div class="card quiz-card">
+    <p class="eyebrow quiz-score">Score : <span id="quiz-score">0</span> / <span id="quiz-total">0</span></p>
+    <p class="muted" id="quiz-consigne">Quelle est la bonne traduction de :</p>
+    <h2 id="quiz-mot-fr">…</h2>
+    <div class="quiz-options" id="quiz-options"></div>
+    <p class="quiz-feedback" id="quiz-feedback" aria-live="polite"></p>
+  </div>
+
+  <section style="margin-top:3rem;">
+    <p class="eyebrow">Pour continuer à jouer</p>
+    <h2 style="margin-bottom:.75rem;">D'autres jeux en français</h2>
+    <div class="grid-cards">
+      <div class="card">
+        <span class="icon">🎮</span>
+        <h3 style="margin:.5rem 0 0;">Digital Dialects</h3>
+        <p>Petits jeux de vocabulaire par thème (nourriture, ville, temps...), du débutant à l'avancé.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://www.digitaldialects.com/French.htm" target="_blank" rel="noopener">Jouer →</a></p>
+      </div>
+      <div class="card">
+        <span class="icon">🟩</span>
+        <h3 style="margin:.5rem 0 0;">Sutom</h3>
+        <p>Le « Wordle » français : devine le mot du jour en 6 essais. Idéal pour réviser l'orthographe.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://sutom.nocle.fr/" target="_blank" rel="noopener">Jouer →</a></p>
+      </div>
+      <div class="card">
+        <span class="icon">📚</span>
+        <h3 style="margin:.5rem 0 0;">Le Point du FLE — Jeux</h3>
+        <p>Un vaste répertoire de jeux et d'exercices interactifs classés par niveau et par compétence.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://www.lepointdufle.net/jeux.htm" target="_blank" rel="noopener">Jouer →</a></p>
+      </div>
+      <div class="card">
+        <span class="icon">🁢</span>
+        <h3 style="margin:.5rem 0 0;">TV5MONDE — Jeux</h3>
+        <p>Des jeux vidéo pédagogiques et des quiz d'actualité pour pratiquer en s'amusant.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://apprendre.tv5monde.com/fr/jeux" target="_blank" rel="noopener">Jouer →</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="club-footer">Vendredi entre Amis · Un espace du professeur Miguel Tillero</footer>
+
+<script src="../assets/js/data-loader.js"></script>
+<script src="../assets/js/progression.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/page-jeux.js"></script>
+</body>
+</html>

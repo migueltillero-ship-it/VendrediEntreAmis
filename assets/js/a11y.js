@@ -1,7 +1,7 @@
 ﻿/* ════════ LE COIN SÉRÉNITÉ (A11y) ════════ */
 function initA11y() {
   const html = document.documentElement;
-  const guardado = JSON.parse(localStorage.getItem('mt-a11y-prefs') || '{}');
+  const guardado = JSON.parse(localStorage.getItem('a11y-prefs') || '{}');
   if (guardado.tamano) html.classList.add(guardado.tamano);
   if (guardado.contraste) html.classList.add('contraste');
 }
@@ -18,6 +18,6 @@ function toggleContraste() {
 function guardarPrefsA11y() {
   const html = document.documentElement;
   const tamano = html.classList.contains('confort-plus') ? 'confort-plus' : (html.classList.contains('confort') ? 'confort' : null);
-  localStorage.setItem('mt-a11y-prefs', JSON.stringify({ tamano, contraste: html.classList.contains('contraste') }));
+  localStorage.setItem('a11y-prefs', JSON.stringify({ tamano, contraste: html.classList.contains('contraste') }));
 }
 document.addEventListener('DOMContentLoaded', initA11y);

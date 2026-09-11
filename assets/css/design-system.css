@@ -771,6 +771,60 @@ p {
 
 
 
+/* ==========================================================
+   ALIAS "vea-*" — compatibilité avec les pages qui référencent
+   les tokens sous ce préfixe (temas/theme-arts.html,
+   temas/theme-societe.html, recursos.html §Bibliothèque
+   Thématique). Pointent vers les mêmes tokens que ci-dessus.
+   ========================================================== */
+
+:root {
+    --vea-bleu-encre: var(--bleu-encre);
+    --vea-vert-profond: var(--vert-alliance);
+    --vea-creme-papier: var(--creme);
+    --vea-papier: var(--papier);
+    --vea-or-subtil: var(--or);
+    --vea-anthracite: var(--anthracite);
+    --vea-gris-lecture: var(--gris-doux);
+    --vea-line-gold: var(--line-gold);
+}
+
+.section-wrapper {
+    padding: 0 1.5rem;
+}
+
+.vea-card {
+    background: var(--papier);
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    padding: 1.75rem;
+    box-shadow: var(--shadow-editorial);
+    transition: var(--transition);
+}
+
+.vea-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.vea-button {
+    display: inline-block;
+    padding: .8rem 1.75rem;
+    border-radius: var(--radius-xl);
+    background: var(--bleu-encre);
+    color: var(--blanc);
+    font-family: var(--font-sans);
+    font-size: .85rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.vea-button:hover {
+    background: var(--bleu-encre-light);
+}
+
 /* Historial - envoltura */
 .vea-history-wrapper {
     margin-top: 2.5rem;
