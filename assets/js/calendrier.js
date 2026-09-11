@@ -15,17 +15,26 @@ const EVENEMENT_CLUB = {
   decalageUtc: -6,             // Mexique n'a plus d'heure d'été depuis 2022 : décalage fixe
 };
 
-/* Fuseaux de la communauté, calculés automatiquement (gère l'heure
-   d'été de chaque pays grâce à Intl + la base de fuseaux IANA — pas
-   de calcul manuel qui pourrait se tromper). */
+/* Pays proposés dans le sélecteur « Découvre à quelle heure... ».
+   Le calcul (y compris l'heure d'été de chaque pays) se fait via Intl
+   + la base de fuseaux IANA — jamais à la main. */
 const FUSEAUX_MONDE = [
+  { pays: 'Mexique · Ciudad de México', tz: 'America/Mexico_City' },
   { pays: 'Canada · Toronto / Montréal', tz: 'America/Toronto' },
-  { pays: 'Venezuela · Caracas', tz: 'America/Caracas' },
-  { pays: 'Équateur · Quito', tz: 'America/Guayaquil' },
-  { pays: 'Chili · Santiago', tz: 'America/Santiago' },
   { pays: 'États-Unis · New York', tz: 'America/New_York' },
   { pays: 'États-Unis · Los Angeles', tz: 'America/Los_Angeles' },
+  { pays: 'Venezuela · Caracas', tz: 'America/Caracas' },
+  { pays: 'Équateur · Quito', tz: 'America/Guayaquil' },
+  { pays: 'Colombie · Bogotá', tz: 'America/Bogota' },
+  { pays: 'Pérou · Lima', tz: 'America/Lima' },
+  { pays: 'Chili · Santiago', tz: 'America/Santiago' },
+  { pays: 'Argentine · Buenos Aires', tz: 'America/Argentina/Buenos_Aires' },
+  { pays: 'Espagne · Madrid', tz: 'Europe/Madrid' },
   { pays: 'France · Paris', tz: 'Europe/Paris' },
+  { pays: 'Belgique · Bruxelles', tz: 'Europe/Brussels' },
+  { pays: 'Suisse · Genève / Zurich', tz: 'Europe/Zurich' },
+  { pays: 'Maroc · Casablanca', tz: 'Africa/Casablanca' },
+  { pays: 'Sénégal · Dakar', tz: 'Africa/Dakar' },
   { pays: 'Australie · Sydney', tz: 'Australia/Sydney' },
 ];
 
@@ -51,17 +60,36 @@ function formatJourZone(date, tz) {
 }
 
 function rendreFuseauxMonde(ev) {
-  const wrap = document.getElementById('fuseaux-monde');
-  if (!wrap) return;
+  const select = document.getElementById('fuseauSelect');
+  const resultat = document.getElementById('fuseauResultat');
+  if (!select || !resultat) return;
+
   const debut = versUtcDate(ev.dateLancement, ev.heureDebut, ev.decalageUtc);
   const fin = versUtcDate(ev.dateLancement, ev.heureFin, ev.decalageUtc);
   const jourMexique = formatJourZone(debut, ev.fuseauIana);
 
-  wrap.innerHTML = FUSEAUX_MONDE.map(f => {
-    const jour = formatJourZone(debut, f.tz);
+  let fuseauDetecte = null;
+  try { fuseauDetecte = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (e) { /* ignoré */ }
+  const correspond = FUSEAUX_MONDE.some(f => f.tz === fuseauDetecte);
+
+  let optionsHtml = FUSEAUX_MONDE.map(f =>
+    `<option value="${f.tz}"${f.tz === fuseauDetecte ? ' selected' : ''}>${f.pays}</option>`
+  ).join('');
+  if (fuseauDetecte && !correspond) {
+    const nomLisible = fuseauDetecte.split('/').pop().replace(/_/g, ' ');
+    optionsHtml = `<option value="${fuseauDetecte}" selected>Chez toi (${nomLisible})</option>` + optionsHtml;
+  }
+  select.innerHTML = optionsHtml;
+
+  function afficher() {
+    const tz = select.value;
+    const jour = formatJourZone(debut, tz);
     const noteJour = jour !== jourMexique ? ` <span class="fuseau-note">(${jour})</span>` : '';
-    return `<div class="fuseau-item"><span class="fuseau-pays">${f.pays}</span><span class="fuseau-heure">${formatHeureZone(debut, f.tz)} – ${formatHeureZone(fin, f.tz)}${noteJour}</span></div>`;
-  }).join('');
+    resultat.innerHTML = `${formatHeureZone(debut, tz)} – ${formatHeureZone(fin, tz)}${noteJour}`;
+  }
+
+  afficher();
+  select.addEventListener('change', afficher);
 }
 
 function lienGoogleCalendar(ev) {

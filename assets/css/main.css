@@ -95,7 +95,6 @@ footer#club-footer{
     grid-template-columns:repeat(2, 1fr); gap:.55rem;
   }
   #tabs a{ justify-content:center; text-align:center; padding:.7rem .5rem; font-size:.95rem; }
-  .a11y-controls{ order:2; margin-left:auto; }
 }
 
 @media(max-width:380px){
