@@ -245,6 +245,41 @@ function basculerAudioVideo(){
   v.muted = !v.muted;
   if(!v.muted){ v.volume=0.8; b.textContent='🔊 Son'; } else { b.textContent='🔇 Son'; }
 }
+
+/* ── Son automatique dès le début, quand le navigateur l'autorise ──
+   La plupart des navigateurs bloquent l'autoplay avec son tant que la
+   personne n'a pas interagi avec la page — c'est une règle du
+   navigateur, pas un choix du site. On tente quand même l'autoplay
+   avec son au chargement (fonctionne parfois, ex. visiteur régulier) ;
+   sinon, le son s'active automatiquement au tout premier geste sur la
+   page (clic, scroll, touche), sans que la personne ait besoin de
+   chercher le bouton. */
+function tenterSonAutomatique(){
+  const v = document.getElementById('headerVideo');
+  const b = document.getElementById('btnAudioVideo');
+  if(!v) return;
+  v.muted = false;
+  v.volume = 0.8;
+  const p = v.play();
+  if(p && p.catch){
+    p.then(() => { if(b) b.textContent = '🔊 Son'; })
+     .catch(() => { v.muted = true; }); // bloqué par le navigateur, on réessaiera au premier geste
+  }
+}
+document.addEventListener('DOMContentLoaded', tenterSonAutomatique);
+
+function activerSonAuPremierGeste(){
+  const v = document.getElementById('headerVideo');
+  const b = document.getElementById('btnAudioVideo');
+  if(!v || !v.muted) return;
+  v.muted = false;
+  v.volume = 0.8;
+  v.play().catch(() => {});
+  if(b) b.textContent = '🔊 Son';
+}
+['click','touchstart','keydown','scroll'].forEach(ev =>
+  document.addEventListener(ev, activerSonAuPremierGeste, { once: true, passive: true })
+);
 </script>
 </body>
 </html>
