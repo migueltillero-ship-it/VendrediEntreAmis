@@ -75,15 +75,3 @@ footer { text-align: center; padding: 2rem; font-family: 'Syne', sans-serif; fon
 @media (max-width: 400px) {
   .nav-scroll { grid-template-columns: 1fr; }
 }
-
-/* ════════ COIN SÉRÉNITÉ (Clases Dinámicas) ════════ */
-html.confort { font-size: 120%; }
-html.confort-plus { font-size: 140%; }
-html.contraste body { background: #000 !important; color: #fff !important; }
-html.contraste .tarjeta-valor, html.contraste .contenedor-slide { background: #111 !important; border-color: #fff !important; }
-.a11y-panel { position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.85); border: 1px solid var(--gold); padding: 0.6rem; border-radius: 10px; z-index: 100; display: flex; gap: 0.6rem; }
-.a11y-panel button {
-  background: transparent; border: 2px solid var(--gold-claro); color: #fff; min-width: 2.75rem; min-height: 2.75rem;
-  padding: 0.4rem 0.7rem; font-size: 1rem; border-radius: 8px; cursor: pointer; font-family: 'Syne'; font-weight: 700; transition: 0.3s;
-}
-.a11y-panel button:hover { background: var(--gold); color: #000; }

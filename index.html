@@ -80,20 +80,24 @@
   .btn-reunion:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
   @media(max-width:600px){ .btn-reunion.nouveau{ font-size:0.85rem; padding:0.85rem 1.4rem; text-align:center; } }
 
-  .fuseaux-wrap { max-width: 640px; margin: 1.5rem auto 0; }
+  .fuseaux-wrap {
+      max-width: 480px; margin: 1.5rem auto 0; background: rgba(255,255,255,0.6);
+      border: 1px solid var(--gold); border-radius: 16px; padding: 1.25rem 1.5rem; text-align: center;
+  }
   .fuseaux-titre {
-      text-align: center; font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700;
-      color: #12291c; margin-bottom: 0.8rem;
+      font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700;
+      color: #12291c; margin-bottom: 0.9rem;
   }
-  .fuseaux-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 1.2rem; }
-  .fuseau-item {
-      display: flex; justify-content: space-between; gap: 0.6rem; padding: 0.5rem 0.7rem;
-      background: rgba(255,255,255,0.55); border-radius: 8px; font-size: 0.82rem;
+  .fuseaux-select-wrap { display: flex; flex-direction: column; gap: 0.4rem; align-items: center; }
+  .fuseaux-select-wrap label { font-size: 0.85rem; color: #12291c; opacity: 0.8; }
+  #fuseauSelect {
+      width: 100%; max-width: 340px; min-height: 3rem; padding: 0.6rem 0.9rem;
+      border-radius: 10px; border: 1px solid var(--gold); background: #fff; font-family: inherit; font-size: 1rem;
   }
-  .fuseau-pays { color: #12291c; opacity: 0.8; }
-  .fuseau-heure { font-family: 'Space Mono', monospace; font-weight: 700; color: #0B3327; white-space: nowrap; }
-  .fuseau-note { font-weight: 400; opacity: 0.7; font-size: 0.75rem; }
-  @media(max-width:600px){ .fuseaux-grid{ grid-template-columns: 1fr; } }
+  .fuseaux-resultat {
+      margin-top: 1rem; font-family: 'Space Mono', monospace; font-size: 1.1rem; font-weight: 700; color: #0B3327;
+  }
+  .fuseaux-resultat .fuseau-note { font-weight: 400; opacity: 0.75; font-size: 0.85rem; }
 
   /* 3. CARROUSEL D'IDENTITÉ VISUELLE */
   /* Carrousel : pas de défilement automatique (le public lit à son
@@ -174,8 +178,12 @@
     <p class="lancement-badge">✨ Vendredi 11 — notre toute première séance ! On se retrouve, on se présente, et le voyage commence.</p>
 
     <div class="fuseaux-wrap">
-      <p class="fuseaux-titre"><i class="fa-solid fa-earth-americas"></i> 18h00 – 19h30, heure du Mexique — et chez toi ?</p>
-      <div class="fuseaux-grid" id="fuseaux-monde"></div>
+      <p class="fuseaux-titre"><i class="fa-solid fa-earth-americas"></i> Découvre à quelle heure a lieu le club, où que tu sois</p>
+      <div class="fuseaux-select-wrap">
+        <label for="fuseauSelect">Choisis ton pays :</label>
+        <select id="fuseauSelect"></select>
+      </div>
+      <p class="fuseaux-resultat" id="fuseauResultat"></p>
     </div>
   </section>
 
