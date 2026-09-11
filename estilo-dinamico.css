@@ -13,6 +13,8 @@ body {
   background-attachment: fixed;
   color: #f0f4f1;
   font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;         /* base ergonomique : public majoritairement senior */
+  line-height: 1.7;
   margin: 0; padding: 0; min-height: 100vh;
   display: flex; flex-direction: column; justify-content: space-between;
 }
@@ -25,11 +27,19 @@ body {
 .marca { font-family: 'Syne', sans-serif; font-weight: 700; color: #fff; text-decoration: none; font-size: 1.2rem; }
 .marca b { color: var(--gold); }
 nav { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-nav a { color: rgba(255,255,255,0.8); text-decoration: none; font-family: 'Syne', sans-serif; font-size: 0.850rem; transition: color 0.2s; }
+nav a {
+  display: inline-flex; align-items: center; min-height: 2.75rem;
+  color: rgba(255,255,255,0.85); text-decoration: none; font-family: 'Syne', sans-serif;
+  font-size: 1rem; font-weight: 600; transition: color 0.2s;
+}
 nav a:hover, nav a.on { color: var(--gold-claro); }
 .contenedor-slide { max-width: 900px; margin: 3rem auto; padding: 2.5rem; background: rgba(11, 51, 39, 0.6); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--sombra); backdrop-filter: blur(5px); }
 h1, h2, h3 { font-family: 'Syne', sans-serif; color: #fff; text-shadow: 1px 2px 4px rgba(0,0,0,0.5); }
-.btn-oro { background: var(--gold); color: #0b3327; font-family: 'Syne', sans-serif; font-weight: 700; padding: 0.7rem 1.4rem; border-radius: 4px; text-decoration: none; display: inline-block; transition: background 0.2s; }
+.btn-oro {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 3rem;
+  background: var(--gold); color: #0b3327; font-family: 'Syne', sans-serif; font-weight: 700;
+  padding: 0.8rem 1.6rem; font-size: 1rem; border-radius: 6px; text-decoration: none; transition: background 0.2s;
+}
 .btn-oro:hover { background: var(--gold-claro); }
 .mosaico-identidad { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 1.5rem; }
 .mosaico-identidad figure { margin: 0; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--sombra); aspect-ratio: 2/3; background: #000; }
@@ -39,8 +49,8 @@ footer { text-align: center; padding: 2rem; font-family: 'Syne', sans-serif; fon
 .rejilla-6 { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 .tarjeta-valor { background: rgba(0,0,0,0.4); border: 1px solid var(--gold); border-radius: 8px; padding: 1.5rem; text-align: left; transition: transform 0.3s; }
 .tarjeta-valor:hover { transform: translateY(-5px); }
-.tarjeta-valor h3 { color: var(--gold-claro); margin-top: 0; font-size: 1.2rem; }
-.tarjeta-valor p { color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-bottom: 0; }
+.tarjeta-valor h3 { color: var(--gold-claro); margin-top: 0; font-size: 1.3rem; }
+.tarjeta-valor p { color: rgba(255,255,255,0.9); font-size: 1.05rem; margin-bottom: 0; }
 .paso-cifra { font-family: 'Syne', sans-serif; font-size: 3rem; color: rgba(197, 160, 89, 0.2); float: right; line-height: 0.8; }
 
 /* ════════ LA PHOTO DU VENDREDI ════════ */
@@ -52,18 +62,28 @@ footer { text-align: center; padding: 2rem; font-family: 'Syne', sans-serif; fon
 
 /* ════════ RESPONSIVIDAD MÓVIL (MENÚ) ════════ */
 @media (max-width: 768px) {
-  .nav-scroll { display: flex; overflow-x: auto; white-space: nowrap; padding-bottom: 0.5rem; width: 100%; -webkit-overflow-scrolling: touch; gap: 1.2rem; margin-bottom: 0.5rem; }
-  .nav-scroll::-webkit-scrollbar { height: 3px; }
-  .nav-scroll::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+  /* Menu entièrement visible en grille, sans défilement caché :
+     plus sûr pour un public peu habitué aux gestes de balayage. */
+  .nav-scroll {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem;
+    width: 100%; margin-bottom: 0.5rem;
+  }
+  .nav-scroll a { justify-content: center; text-align: center; background: rgba(255,255,255,0.06); border-radius: 8px; }
   .barra-in { flex-direction: column; align-items: center; gap: 0.5rem; }
   .btn-oro { width: 100%; text-align: center; }
 }
+@media (max-width: 400px) {
+  .nav-scroll { grid-template-columns: 1fr; }
+}
 
 /* ════════ COIN SÉRÉNITÉ (Clases Dinámicas) ════════ */
-html.confort { font-size: 110%; }
-html.confort-plus { font-size: 125%; }
+html.confort { font-size: 120%; }
+html.confort-plus { font-size: 140%; }
 html.contraste body { background: #000 !important; color: #fff !important; }
 html.contraste .tarjeta-valor, html.contraste .contenedor-slide { background: #111 !important; border-color: #fff !important; }
-.a11y-panel { position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.8); border: 1px solid var(--gold); padding: 0.5rem; border-radius: 8px; z-index: 100; display: flex; gap: 0.5rem; }
-.a11y-panel button { background: transparent; border: 1px solid var(--gold-claro); color: #fff; padding: 0.3rem 0.6rem; border-radius: 4px; cursor: pointer; font-family: 'Syne'; transition: 0.3s; }
+.a11y-panel { position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.85); border: 1px solid var(--gold); padding: 0.6rem; border-radius: 10px; z-index: 100; display: flex; gap: 0.6rem; }
+.a11y-panel button {
+  background: transparent; border: 2px solid var(--gold-claro); color: #fff; min-width: 2.75rem; min-height: 2.75rem;
+  padding: 0.4rem 0.7rem; font-size: 1rem; border-radius: 8px; cursor: pointer; font-family: 'Syne'; font-weight: 700; transition: 0.3s;
+}
 .a11y-panel button:hover { background: var(--gold); color: #000; }

@@ -45,6 +45,7 @@
       <a class="brand" href="${prefix}index.html">Vendredi <span>entre Amis</span></a>
       <nav id="tabs" aria-label="Sections du club">${tabsHtml}</nav>
       <div class="a11y-controls" role="group" aria-label="Confort de lecture — Coin Sérénité">
+        <span class="a11y-label">Confort de lecture</span>
         <button id="btn-a-normal" aria-pressed="true" title="Taille normale">A</button>
         <button id="btn-a-plus" aria-pressed="false" title="Texte agrandi">A+</button>
         <button id="btn-a-plusplus" aria-pressed="false" title="Texte très agrandi">A++</button>

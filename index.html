@@ -96,28 +96,34 @@
   @media(max-width:600px){ .fuseaux-grid{ grid-template-columns: 1fr; } }
 
   /* 3. CARROUSEL D'IDENTITÉ VISUELLE */
-  .carousel-identite { position: relative; margin: 2.5rem auto 3rem; max-width: 1080px; padding: 0 1.5rem; }
+  /* Carrousel : pas de défilement automatique (le public lit à son
+     rythme) — on avance seulement avec les flèches, les points, ou en
+     glissant. Flèches toujours visibles, grandes et faciles à toucher. */
+  .carousel-identite { position: relative; margin: 2.5rem auto 3rem; max-width: 1080px; padding: 0 3.5rem; }
   .carousel-track {
       display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0.5rem 0 1rem;
   }
   .carousel-track::-webkit-scrollbar { display: none; }
   .carousel-slide {
-      flex: 0 0 auto; width: min(74vw, 300px); aspect-ratio: 2/3; scroll-snap-align: center;
+      flex: 0 0 auto; width: min(82vw, 340px); aspect-ratio: 2/3; scroll-snap-align: center;
       border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin: 0;
   }
   .carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .carousel-arrow {
-      position: absolute; top: 42%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%;
-      background: rgba(255,255,255,0.92); border: 1px solid var(--gold); color: #12291c; font-size: 1rem;
-      display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: absolute; top: 42%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(255,255,255,0.96); border: 2px solid var(--gold); color: #12291c; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
-  .carousel-arrow.prev { left: -0.5rem; } .carousel-arrow.next { right: -0.5rem; }
-  .carousel-arrow:hover { background: var(--gold); color: #12291c; }
-  .carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.5rem; }
-  .carousel-dots button { width: 8px; height: 8px; border-radius: 50%; background: rgba(18,41,28,0.25); border: none; padding: 0; cursor: pointer; transition: all 0.2s; }
-  .carousel-dots button.active { background: var(--gold); width: 22px; border-radius: 4px; }
-  @media(max-width:720px){ .carousel-arrow{ display:none; } }
+  .carousel-arrow.prev { left: 0; } .carousel-arrow.next { right: 0; }
+  .carousel-arrow:hover, .carousel-arrow:focus-visible { background: var(--gold); color: #12291c; }
+  .carousel-dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+  .carousel-dots button { width: 14px; height: 14px; border-radius: 50%; background: rgba(18,41,28,0.25); border: none; padding: 0; cursor: pointer; transition: all 0.2s; }
+  .carousel-dots button.active { background: var(--gold); width: 34px; border-radius: 7px; }
+  @media(max-width:600px){
+      .carousel-identite{ padding: 0 3.1rem; }
+      .carousel-arrow{ width: 46px; height: 46px; }
+  }
 
   .video-cta-flottant { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 50; width: 88px; height: 88px; border-radius: 50%; background: #0B3327; border: 1px solid var(--gold); color: #fff; font-size: 0.72rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.4rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s; }
   .video-cta-flottant:hover { background: var(--gold); color: #12291c; transform: scale(1.05); }
@@ -251,9 +257,11 @@ function basculerAudioVideo(){
    personne n'a pas interagi avec la page — c'est une règle du
    navigateur, pas un choix du site. On tente quand même l'autoplay
    avec son au chargement (fonctionne parfois, ex. visiteur régulier) ;
-   sinon, le son s'active automatiquement au tout premier geste sur la
-   page (clic, scroll, touche), sans que la personne ait besoin de
-   chercher le bouton. */
+   sinon, le son s'active dès le premier geste VOLONTAIRE sur la page
+   (un clic ou un toucher). On n'utilise pas le simple défilement
+   (scroll) : pour un public senior qui prend le temps de lire, un son
+   qui démarre pendant qu'on fait juste défiler la page surprendrait
+   plus qu'il n'aiderait. */
 function tenterSonAutomatique(){
   const v = document.getElementById('headerVideo');
   const b = document.getElementById('btnAudioVideo');
@@ -277,7 +285,7 @@ function activerSonAuPremierGeste(){
   v.play().catch(() => {});
   if(b) b.textContent = '🔊 Son';
 }
-['click','touchstart','keydown','scroll'].forEach(ev =>
+['click','touchstart'].forEach(ev =>
   document.addEventListener(ev, activerSonAuPremierGeste, { once: true, passive: true })
 );
 </script>
