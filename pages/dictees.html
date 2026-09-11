@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="La dictée du vendredi : un texte à écouter et à écrire, par niveau, plus une sélection de dictées françaises pour s'entraîner.">
+<title>Dictées · Vendredi entre Amis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/main.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/accessibility.css">
+<script>window.PAGE_PREFIX = "../"; window.CURRENT_PAGE = "dictees";</script>
+</head>
+<body>
+
+<header id="topbar"><div id="topbar-mount"></div></header>
+
+<main class="container">
+  <p class="eyebrow">Écoute, écris, corrige-toi</p>
+  <h1>La Dictée du Vendredi</h1>
+  <p class="muted" style="max-width:60ch;margin:.5rem 0 1.5rem;">Écoute le texte (autant de fois que tu veux — il y a même une version « lente »), écris ce que tu entends, puis affiche le corrigé pour te comparer. Pas de note, pas de pression : juste l'oreille qui s'entraîne.</p>
+
+  <h3>Niveau A1–A2</h3>
+  <div class="dictee-box">
+    <div class="dictee-controls">
+      <button class="btn" id="dictee-ecouter-a1a2">🔊 Écouter</button>
+      <button class="btn secondary" id="dictee-lent-a1a2">🐢 Version lente</button>
+    </div>
+    <textarea id="dictee-texte-a1a2" placeholder="Écris ici ce que tu entends..."></textarea>
+    <div class="dictee-controls">
+      <button class="btn secondary" id="dictee-corriger-a1a2">Afficher le corrigé</button>
+    </div>
+    <div class="dictee-corrige"><p id="dictee-corrige-a1a2"></p></div>
+  </div>
+
+  <h3 style="margin-top:2.5rem;">Niveau B1–B2</h3>
+  <div class="dictee-box">
+    <div class="dictee-controls">
+      <button class="btn" id="dictee-ecouter-b1b2">🔊 Écouter</button>
+      <button class="btn secondary" id="dictee-lent-b1b2">🐢 Version lente</button>
+    </div>
+    <textarea id="dictee-texte-b1b2" placeholder="Écris ici ce que tu entends..."></textarea>
+    <div class="dictee-controls">
+      <button class="btn secondary" id="dictee-corriger-b1b2">Afficher le corrigé</button>
+    </div>
+    <div class="dictee-corrige"><p id="dictee-corrige-b1b2"></p></div>
+  </div>
+
+  <section style="margin-top:3rem;">
+    <p class="eyebrow">Pour aller plus loin</p>
+    <h2 style="margin-bottom:.75rem;">D'autres dictées en français</h2>
+    <div class="grid-cards">
+      <div class="card">
+        <span class="icon">📻</span>
+        <h3 style="margin:.5rem 0 0;">RFI — Journal en français facile</h3>
+        <p>Chaque bulletin peut servir de dictée : écoute, transcris, puis compare avec la transcription officielle.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://francaisfacile.rfi.fr/" target="_blank" rel="noopener">Écouter →</a></p>
+      </div>
+      <div class="card">
+        <span class="icon">✍️</span>
+        <h3 style="margin:.5rem 0 0;">Le Point du FLE — Dictées</h3>
+        <p>Une grande sélection de dictées classées par niveau, avec audio et corrigé.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://www.lepointdufle.net/dictees.htm" target="_blank" rel="noopener">S'entraîner →</a></p>
+      </div>
+      <div class="card">
+        <span class="icon">🖋️</span>
+        <h3 style="margin:.5rem 0 0;">Bescherelle — Dictées audio</h3>
+        <p>Des dictées audio classées par difficulté, pensées pour travailler l'orthographe française.</p>
+        <p style="margin-top:.75rem;"><a class="btn secondary" href="https://www.bescherelle.com/dictees-audio/" target="_blank" rel="noopener">S'entraîner →</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="club-footer">Vendredi entre Amis · Un espace du professeur Miguel Tillero</footer>
+
+<script src="../assets/js/progression.js"></script>
+<script src="../assets/js/audio.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/page-dictees.js"></script>
+</body>
+</html>
