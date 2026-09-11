@@ -80,6 +80,21 @@
   .btn-reunion:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
   @media(max-width:600px){ .btn-reunion.nouveau{ font-size:0.85rem; padding:0.85rem 1.4rem; text-align:center; } }
 
+  .fuseaux-wrap { max-width: 640px; margin: 1.5rem auto 0; }
+  .fuseaux-titre {
+      text-align: center; font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700;
+      color: #12291c; margin-bottom: 0.8rem;
+  }
+  .fuseaux-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 1.2rem; }
+  .fuseau-item {
+      display: flex; justify-content: space-between; gap: 0.6rem; padding: 0.5rem 0.7rem;
+      background: rgba(255,255,255,0.55); border-radius: 8px; font-size: 0.82rem;
+  }
+  .fuseau-pays { color: #12291c; opacity: 0.8; }
+  .fuseau-heure { font-family: 'Space Mono', monospace; font-weight: 700; color: #0B3327; white-space: nowrap; }
+  .fuseau-note { font-weight: 400; opacity: 0.7; font-size: 0.75rem; }
+  @media(max-width:600px){ .fuseaux-grid{ grid-template-columns: 1fr; } }
+
   /* 3. CARROUSEL D'IDENTITÉ VISUELLE */
   .carousel-identite { position: relative; margin: 2.5rem auto 3rem; max-width: 1080px; padding: 0 1.5rem; }
   .carousel-track {
@@ -151,6 +166,11 @@
     </div>
 
     <p class="lancement-badge">✨ Vendredi 11 — notre toute première séance ! On se retrouve, on se présente, et le voyage commence.</p>
+
+    <div class="fuseaux-wrap">
+      <p class="fuseaux-titre"><i class="fa-solid fa-earth-americas"></i> 18h00 – 19h30, heure du Mexique — et chez toi ?</p>
+      <div class="fuseaux-grid" id="fuseaux-monde"></div>
+    </div>
   </section>
 
   <!-- BLOQUE 3: GALERIE / CARROUSEL D'IDENTITÉ -->

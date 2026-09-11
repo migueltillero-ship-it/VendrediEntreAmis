@@ -1,30 +1,67 @@
 /* ════════════════════════════════════════════════
-   CALENDRIER.JS — « Ajouter à mon calendrier »
-   Génère un lien Google Calendar et un fichier .ics pour la
-   séance hebdomadaire du vendredi (événement récurrent).
-
-   ⚠️ À CONFIRMER : Miguel doit vérifier/ajuster DATE_LANCEMENT,
-   HEURE_DEBUT, HEURE_FIN et FUSEAU ci-dessous une seule fois —
-   tout le reste (lien Google Calendar + .ics) se génère seul.
+   CALENDRIER.JS — « Ajouter à mon calendrier » + heures dans le monde
+   Génère un lien Google Calendar et un fichier .ics pour la séance
+   hebdomadaire du vendredi (événement récurrent), et affiche l'heure
+   correspondante dans plusieurs pays de la communauté.
 ════════════════════════════════════════════════ */
 const EVENEMENT_CLUB = {
   titre: 'Vendredi entre Amis — Club de conversation en français',
   lieu: 'En ligne (Zoom) — lien dans le groupe WhatsApp',
   description: "Chaque vendredi, une conversation. Chaque semaine, une nouvelle destination francophone. Rejoignez-nous sur Zoom : https://us02web.zoom.us/j/2368165321",
-  dateLancement: '2026-09-11', // 1er vendredi — à confirmer si besoin
-  heureDebut: '19:00',         // heure locale — À CONFIRMER par Miguel
-  heureFin: '20:30',           // heure locale — À CONFIRMER par Miguel
-  fuseauIana: 'America/Mexico_City', // À CONFIRMER — utilisé par Google Calendar (ctz)
-  decalageUtc: -6,             // décalage fixe du fuseau ci-dessus, en heures (sans heure d'été)
+  dateLancement: '2026-09-11', // 1er vendredi
+  heureDebut: '18:00',         // heure du Mexique (confirmé)
+  heureFin: '19:30',           // heure du Mexique (confirmé)
+  fuseauIana: 'America/Mexico_City', // utilisé par Google Calendar (ctz)
+  decalageUtc: -6,             // Mexique n'a plus d'heure d'été depuis 2022 : décalage fixe
 };
+
+/* Fuseaux de la communauté, calculés automatiquement (gère l'heure
+   d'été de chaque pays grâce à Intl + la base de fuseaux IANA — pas
+   de calcul manuel qui pourrait se tromper). */
+const FUSEAUX_MONDE = [
+  { pays: 'Canada · Toronto / Montréal', tz: 'America/Toronto' },
+  { pays: 'Venezuela · Caracas', tz: 'America/Caracas' },
+  { pays: 'Équateur · Quito', tz: 'America/Guayaquil' },
+  { pays: 'Chili · Santiago', tz: 'America/Santiago' },
+  { pays: 'États-Unis · New York', tz: 'America/New_York' },
+  { pays: 'États-Unis · Los Angeles', tz: 'America/Los_Angeles' },
+  { pays: 'France · Paris', tz: 'Europe/Paris' },
+  { pays: 'Australie · Sydney', tz: 'Australia/Sydney' },
+];
 
 function pad(n) { return String(n).padStart(2, '0'); }
 
-function versUtc(dateStr, heureStr, decalageUtc) {
+function versUtcDate(dateStr, heureStr, decalageUtc) {
   const [an, mois, jour] = dateStr.split('-').map(Number);
   const [h, m] = heureStr.split(':').map(Number);
-  const d = new Date(Date.UTC(an, mois - 1, jour, h - decalageUtc, m, 0));
+  return new Date(Date.UTC(an, mois - 1, jour, h - decalageUtc, m, 0));
+}
+
+function versUtc(dateStr, heureStr, decalageUtc) {
+  const d = versUtcDate(dateStr, heureStr, decalageUtc);
   return `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}T${pad(d.getUTCHours())}${pad(d.getUTCMinutes())}00Z`;
+}
+
+function formatHeureZone(date, tz) {
+  return new Intl.DateTimeFormat('fr-FR', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: tz }).format(date);
+}
+
+function formatJourZone(date, tz) {
+  return new Intl.DateTimeFormat('fr-FR', { weekday: 'long', timeZone: tz }).format(date);
+}
+
+function rendreFuseauxMonde(ev) {
+  const wrap = document.getElementById('fuseaux-monde');
+  if (!wrap) return;
+  const debut = versUtcDate(ev.dateLancement, ev.heureDebut, ev.decalageUtc);
+  const fin = versUtcDate(ev.dateLancement, ev.heureFin, ev.decalageUtc);
+  const jourMexique = formatJourZone(debut, ev.fuseauIana);
+
+  wrap.innerHTML = FUSEAUX_MONDE.map(f => {
+    const jour = formatJourZone(debut, f.tz);
+    const noteJour = jour !== jourMexique ? ` <span class="fuseau-note">(${jour})</span>` : '';
+    return `<div class="fuseau-item"><span class="fuseau-pays">${f.pays}</span><span class="fuseau-heure">${formatHeureZone(debut, f.tz)} – ${formatHeureZone(fin, f.tz)}${noteJour}</span></div>`;
+  }).join('');
 }
 
 function lienGoogleCalendar(ev) {
@@ -69,6 +106,7 @@ function contenuIcs(ev) {
 function initCalendrier() {
   const btnGoogle = document.getElementById('btn-calendrier-google');
   const btnIcs = document.getElementById('btn-calendrier-ics');
+  rendreFuseauxMonde(EVENEMENT_CLUB);
   if (btnGoogle) btnGoogle.href = lienGoogleCalendar(EVENEMENT_CLUB);
   if (btnIcs) {
     btnIcs.addEventListener('click', (e) => {
