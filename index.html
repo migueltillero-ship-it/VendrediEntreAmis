@@ -38,6 +38,11 @@
       cursor: pointer; backdrop-filter: blur(8px); font-family: 'Syne', sans-serif; transition: all 0.3s;
   }
   .btn-audio-video:hover { background: var(--gold); color: #12291c; }
+  @media(max-width:720px){
+    .bloque-video-oficial{ height:42vh !important; min-height:280px !important; margin-top:70px !important; }
+    .bloque-texto-debajo h1{ font-size:2.3rem !important; }
+    .bloque-texto-debajo .manifeste{ font-size:1rem !important; }
+  }
 
   /* 2. BLOQUE DE TEXTO DESPLAZADO HACIA ABAJO */
   .bloque-texto-debajo {
@@ -66,10 +71,14 @@
       color: #12291c; background: rgba(201,169,110,0.18); border: 1px solid var(--gold);
       border-radius: 30px; padding: 0.6rem 1.4rem;
   }
+  .cta-nouveau-wrap { display: flex; justify-content: center; margin-bottom: 1rem; }
   .btn-reunion { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.6rem; border-radius: 30px; font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
   .btn-reunion.whatsapp { background: #25D366; color: #fff; }
   .btn-reunion.zoom { background: #0A84FF; color: #fff; }
+  .btn-reunion.calendrier { background: rgba(255,255,255,0.85); color: #12291c; border: 1px solid var(--gold); }
+  .btn-reunion.nouveau { background: var(--gold); color: #12291c; font-size: 0.95rem; padding: 1rem 2rem; box-shadow: 0 6px 22px rgba(165,130,74,0.35); }
   .btn-reunion:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+  @media(max-width:600px){ .btn-reunion.nouveau{ font-size:0.85rem; padding:0.85rem 1.4rem; text-align:center; } }
 
   .video-cta-flottant { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 50; width: 88px; height: 88px; border-radius: 50%; background: #0B3327; border: 1px solid var(--gold); color: #fff; font-size: 0.72rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.4rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s; }
   .video-cta-flottant:hover { background: var(--gold); color: #12291c; transform: scale(1.05); }
@@ -96,12 +105,24 @@
     <h1>Vendredi entre amis</h1>
     <p class="manifeste">« Chaque vendredi, une conversation. Chaque semaine, une progression. » Ici, on parle français sans peur, comme entre amis.</p>
 
+    <div class="cta-nouveau-wrap">
+      <a href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20suis%20nouveau%2Fnouvelle%20et%20je%20voudrais%20rejoindre%20Vendredi%20entre%20amis%20%21" target="_blank" class="btn-reunion nouveau">
+        <i class="fa-solid fa-hand-sparkles"></i> Je suis nouveau·elle, je veux rejoindre !
+      </a>
+    </div>
+
     <div class="reuniones-bar">
       <a href="https://chat.whatsapp.com/DtYaNnlHWktLobKA0tEEdB" target="_blank" class="btn-reunion whatsapp">
         <i class="fa-brands fa-whatsapp"></i> WhatsApp
       </a>
       <a href="https://us02web.zoom.us/j/2368165321" target="_blank" class="btn-reunion zoom">
         <i class="fa-solid fa-video"></i> Zoom
+      </a>
+      <a href="#" id="btn-calendrier-google" target="_blank" class="btn-reunion calendrier">
+        <i class="fa-solid fa-calendar-plus"></i> Ajouter au calendrier
+      </a>
+      <a href="#" id="btn-calendrier-ics" class="btn-reunion calendrier">
+        <i class="fa-solid fa-download"></i> Fichier .ics
       </a>
     </div>
 
@@ -150,6 +171,7 @@
 
 <a class="video-cta-flottant" href="https://us02web.zoom.us/j/2368165321" target="_blank" title="Entrer à la réunion Zoom">Rejoindre<br>la réunion</a>
 
+<script src="assets/js/calendrier.js"></script>
 <script src="assets/js/data-loader.js"></script>
 <script src="assets/js/progression.js"></script>
 <script src="assets/js/audio.js"></script>
