@@ -83,4 +83,14 @@ footer#club-footer{
 
 @media(max-width:720px){
   .mot-miguel{ flex-direction:column; }
+
+  .topbar-inner{ flex-wrap:wrap; padding:.7rem 1rem; gap:.5rem; }
+  .brand{ font-size:1.15rem; }
+  #tabs{
+    order:3; flex:1 1 100%; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    gap:.4rem; margin:0 -1rem; padding:0 1rem .3rem; scrollbar-width:none;
+  }
+  #tabs::-webkit-scrollbar{ display:none; }
+  #tabs a{ white-space:nowrap; padding:.45rem .85rem; font-size:.85rem; }
+  .a11y-controls{ order:2; margin-left:auto; }
 }
