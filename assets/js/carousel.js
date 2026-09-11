@@ -1,9 +1,11 @@
 /* ════════════════════════════════════════════════
    CAROUSEL.JS — Galerie d'identité visuelle (accueil)
    Carrousel basé sur le scroll-snap natif (fluide et tactile
-   sur mobile) + flèches, points et défilement automatique
-   doux qui respecte prefers-reduced-motion et se met en pause
-   dès que l'utilisateur interagit.
+   sur mobile) + flèches et points. Volontairement SANS défilement
+   automatique : le public du club est majoritairement senior, et un
+   carrousel qui avance seul empêche de lire les images à son rythme.
+   L'avancée se fait uniquement par geste volontaire (flèche, point
+   ou glissement) — voir aussi WCAG 2.2.2 (Pause, Stop, Hide).
 ════════════════════════════════════════════════ */
 function initCarousel() {
   const track = document.getElementById('carouselTrack');
@@ -50,17 +52,6 @@ function initCarousel() {
     debounceScroll = setTimeout(majDots, 100);
   }, { passive: true });
   majDots();
-
-  const reduitAnimations = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduitAnimations) {
-    let auto = setInterval(() => {
-      const i = indexActuel();
-      allerA(i >= slides.length - 1 ? 0 : i + 1);
-    }, 5000);
-    const stopper = () => clearInterval(auto);
-    ['pointerdown', 'touchstart', 'wheel'].forEach(ev => track.addEventListener(ev, stopper, { passive: true }));
-    [prevBtn, nextBtn].forEach(b => b && b.addEventListener('click', stopper));
-  }
 }
 
 document.addEventListener('DOMContentLoaded', initCarousel);

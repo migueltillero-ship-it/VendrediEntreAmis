@@ -117,6 +117,8 @@ body {
     font-family:
         var(--font-sans);
 
+    font-size: 18px; /* base ergonomique : public majoritairement senior */
+
     line-height:
         1.75;
 
@@ -808,13 +810,16 @@ p {
 }
 
 .vea-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
     padding: .8rem 1.75rem;
     border-radius: var(--radius-xl);
     background: var(--bleu-encre);
     color: var(--blanc);
     font-family: var(--font-sans);
-    font-size: .85rem;
+    font-size: 1rem;
     font-weight: 600;
     text-decoration: none;
     text-align: center;
