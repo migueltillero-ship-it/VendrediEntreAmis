@@ -80,6 +80,30 @@
   .btn-reunion:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
   @media(max-width:600px){ .btn-reunion.nouveau{ font-size:0.85rem; padding:0.85rem 1.4rem; text-align:center; } }
 
+  /* 3. CARROUSEL D'IDENTITÉ VISUELLE */
+  .carousel-identite { position: relative; margin: 2.5rem auto 3rem; max-width: 1080px; padding: 0 1.5rem; }
+  .carousel-track {
+      display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0.5rem 0 1rem;
+  }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-slide {
+      flex: 0 0 auto; width: min(74vw, 300px); aspect-ratio: 2/3; scroll-snap-align: center;
+      border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin: 0;
+  }
+  .carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .carousel-arrow {
+      position: absolute; top: 42%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(255,255,255,0.92); border: 1px solid var(--gold); color: #12291c; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  .carousel-arrow.prev { left: -0.5rem; } .carousel-arrow.next { right: -0.5rem; }
+  .carousel-arrow:hover { background: var(--gold); color: #12291c; }
+  .carousel-dots { display: flex; justify-content: center; gap: 0.5rem; margin-top: 0.5rem; }
+  .carousel-dots button { width: 8px; height: 8px; border-radius: 50%; background: rgba(18,41,28,0.25); border: none; padding: 0; cursor: pointer; transition: all 0.2s; }
+  .carousel-dots button.active { background: var(--gold); width: 22px; border-radius: 4px; }
+  @media(max-width:720px){ .carousel-arrow{ display:none; } }
+
   .video-cta-flottant { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 50; width: 88px; height: 88px; border-radius: 50%; background: #0B3327; border: 1px solid var(--gold); color: #fff; font-size: 0.72rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.4rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s; }
   .video-cta-flottant:hover { background: var(--gold); color: #12291c; transform: scale(1.05); }
   @media(max-width:720px){ .video-cta-flottant{ width:72px; height:72px; font-size:0.62rem; } }
@@ -129,6 +153,22 @@
     <p class="lancement-badge">✨ Vendredi 11 — notre toute première séance ! On se retrouve, on se présente, et le voyage commence.</p>
   </section>
 
+  <!-- BLOQUE 3: GALERIE / CARROUSEL D'IDENTITÉ -->
+  <section class="carousel-identite" aria-label="Galerie Vendredi entre amis">
+    <div class="carousel-track" id="carouselTrack" tabindex="0">
+      <figure class="carousel-slide"><img src="assets/club/hero-bienvenue.jpg" alt="Affiche de bienvenue « Rejoins notre Vendredi entre amis »" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/marque-identite.jpg" alt="Soyez les bienvenus à Vendredi entre amis — un groupe qui s'embrasse" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/invitation-livres.jpg" alt="Terrasse de café parisienne, guirlande lumineuse et drapeau français" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/citation-mains.jpg" alt="Illustration de deux mains qui s'enlacent, symbole du club" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/structure-papier.jpg" alt="Vendredi entre amis — citation et identité du club" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/hero-cafe.jpg" alt="Mot de bienvenue de Miguel pour ce nouveau cycle" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/lettre-macarons.jpg" alt="La charte du club : rythme, thématique, partage et disponibilité" loading="lazy"></figure>
+    </div>
+    <button class="carousel-arrow prev" id="carouselPrev" aria-label="Image précédente"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="carousel-arrow next" id="carouselNext" aria-label="Image suivante"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </section>
+
   <!-- EL RESTO DE LA PÁGINA -->
   <div class="hero">
     <p class="eyebrow" id="accueil-temporada"></p>
@@ -172,6 +212,7 @@
 <a class="video-cta-flottant" href="https://us02web.zoom.us/j/2368165321" target="_blank" title="Entrer à la réunion Zoom">Rejoindre<br>la réunion</a>
 
 <script src="assets/js/calendrier.js"></script>
+<script src="assets/js/carousel.js"></script>
 <script src="assets/js/data-loader.js"></script>
 <script src="assets/js/progression.js"></script>
 <script src="assets/js/audio.js"></script>
