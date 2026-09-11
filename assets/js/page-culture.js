@@ -14,7 +14,8 @@
   items.slice().reverse().forEach(s => {
     const div = document.createElement('div');
     div.className = 'culture-card';
-    div.innerHTML = `<h3>${s.destino}, ${s.pais}</h3><p>${s.cultura}</p>`;
+    const titre = s.destino ? `${s.destino}, ${s.pais}` : s.tema;
+    div.innerHTML = `<h3>${titre}</h3><p>${s.cultura}</p>`;
     cont.appendChild(div);
   });
 })();
