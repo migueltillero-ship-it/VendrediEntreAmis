@@ -9,18 +9,52 @@
 ════════════════════════════════════════════════ */
 const CARNET_KEY = 'mt-carnet-voyage';
 const CARNET_TELEFONO_KEY = 'mt-carnet-telefono';
+const CARNET_NOMBRE_KEY = 'mt-carnet-nombre';
 
 function leerCarnetLocal() { try { return JSON.parse(localStorage.getItem(CARNET_KEY)) || []; } catch (e) { return []; } }
 function guardarCarnetLocal(lista) { localStorage.setItem(CARNET_KEY, JSON.stringify(lista)); }
+
+/* Ne garde que les chiffres et le "+" initial, pour que le numéro tapé par
+   la personne corresponde toujours au même format, quel que soit la façon
+   dont elle l'a écrit (espaces, tirets, parenthèses...). */
+function normalizarTelefono(tel) {
+  return (tel || '').trim().replace(/[^\d+]/g, '');
+}
 
 function telefonoGuardado() {
   return (localStorage.getItem(CARNET_TELEFONO_KEY) || '').trim() || null;
 }
 function guardarTelefono(telefono) {
-  localStorage.setItem(CARNET_TELEFONO_KEY, telefono.trim());
+  localStorage.setItem(CARNET_TELEFONO_KEY, normalizarTelefono(telefono));
 }
 function olvidarTelefono() {
   localStorage.removeItem(CARNET_TELEFONO_KEY);
+}
+
+function nombreGuardado() {
+  return (localStorage.getItem(CARNET_NOMBRE_KEY) || '').trim() || null;
+}
+function guardarNombre(nombre) {
+  localStorage.setItem(CARNET_NOMBRE_KEY, nombre);
+}
+function olvidarNombre() {
+  localStorage.removeItem(CARNET_NOMBRE_KEY);
+}
+
+/* Bienvenue personnalisée : si le numéro correspond à un·e élève connu·e
+   (voir supabase/carnet-bienvenida-estudiantes.sql), on récupère son
+   prénom une fois et on le garde en cache local. */
+async function buscarYCachearNombre(tel) {
+  try {
+    const { data, error } = await window.supabaseClient.rpc('vea_estudiante_por_telefono', { p_telefono: tel });
+    if (error) throw error;
+    if (data) { guardarNombre(data); return data; }
+    olvidarNombre();
+    return null;
+  } catch (e) {
+    console.warn('Carnet : recherche du prénom indisponible.', e);
+    return null;
+  }
 }
 
 function carnetSincronizado() {
@@ -148,18 +182,24 @@ function initCarnetSync(idContenedorListe) {
   const wrap = document.getElementById('carnetSync');
   if (!wrap) return;
 
-  function afficherEtat() {
+  async function afficherEtat() {
     if (!window.supabaseConfigurado) {
       wrap.innerHTML = '<p class="muted">Ce carnet est privé à cet appareil.</p>';
       return;
     }
     const tel = telefonoGuardado();
     if (tel) {
+      let nombre = nombreGuardado();
+      if (!nombre) nombre = await buscarYCachearNombre(tel);
+      const saludo = nombre
+        ? `👋 Bienvenue, <strong>${nombre}</strong> ! Ton carnet te suit sur tous tes appareils.`
+        : `📱 Synchronisé avec <strong>${tel}</strong> — retrouve ton carnet sur n'importe quel appareil.`;
       wrap.innerHTML = `
-        <p class="muted">📱 Synchronisé avec <strong>${tel}</strong> — retrouve ton carnet sur n'importe quel appareil.
+        <p class="muted">${saludo}
         <button type="button" class="btn secondary" id="btnOublierTel" style="margin-left:.5rem;">Changer de numéro</button></p>`;
       document.getElementById('btnOublierTel').addEventListener('click', () => {
         olvidarTelefono();
+        olvidarNombre();
         afficherEtat();
         renderCarnet(idContenedorListe);
       });
