@@ -1,21 +1,102 @@
-﻿/* ════════ MON CARNET DE VOYAGE (Local Storage) ════════ */
+/* ════════════════════════════════════════════════
+   MON CARNET DE VOYAGE
+   Par défaut, le carnet vit dans le localStorage de l'appareil (comme
+   avant — aucun changement pour qui n'active pas la synchronisation).
+   Si la personne indique son numéro WhatsApp une fois, le carnet passe
+   en mode « synchronisé » : il est lu/écrit dans Supabase (voir
+   assets/js/supabase-config.js) et suit le même numéro sur n'importe
+   quel appareil où il est ressaisi. Aucun mot de passe, aucun compte.
+════════════════════════════════════════════════ */
 const CARNET_KEY = 'mt-carnet-voyage';
-function leerCarnet() { try { return JSON.parse(localStorage.getItem(CARNET_KEY)) || []; } catch(e) { return []; } }
-function guardarCarnet(lista) { localStorage.setItem(CARNET_KEY, JSON.stringify(lista)); }
+const CARNET_TELEFONO_KEY = 'mt-carnet-telefono';
 
-function agregarAlCarnet(texto, tipo) {
-    if (!texto) return;
-    const lista = leerCarnet();
-    lista.push({ texto, tipo, fecha: new Date().toLocaleDateString('fr-FR') });
-    guardarCarnet(lista);
-    alert('✨ "' + texto + '" a été ajouté à ton carnet !');
+function leerCarnetLocal() { try { return JSON.parse(localStorage.getItem(CARNET_KEY)) || []; } catch (e) { return []; } }
+function guardarCarnetLocal(lista) { localStorage.setItem(CARNET_KEY, JSON.stringify(lista)); }
+
+function telefonoGuardado() {
+  return (localStorage.getItem(CARNET_TELEFONO_KEY) || '').trim() || null;
+}
+function guardarTelefono(telefono) {
+  localStorage.setItem(CARNET_TELEFONO_KEY, telefono.trim());
+}
+function olvidarTelefono() {
+  localStorage.removeItem(CARNET_TELEFONO_KEY);
 }
 
-/* Rendu de la liste dans un conteneur, avec suppression */
-function renderCarnet(idContenedor) {
+function carnetSincronizado() {
+  return !!(window.supabaseConfigurado && telefonoGuardado());
+}
+
+/* ─── Lecture / écriture, selon le mode actif ─── */
+
+async function leerCarnet() {
+  if (!carnetSincronizado()) return leerCarnetLocal();
+  try {
+    const { data, error } = await window.supabaseClient.rpc('vea_carnet_por_telefono', { p_telefono: telefonoGuardado() });
+    if (error) throw error;
+    return (data || []).map(fila => ({
+      id: fila.id,
+      texto: fila.texto,
+      tipo: fila.tipo,
+      fecha: new Date(fila.created_at).toLocaleDateString('fr-FR'),
+    }));
+  } catch (e) {
+    console.warn('Carnet : lecture Supabase impossible, repli local.', e);
+    return leerCarnetLocal();
+  }
+}
+
+async function agregarEntrada(texto, tipo) {
+  if (!texto) return { ok: false };
+  if (carnetSincronizado()) {
+    try {
+      const { error } = await window.supabaseClient.from('vea_carnet').insert({
+        telefono: telefonoGuardado(), texto, tipo,
+      });
+      if (error) throw error;
+      return { ok: true };
+    } catch (e) {
+      console.warn('Carnet : écriture Supabase impossible.', e);
+      return { ok: false, erreur: true };
+    }
+  }
+  const lista = leerCarnetLocal();
+  lista.push({ texto, tipo, fecha: new Date().toLocaleDateString('fr-FR') });
+  guardarCarnetLocal(lista);
+  return { ok: true };
+}
+
+async function eliminarEntrada(item, idxLocal) {
+  if (carnetSincronizado() && item.id) {
+    try {
+      const { error } = await window.supabaseClient.rpc('vea_carnet_borrar', { p_id: item.id, p_telefono: telefonoGuardado() });
+      if (error) throw error;
+    } catch (e) {
+      console.warn('Carnet : suppression Supabase impossible.', e);
+    }
+    return;
+  }
+  const actual = leerCarnetLocal();
+  actual.splice(idxLocal, 1);
+  guardarCarnetLocal(actual);
+}
+
+/* Point d'entrée utilisé ailleurs sur le site (ex. theme-routine.html,
+   bouton 🔖 « ajouter au carnet » à côté du vocabulaire). */
+function agregarAlCarnet(texto, tipo) {
+  if (!texto) return;
+  agregarEntrada(texto, tipo).then(res => {
+    if (res.ok) alert('✨ "' + texto + '" a été ajouté à ton carnet !');
+    else alert('Impossible d\'ajouter au carnet pour le moment — vérifie ta connexion et réessaie.');
+  });
+}
+
+/* ─── Rendu de la liste, avec suppression ─── */
+async function renderCarnet(idContenedor) {
   const cont = document.getElementById(idContenedor);
   if (!cont) return;
-  const lista = leerCarnet();
+  cont.innerHTML = '<div class="empty-state">Chargement…</div>';
+  const lista = await leerCarnet();
   cont.innerHTML = '';
   if (lista.length === 0) {
     cont.innerHTML = '<div class="empty-state">Ton carnet est vide pour l\'instant — ajoute ton premier mot, expression ou réflexion ci-dessus.</div>';
@@ -32,10 +113,8 @@ function renderCarnet(idContenedor) {
       </div>
       <button class="del" aria-label="Supprimer">✕</button>
     `;
-    div.querySelector('.del').addEventListener('click', () => {
-      const actual = leerCarnet();
-      actual.splice(idxReal, 1);
-      guardarCarnet(actual);
+    div.querySelector('.del').addEventListener('click', async () => {
+      await eliminarEntrada(item, idxReal);
       renderCarnet(idContenedor);
     });
     cont.appendChild(div);
@@ -46,15 +125,62 @@ function renderCarnet(idContenedor) {
 function initCarnetForm(idFormulario, idTexto, idTipo, idContenedor) {
   const form = document.getElementById(idFormulario);
   if (!form) return;
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
     const texto = document.getElementById(idTexto).value.trim();
     const tipo = document.getElementById(idTipo).value;
     if (!texto) return;
-    const lista = leerCarnet();
-    lista.push({ texto, tipo, fecha: new Date().toLocaleDateString('fr-FR') });
-    guardarCarnet(lista);
+    const boton = form.querySelector('button[type="submit"]');
+    if (boton) boton.disabled = true;
+    const res = await agregarEntrada(texto, tipo);
+    if (boton) boton.disabled = false;
+    if (!res.ok) {
+      alert('Impossible d\'ajouter au carnet pour le moment — vérifie ta connexion et réessaie.');
+      return;
+    }
     document.getElementById(idTexto).value = '';
     renderCarnet(idContenedor);
   });
+}
+
+/* ─── Bandeau de synchronisation (numéro WhatsApp, sans mot de passe) ─── */
+function initCarnetSync(idContenedorListe) {
+  const wrap = document.getElementById('carnetSync');
+  if (!wrap) return;
+
+  function afficherEtat() {
+    if (!window.supabaseConfigurado) {
+      wrap.innerHTML = '<p class="muted">Ce carnet est privé à cet appareil.</p>';
+      return;
+    }
+    const tel = telefonoGuardado();
+    if (tel) {
+      wrap.innerHTML = `
+        <p class="muted">📱 Synchronisé avec <strong>${tel}</strong> — retrouve ton carnet sur n'importe quel appareil.
+        <button type="button" class="btn secondary" id="btnOublierTel" style="margin-left:.5rem;">Changer de numéro</button></p>`;
+      document.getElementById('btnOublierTel').addEventListener('click', () => {
+        olvidarTelefono();
+        afficherEtat();
+        renderCarnet(idContenedorListe);
+      });
+    } else {
+      wrap.innerHTML = `
+        <form id="formActivarSync" class="entry-form" style="margin-bottom:1.5rem;">
+          <label class="muted" for="carnetTelInput" style="margin-bottom:.3rem;">Synchronise ton carnet avec ton numéro WhatsApp (facultatif — sans mot de passe) :</label>
+          <input type="tel" id="carnetTelInput" placeholder="+58 412 000 0000" required>
+          <button type="submit" class="btn">Activer la synchronisation</button>
+        </form>`;
+      document.getElementById('formActivarSync').addEventListener('submit', e => {
+        e.preventDefault();
+        const input = document.getElementById('carnetTelInput');
+        const tel = input.value.trim();
+        if (!tel) return;
+        guardarTelefono(tel);
+        afficherEtat();
+        renderCarnet(idContenedorListe);
+      });
+    }
+  }
+
+  afficherEtat();
 }
