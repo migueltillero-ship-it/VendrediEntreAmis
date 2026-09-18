@@ -8,7 +8,7 @@ const EVENEMENT_CLUB = {
   titre: 'Vendredi entre Amis — Club de conversation en français',
   lieu: 'En ligne (Zoom) — lien dans le groupe WhatsApp',
   description: "Chaque vendredi, une conversation. Chaque semaine, une nouvelle destination francophone. Rejoignez-nous sur Zoom : https://us02web.zoom.us/j/2368165321",
-  dateLancement: '2026-09-11', // 1er vendredi
+  dateLancement: '2026-09-18', // 1er vendredi
   heureDebut: '18:00',         // heure du Mexique (confirmé)
   heureFin: '19:30',           // heure du Mexique (confirmé)
   fuseauIana: 'America/Mexico_City', // utilisé par Google Calendar (ctz)
