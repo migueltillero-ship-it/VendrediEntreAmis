@@ -1,10 +1,12 @@
 /* ════════════════════════════════════════════════
-   PAGE-JEUX.JS — Quiz de vocabulaire
-   Pioche dans tout le vocabulaire déjà vu (semaines 1 à
-   SEMANA_ACTUAL) pour composer des questions à choix multiple.
+   PAGE-JEUX.JS — Quiz de vocabulaire et d'expressions
+   Pioche dans tout le vocabulaire et toutes les expressions
+   du parcours (52 semaines) pour composer des questions à
+   choix multiple — deux modes de jeu, par niveau.
 ════════════════════════════════════════════════ */
 let JEUX_DATA = null;
 let niveauActif = 'todos';
+let modeActif = 'vocab';
 let score = 0;
 let total = 0;
 let motActuel = null;
@@ -21,20 +23,32 @@ function melanger(tableau) {
 function vocabulairePool(niveau) {
   const niveaux = niveau === 'todos' ? ['a1a2', 'b1b2'] : [niveau];
   const pool = [];
-  JEUX_DATA.semanas.filter(s => s.semana <= SEMANA_ACTUAL).forEach(s => {
+  JEUX_DATA.semanas.forEach(s => {
     niveaux.forEach(n => s[n].vocabulario.forEach(v => pool.push(v)));
   });
   return pool;
 }
 
+function expressionsPool(niveau) {
+  return ClubData.todasLasExpresiones(JEUX_DATA.semanas, JEUX_DATA.total_semanas)
+    .filter(e => niveau === 'todos' || e.nivel === niveau);
+}
+
+function poolActif() {
+  return modeActif === 'vocab' ? vocabulairePool(niveauActif) : expressionsPool(niveauActif);
+}
+
 function nouvelleQuestion() {
-  const pool = vocabulairePool(niveauActif);
+  const pool = poolActif();
   const feedback = document.getElementById('quiz-feedback');
   feedback.textContent = '';
+  document.getElementById('quiz-consigne').textContent = modeActif === 'vocab'
+    ? 'Quelle est la bonne traduction de :'
+    : 'Que signifie cette expression ?';
   if (pool.length < 4) {
     document.getElementById('quiz-mot-fr').textContent = '—';
     document.getElementById('quiz-options').innerHTML = '';
-    feedback.textContent = "Pas encore assez de vocabulaire à ce niveau — reviens après quelques semaines !";
+    feedback.textContent = "Pas assez d'entrées à ce niveau pour ce mode de jeu.";
     return;
   }
   motActuel = pool[Math.floor(Math.random() * pool.length)];
@@ -71,6 +85,13 @@ function repondre(opt, btnClique) {
   setTimeout(nouvelleQuestion, 1400);
 }
 
+function reinitialiserScore() {
+  score = 0; total = 0;
+  document.getElementById('quiz-score').textContent = 0;
+  document.getElementById('quiz-total').textContent = 0;
+  nouvelleQuestion();
+}
+
 (async function () {
   JEUX_DATA = await ClubData.cargar();
   nouvelleQuestion();
@@ -80,10 +101,20 @@ function repondre(opt, btnClique) {
       document.querySelectorAll('#quiz-filtros button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       niveauActif = btn.dataset.nivel;
-      score = 0; total = 0;
-      document.getElementById('quiz-score').textContent = 0;
-      document.getElementById('quiz-total').textContent = 0;
-      nouvelleQuestion();
+      reinitialiserScore();
     });
+  });
+
+  document.querySelectorAll('#quiz-modes button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#quiz-modes button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      modeActif = btn.dataset.mode;
+      reinitialiserScore();
+    });
+  });
+
+  document.getElementById('quiz-ecouter').addEventListener('click', () => {
+    if (motActuel) decirFrances(motActuel.fr);
   });
 })();
