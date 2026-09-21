@@ -20,32 +20,63 @@
 <main class="container">
   <p class="eyebrow">Écoute, écris, corrige-toi</p>
   <h1>La Dictée du Vendredi</h1>
-  <p class="muted" style="max-width:60ch;margin:.5rem 0 1.5rem;">Écoute le texte (autant de fois que tu veux — il y a même une version « lente »), écris ce que tu entends, puis affiche le corrigé pour te comparer. Pas de note, pas de pression : juste l'oreille qui s'entraîne.</p>
+  <p class="muted" style="max-width:60ch;margin:.5rem 0 1.5rem;">Choisis un texte (ou clique sur « aléatoire »), écoute-le (autant de fois que tu veux — il y a même une version « lente »), écris ce que tu entends, puis vérifie mot à mot ou affiche le corrigé. Pas de note, pas de pression : juste l'oreille qui s'entraîne.</p>
 
-  <h3>Niveau A1–A2</h3>
+  <h3>Niveau A1–A2 · Débutant</h3>
   <div class="dictee-box">
+    <div class="dictee-controls">
+      <select id="dictee-select-a1a2" class="dictee-select"></select>
+      <button class="btn secondary" id="dictee-aleatoire-a1a2">🔀 Aléatoire</button>
+    </div>
     <div class="dictee-controls">
       <button class="btn" id="dictee-ecouter-a1a2">🔊 Écouter</button>
       <button class="btn secondary" id="dictee-lent-a1a2">🐢 Version lente</button>
     </div>
     <textarea id="dictee-texte-a1a2" placeholder="Écris ici ce que tu entends..."></textarea>
     <div class="dictee-controls">
+      <button class="btn secondary" id="dictee-verifier-a1a2">✔️ Vérifier mot à mot</button>
       <button class="btn secondary" id="dictee-corriger-a1a2">Afficher le corrigé</button>
     </div>
+    <div id="dictee-score-a1a2"></div>
     <div class="dictee-corrige"><p id="dictee-corrige-a1a2"></p></div>
   </div>
 
-  <h3 style="margin-top:2.5rem;">Niveau B1–B2</h3>
+  <h3 style="margin-top:2.5rem;">Niveau B1–B2 · Intermédiaire</h3>
   <div class="dictee-box">
+    <div class="dictee-controls">
+      <select id="dictee-select-b1b2" class="dictee-select"></select>
+      <button class="btn secondary" id="dictee-aleatoire-b1b2">🔀 Aléatoire</button>
+    </div>
     <div class="dictee-controls">
       <button class="btn" id="dictee-ecouter-b1b2">🔊 Écouter</button>
       <button class="btn secondary" id="dictee-lent-b1b2">🐢 Version lente</button>
     </div>
     <textarea id="dictee-texte-b1b2" placeholder="Écris ici ce que tu entends..."></textarea>
     <div class="dictee-controls">
+      <button class="btn secondary" id="dictee-verifier-b1b2">✔️ Vérifier mot à mot</button>
       <button class="btn secondary" id="dictee-corriger-b1b2">Afficher le corrigé</button>
     </div>
+    <div id="dictee-score-b1b2"></div>
     <div class="dictee-corrige"><p id="dictee-corrige-b1b2"></p></div>
+  </div>
+
+  <h3 style="margin-top:2.5rem;">Niveau C1–C2 · Avancé</h3>
+  <div class="dictee-box">
+    <div class="dictee-controls">
+      <select id="dictee-select-c1c2" class="dictee-select"></select>
+      <button class="btn secondary" id="dictee-aleatoire-c1c2">🔀 Aléatoire</button>
+    </div>
+    <div class="dictee-controls">
+      <button class="btn" id="dictee-ecouter-c1c2">🔊 Écouter</button>
+      <button class="btn secondary" id="dictee-lent-c1c2">🐢 Version lente</button>
+    </div>
+    <textarea id="dictee-texte-c1c2" placeholder="Écris ici ce que tu entends..."></textarea>
+    <div class="dictee-controls">
+      <button class="btn secondary" id="dictee-verifier-c1c2">✔️ Vérifier mot à mot</button>
+      <button class="btn secondary" id="dictee-corriger-c1c2">Afficher le corrigé</button>
+    </div>
+    <div id="dictee-score-c1c2"></div>
+    <div class="dictee-corrige"><p id="dictee-corrige-c1c2"></p></div>
   </div>
 
   <section style="margin-top:3rem;">

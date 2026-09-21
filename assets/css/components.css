@@ -128,9 +128,15 @@
   width:100%; min-height:120px; margin-top:1rem; padding:.85rem; border-radius:var(--radius);
   border:1px solid var(--border); font-family:inherit; font-size:1rem; resize:vertical;
 }
-.dictee-controls{ display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem; }
+.dictee-controls{ display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem; align-items:center; }
 .dictee-corrige{ display:none; margin-top:1.25rem; padding:1rem; border-radius:var(--radius); background:var(--goldx); border:1px dashed var(--gold); }
 .dictee-corrige.visible{ display:block; }
+.dictee-select{
+  font-family:inherit; padding:.65rem .9rem; min-height:var(--touch); border-radius:8px; border:1px solid var(--border); font-size:1rem; flex:1; min-width:180px;
+}
+.dictee-score{ font-weight:700; margin-top:1rem; }
+.mot-ok{ color:var(--em1); }
+.mot-erreur{ color:#c83c3c; text-decoration:underline wavy; }
 
 .entry-form{
   display:grid; gap:.6rem; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:1.5rem;
