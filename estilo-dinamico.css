@@ -75,3 +75,73 @@ footer { text-align: center; padding: 2rem; font-family: 'Syne', sans-serif; fon
 @media (max-width: 400px) {
   .nav-scroll { grid-template-columns: 1fr; }
 }
+
+/* ════════ TOPBAR PARTAGÉE (assets/js/nav.js) ════════
+   Rendue en JS dans #topbar-mount / #club-footer — remplace .barra
+   sur les pages migrées vers la navigation commune du site. */
+#topbar {
+  position: sticky; top: 0; z-index: 1000;
+  background: rgba(11, 51, 39, 0.9); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0.8rem 1.5rem;
+  display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+}
+.brand { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; color: #fff; text-decoration: none; white-space: nowrap; }
+.brand span { color: var(--gold); }
+#tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; flex: 1; }
+#tabs a {
+  display: inline-flex; align-items: center; min-height: 2.75rem; border-radius: 999px;
+  padding: 0.5rem 1rem; font-size: 0.95rem; font-weight: 600;
+  color: rgba(255,255,255,0.85); text-decoration: none; font-family: 'Syne', sans-serif;
+  transition: color 0.2s, background 0.2s;
+}
+#tabs a:hover { color: var(--gold-claro); }
+#tabs a.active { background: var(--gold); color: #0b3327; }
+.topbar-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem;
+  background: var(--gold); color: #0b3327; font-family: 'Syne', sans-serif; font-weight: 700;
+  padding: 0.6rem 1.3rem; font-size: 0.95rem; border-radius: 6px; text-decoration: none; transition: background 0.2s;
+}
+.topbar-cta:hover { background: var(--gold-claro); }
+
+footer#club-footer {
+  text-align: center; padding: 2rem 1rem; font-family: 'Syne', sans-serif; font-size: 0.8rem;
+  color: var(--muted); border-top: 1px solid var(--line); margin-top: 2rem;
+}
+.footer-decouverte {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1.2rem; margin-bottom: 1rem;
+  font-family: 'Syne', sans-serif; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase;
+}
+.footer-decouverte a { color: var(--gold-claro); text-decoration: none; }
+.footer-decouverte a:hover, .footer-decouverte a.active { color: #fff; text-decoration: underline; }
+.footer-copy a { color: var(--gold-claro); text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .topbar-inner { flex-direction: column; align-items: stretch; gap: 0.6rem; }
+  #tabs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+  #tabs a { justify-content: center; text-align: center; background: rgba(255,255,255,0.06); }
+  .topbar-cta { width: 100%; justify-content: center; }
+}
+
+/* ════════ .btn / .recurso-card ════════
+   Utilisées par recursos.html — n'avaient jusqu'ici aucun style
+   (composants pensés pour l'autre feuille de styles du site). */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 3rem;
+  background: var(--gold); color: #0b3327; font-family: 'Syne', sans-serif; font-weight: 700;
+  padding: 0.8rem 1.4rem; font-size: 0.95rem; border-radius: 6px; text-decoration: none; transition: background 0.2s;
+}
+.btn:hover { background: var(--gold-claro); }
+.btn.secondary { background: transparent; color: #fff; border: 1px solid var(--gold); }
+.btn.secondary:hover { background: rgba(255,255,255,0.08); }
+
+.recurso-card {
+  display: flex; align-items: center; gap: 1rem; background: rgba(0,0,0,0.3); border: 1px solid var(--line);
+  border-radius: 8px; padding: 1.2rem; color: #fff; transition: transform 0.3s, border-color 0.3s;
+}
+.recurso-card:hover { transform: translateY(-3px); border-color: var(--gold); }
+.recurso-card > i { font-size: 1.5rem; color: var(--gold); }
+.r-texto h3 { margin: 0 0 0.3rem; font-size: 1.1rem; }
+.r-texto p { margin: 0; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
