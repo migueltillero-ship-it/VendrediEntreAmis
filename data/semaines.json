@@ -7,66 +7,66 @@
       "temporada_nombre": "Voyage en Francophonie",
       "destino": "Paris",
       "pais": "France",
-      "tema": "Se présenter dans un café parisien",
+      "tema": "Bienvenue : nos villes préférées & rendez-vous à Paris",
       "a1a2": {
         "vocabulario": [
           {
-            "fr": "un café",
-            "es": "un café"
+            "fr": "une ville",
+            "es": "una ciudad"
           },
           {
-            "fr": "l'addition",
-            "es": "la cuenta"
+            "fr": "préféré(e)",
+            "es": "favorito(a)"
           },
           {
-            "fr": "s'il vous plaît",
-            "es": "por favor"
+            "fr": "un monument",
+            "es": "un monumento"
           },
           {
-            "fr": "la terrasse",
-            "es": "la terraza"
+            "fr": "visiter",
+            "es": "visitar"
           },
           {
-            "fr": "un croissant",
-            "es": "un croissant"
+            "fr": "un souvenir",
+            "es": "un recuerdo"
           }
         ],
         "expresion": {
-          "fr": "Je voudrais...",
-          "es": "Quisiera..."
+          "fr": "Ma ville préférée, c'est...",
+          "es": "Mi ciudad favorita es..."
         },
-        "reto": "Graba un audio de 30 segundos pidiendo algo en un café imaginario."
+        "reto": "Miguel presentará un video sobre París en la próxima sesión. Antes de eso, elige 3 monumentos parisinos que te gustaría visitar y compártelos en tu Carnet de Voyage."
       },
       "b1b2": {
         "vocabulario": [
           {
-            "fr": "flâner",
-            "es": "pasear sin rumbo"
+            "fr": "un classement",
+            "es": "una clasificación"
           },
           {
-            "fr": "un quartier",
-            "es": "un barrio"
+            "fr": "incontournable",
+            "es": "imprescindible"
           },
           {
-            "fr": "un habitué",
-            "es": "un cliente habitual"
+            "fr": "un avis",
+            "es": "una reseña"
           },
           {
-            "fr": "l'ambiance",
-            "es": "el ambiente"
+            "fr": "deviner",
+            "es": "adivinar"
           },
           {
-            "fr": "bavarder",
-            "es": "charlar"
+            "fr": "surprenant(e)",
+            "es": "sorprendente"
           }
         ],
         "expresion": {
-          "fr": "Ça vaut le détour",
-          "es": "Vale la pena el desvío / vale la pena verlo"
+          "fr": "Je parie que...",
+          "es": "Apuesto a que..."
         },
-        "reto": "Describe en 5 frases tu café parisino ideal: dónde está, cómo es, qué pides."
+        "reto": "¿Cuál crees que es el Top 10 de monumentos de París mejor calificados por los usuarios de TripAdvisor en 2026? Comparte tu clasificación completa (¡con la posición de la Tour Eiffel incluida!) antes de la próxima sesión."
       },
-      "cultura": "En París, pedir un café significa casi siempre un espresso; si quieres uno largo, hay que pedir 'café allongé'."
+      "cultura": "En nuestra primera sesión, cada quien compartió su ciudad favorita — hicimos una parada en Cuenca y en Quito, y construimos juntos un compromiso de grupo en Honolulu. Para cerrar con broche de oro, Miguel propuso París como próximo destino: la sesión que viene presentará un video de la ciudad y el reto de adivinar el Top 10 de monumentos según TripAdvisor 2026."
     },
     {
       "semana": 2,
