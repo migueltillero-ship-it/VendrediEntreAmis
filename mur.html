@@ -18,15 +18,26 @@
     Entre deux vendredis, le mur garde le fil de notre communauté. C'est un espace de célébration, pas d'évaluation : on n'y note rien, on n'y corrige rien, on y partage simplement ce que la semaine nous a appris ou fait sourire. Para un club que se vive tanto en pantalla como en persona, este muro es el punto de encuentro que evita que la semana entre sesiones se sienta como una pausa vacía.
   </p>
 
-  <div id="bilan-semaine" style="background:rgba(197, 160, 89, 0.1); border:1px solid var(--gold); border-radius:8px; padding:2rem; margin-bottom:2.5rem;">
-    <span style="font-family:'Syne'; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold-claro);"><i class="fa-solid fa-clipboard-list"></i> Bilan de vendredi dernier</span>
-    <h2 style="font-size:1.5rem; margin:0.6rem 0 1rem;" id="bilan-titre"></h2>
-    <p style="color:rgba(255,255,255,0.9); font-size:1.05rem; margin-bottom:1.5rem;" id="bilan-resume"></p>
-    <h3 style="color:var(--gold-claro); font-size:1.1rem; margin-bottom:0.8rem;">Activités à réaliser avant le prochain vendredi</h3>
-    <ul style="color:rgba(255,255,255,0.9); font-size:1rem; padding-left:1.3rem; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
-      <li><strong>A1-A2 :</strong> <span id="bilan-reto-a1a2"></span></li>
-      <li><strong>B1-B2 :</strong> <span id="bilan-reto-b1b2"></span></li>
-    </ul>
+  <h2 style="font-size:1.6rem; color:var(--gold-claro); border-bottom:1px solid var(--line); padding-bottom:0.5rem; margin-top:0.5rem;"><i class="fa-solid fa-calendar-week"></i> Chaque vendredi</h2>
+  <p style="color:rgba(255,255,255,0.85); margin-bottom:1.2rem; max-width:70ch;">Le journal de nos sessions : la ville explorée, ce qui s'y est dit, et l'activité à réaliser avant de se retrouver.</p>
+  <div id="journal-semaines" style="display:flex; flex-direction:column; gap:1.5rem; margin-bottom:2.5rem;"></div>
+
+  <!-- Activité bespoke Semaine 1 : déplacée par assets/js/page-mur.js dans la carte du journal
+       correspondante (semana.activite_paris_monuments === true). -->
+  <div id="activite-paris" style="display:none;">
+    <h4 style="color:var(--gold-claro); font-size:1.2rem; margin:0 0 0.4rem;"><i class="fa-solid fa-ranking-star"></i> Activité : classe les monuments de Paris</h4>
+    <p style="color:rgba(255,255,255,0.9); margin-bottom:1.2rem;">Choisis, parmi les 20 monuments ci-dessous, ton Top 10 pour le classement TripAdvisor 2026 — clique pour ajouter, utilise les flèches pour réordonner, clique sur ✕ pour retirer. Miguel révèlera le vrai classement vendredi prochain !</p>
+
+    <p style="font-weight:700; color:var(--gold-claro); margin-bottom:0.6rem;">Mon Top 10</p>
+    <ol id="paris-classement" style="list-style:none; padding:0; margin:0 0 1.5rem; display:grid; gap:0.5rem;"></ol>
+
+    <p style="font-weight:700; color:var(--gold-claro); margin-bottom:0.6rem;">20 monuments à découvrir</p>
+    <div id="paris-banque" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:0.8rem;"></div>
+
+    <div style="margin-top:1.5rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+      <button type="button" id="paris-enregistrer" class="btn-oro" disabled>Enregistrer mon classement dans mon Carnet</button>
+      <span id="paris-statut" style="color:rgba(255,255,255,0.75); font-size:0.9rem;"></span>
+    </div>
   </div>
 
   <h2 style="font-size:1.6rem; color:var(--gold-claro); border-bottom:1px solid var(--line); padding-bottom:0.5rem; margin-top:0.5rem;">Ce que vous y trouverez</h2>
@@ -97,6 +108,10 @@
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/data-loader.js"></script>
 <script src="assets/js/progression.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/carnet.js"></script>
+<script src="assets/js/activite-paris.js"></script>
 <script src="assets/js/page-mur.js"></script>
 </body>
 </html>

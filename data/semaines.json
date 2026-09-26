@@ -3,11 +3,13 @@
   "semanas": [
     {
       "semana": 1,
+      "fecha": "2026-09-25",
       "temporada": 1,
       "temporada_nombre": "Voyage en Francophonie",
       "destino": "Paris",
       "pais": "France",
       "tema": "Bienvenue : nos villes préférées & rendez-vous à Paris",
+      "activite_paris_monuments": true,
       "a1a2": {
         "vocabulario": [
           {
