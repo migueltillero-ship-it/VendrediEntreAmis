@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilo-dinamico.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script>window.PAGE_PREFIX = ""; window.CURRENT_PAGE = "mur"; window.TOPBAR_CTA = { href: "https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis", label: "Rejoindre", icon: "fa-brands fa-whatsapp" };</script>
+<script>window.PAGE_PREFIX = ""; window.CURRENT_PAGE = "mur"; window.TOPBAR_CTA = { href: "https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis", label: "Rejoindre", icon: "fa-brands fa-whatsapp" }; window.DATA_PATH = "data/semaines.json";</script>
 </head>
 <body>
 <header id="topbar"><div id="topbar-mount"></div></header>
@@ -17,6 +17,17 @@
   <p style="font-size:1.1rem; color:rgba(255,255,255,0.9); line-height:1.8; margin-bottom:2rem; max-width:75ch;">
     Entre deux vendredis, le mur garde le fil de notre communauté. C'est un espace de célébration, pas d'évaluation : on n'y note rien, on n'y corrige rien, on y partage simplement ce que la semaine nous a appris ou fait sourire. Para un club que se vive tanto en pantalla como en persona, este muro es el punto de encuentro que evita que la semana entre sesiones se sienta como una pausa vacía.
   </p>
+
+  <div id="bilan-semaine" style="background:rgba(197, 160, 89, 0.1); border:1px solid var(--gold); border-radius:8px; padding:2rem; margin-bottom:2.5rem;">
+    <span style="font-family:'Syne'; font-size:0.7rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold-claro);"><i class="fa-solid fa-clipboard-list"></i> Bilan de vendredi dernier</span>
+    <h2 style="font-size:1.5rem; margin:0.6rem 0 1rem;" id="bilan-titre"></h2>
+    <p style="color:rgba(255,255,255,0.9); font-size:1.05rem; margin-bottom:1.5rem;" id="bilan-resume"></p>
+    <h3 style="color:var(--gold-claro); font-size:1.1rem; margin-bottom:0.8rem;">Activités à réaliser avant le prochain vendredi</h3>
+    <ul style="color:rgba(255,255,255,0.9); font-size:1rem; padding-left:1.3rem; margin:0; display:flex; flex-direction:column; gap:0.6rem;">
+      <li><strong>A1-A2 :</strong> <span id="bilan-reto-a1a2"></span></li>
+      <li><strong>B1-B2 :</strong> <span id="bilan-reto-b1b2"></span></li>
+    </ul>
+  </div>
 
   <h2 style="font-size:1.6rem; color:var(--gold-claro); border-bottom:1px solid var(--line); padding-bottom:0.5rem; margin-top:0.5rem;">Ce que vous y trouverez</h2>
   <div class="rejilla-6" style="margin-bottom:2.5rem;">
@@ -84,5 +95,8 @@
 </main>
 <footer id="club-footer">Vendredi entre amis · Un espace du professeur Miguel Tillero</footer>
 <script src="assets/js/nav.js"></script>
+<script src="assets/js/data-loader.js"></script>
+<script src="assets/js/progression.js"></script>
+<script src="assets/js/page-mur.js"></script>
 </body>
 </html>
