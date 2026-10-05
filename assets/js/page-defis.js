@@ -9,6 +9,7 @@ let defisFiltroActual = 'todos';
   renderRetoActual();
   renderHistorialDefis();
   activarFiltrosDefis();
+  document.getElementById('defis-search').addEventListener('input', renderHistorialDefis);
 })();
 
 function renderRetoActual() {
@@ -38,15 +39,17 @@ function activarFiltrosDefis() {
 
 function renderHistorialDefis() {
   const cont = document.getElementById('defis-list');
-  const todos = ClubData.todosLosDefis(DEFIS_DATA.semanas, SEMANA_ACTUAL);
+  const busqueda = document.getElementById('defis-search').value.toLowerCase();
+  const todos = ClubData.todosLosDefis(DEFIS_DATA.semanas, DEFIS_DATA.total_semanas);
   const datos = todos
     .filter(d => defisFiltroActual === 'todos' || d.nivel === defisFiltroActual)
+    .filter(d => !busqueda || `${d.texto} ${d.tema}`.toLowerCase().includes(busqueda))
     .slice()
     .reverse();
 
   cont.innerHTML = '';
   if (datos.length === 0) {
-    cont.innerHTML = '<div class="empty-state">Les défis des semaines précédentes apparaîtront ici au fil de l\'année.</div>';
+    cont.innerHTML = '<div class="empty-state">Aucun défi ne correspond à ta recherche.</div>';
     return;
   }
   datos.forEach(d => {

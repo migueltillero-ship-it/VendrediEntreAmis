@@ -7,23 +7,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="estilo-dinamico.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script>window.PAGE_PREFIX = ""; window.CURRENT_PAGE = "mediatheque"; window.TOPBAR_CTA = { href: "https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis", label: "Rejoindre", icon: "fa-brands fa-whatsapp" };</script>
 </head>
 <body>
-<header class="barra">
-  <div class="barra-in">
-    <a class="marca" href="../index.html">Miguel <b>Tillero</b></a>
-    <nav class="nav-scroll">
-      <a href="index.html">Accueil</a>
-      <a href="pourquoi.html">Le Concept</a>
-      <a href="animateur.html">L'Animateur</a>
-      <a href="niveles.html">Pédagogie</a>
-      <a href="recursos.html">Ressources</a>
-      <a href="comunidad.html">Communauté</a>
-      <a href="ideas.html">Contact</a>
-    </nav>
-    <a class="btn-oro" href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20souhaite%20rejoindre%20Vendredi%20entre%20amis" target="_blank"><i class="fa-brands fa-whatsapp"></i> Rejoindre</a>
-  </div>
-</header>
+<header id="topbar"><div id="topbar-mount"></div></header>
 <main class="contenedor-slide" style="max-width:900px;">
   <span style="font-family:'Syne'; font-size:0.8rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold-claro);">Immersion Culturelle</span>
   <h1 style="font-size:2.5rem; margin:0.5rem 0 2rem;">Médiathèque Francophone</h1>
@@ -32,25 +19,35 @@
     <div style="background:rgba(255,255,255,0.05); padding:1.5rem; border-radius:8px; border-top:3px solid var(--gold);">
       <h3 style="margin-top:0; color:var(--gold-claro);"><i class="fa-solid fa-film"></i> Cinéma & Séries</h3>
       <ul style="color:rgba(255,255,255,0.85); padding-left:1.2rem; line-height:1.6;">
-        <li><b>Intouchables</b> (B1) - Comédie dramatique</li>
-        <li><b>Le Fabuleux Destin d'Amélie Poulain</b> (B1) - Poésie visuelle</li>
-        <li><b>Lupin</b> (B2) - Série d'action contemporaine</li>
+        <li><a href="https://fr.wikipedia.org/wiki/Intouchables_(film)" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><b>Intouchables</b></a> (B1) - Comédie dramatique</li>
+        <li><a href="https://fr.wikipedia.org/wiki/Le_Fabuleux_Destin_d%27Am%C3%A9lie_Poulain" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><b>Le Fabuleux Destin d'Amélie Poulain</b></a> (B1) - Poésie visuelle</li>
+        <li><a href="https://fr.wikipedia.org/wiki/Lupin_(s%C3%A9rie_t%C3%A9l%C3%A9vis%C3%A9e)" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><b>Lupin</b></a> (B2) - Série d'action contemporaine</li>
       </ul>
     </div>
     <div style="background:rgba(255,255,255,0.05); padding:1.5rem; border-radius:8px; border-top:3px solid var(--gold);">
       <h3 style="margin-top:0; color:var(--gold-claro);"><i class="fa-solid fa-podcast"></i> Podcasts & Écoute</h3>
       <ul style="color:rgba(255,255,255,0.85); padding-left:1.2rem; line-height:1.6;">
-        <li><b>InnerFrench</b> - Idéal pour la transition A2 vers B1</li>
-        <li><b>Journal en français facile</b> - Actualité quotidienne (RFI)</li>
-        <li><b>Affaires Sensibles</b> - Histoire et investigation (C1)</li>
+        <li><a href="https://innerfrench.com/" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><b>InnerFrench</b></a> - Idéal pour la transition A2 vers B1</li>
+        <li><a href="https://francaisfacile.rfi.fr/" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><b>Journal en français facile</b></a> - Actualité quotidienne (RFI)</li>
+        <li><a href="https://www.radiofrance.fr/franceinter/podcasts/affaires-sensibles" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><b>Affaires Sensibles</b></a> - Histoire et investigation (C1)</li>
+      </ul>
+    </div>
+    <div style="background:rgba(255,255,255,0.05); padding:1.5rem; border-radius:8px; border-top:3px solid var(--gold);">
+      <h3 style="margin-top:0; color:var(--gold-claro);"><i class="fa-solid fa-laptop"></i> Sites de pratique</h3>
+      <ul style="color:rgba(255,255,255,0.85); padding-left:1.2rem; line-height:1.6;">
+        <li><a href="https://apprendre.tv5monde.com/" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><b>TV5MONDE · Apprendre</b></a> - Exercices interactifs à partir de vidéos, A1 à B2</li>
+        <li><a href="https://www.lepointdufle.net/" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><b>Le Point du FLE</b></a> - Répertoire d'exercices par point grammatical et niveau</li>
+        <li><a href="https://www.bonjourdefrance.com/" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><b>Bonjour de France</b></a> - Exercices et fiches de civilisation par niveau</li>
       </ul>
     </div>
     <div style="background:rgba(255,255,255,0.05); padding:1.5rem; border-radius:8px; border-top:3px solid var(--gold); grid-column:1 / -1;">
       <h3 style="margin-top:0; color:var(--gold-claro);"><i class="fa-solid fa-book"></i> Littérature Recommandée</h3>
-      <p style="color:rgba(255,255,255,0.85);">Du <em>Petit Prince</em> d'Antoine de Saint-Exupéry (A2) à <em>L'Étranger</em> d'Albert Camus (B2), la lecture est le meilleur allié de votre expression orale.</p>
+      <p style="color:rgba(255,255,255,0.85);">Du <a href="https://fr.wikipedia.org/wiki/Le_Petit_Prince" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><em>Petit Prince</em></a> d'Antoine de Saint-Exupéry (A2) à <a href="https://fr.wikipedia.org/wiki/L%27%C3%89tranger_(Camus)" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;"><em>L'Étranger</em></a> d'Albert Camus (B2), la lecture est le meilleur allié de votre expression orale.</p>
     </div>
   </div>
 </main>
+<footer id="club-footer">Vendredi entre amis · Un espace du professeur Miguel Tillero</footer>
+<script src="assets/js/nav.js"></script>
 </body>
 </html>
 

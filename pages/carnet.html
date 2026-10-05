@@ -17,9 +17,11 @@
 <header id="topbar"><div id="topbar-mount"></div></header>
 
 <main class="container">
-  <p class="eyebrow">Personnel &amp; privé — visible seulement sur cet appareil</p>
+  <p class="eyebrow">Ton journal personnel de vocabulaire</p>
   <h1>Mon Carnet de Voyage</h1>
   <p class="muted" style="max-width:60ch;margin:.5rem 0 1.5rem;">Note ici les mots nouveaux, les expressions qui te plaisent, ou une simple réflexion sur ton apprentissage.</p>
+
+  <div id="carnetSync" style="margin-bottom:1.5rem;"></div>
 
   <form id="carnet-form" class="entry-form">
     <textarea id="carnet-texto" placeholder="Écris un mot, une expression ou une réflexion..." required></textarea>
@@ -38,6 +40,8 @@
 <footer id="club-footer">Vendredi entre Amis · Un espace du professeur Miguel Tillero</footer>
 
 <script src="../assets/js/nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="../assets/js/supabase-config.js"></script>
 <script src="../assets/js/carnet.js"></script>
 <script src="../assets/js/page-carnet.js"></script>
 </body>

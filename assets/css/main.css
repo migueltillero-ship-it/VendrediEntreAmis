@@ -21,8 +21,9 @@
   --em2:     #1a5c45;
   --bg-grad: radial-gradient(ellipse 80% 80% at 50% 20%, #dcefe3 0%, #cfe6d9 55%, #bfdccb 100%);
   --radius:  14px;
-  --step:    1rem;         /* tamaño base de fuente, lo mueve el modo Confort */
-  --line:    1.6;
+  --step:    1.125rem;      /* base ergonomique (18px) : public majoritairement senior */
+  --line:    1.7;
+  --touch:   3rem;          /* taille tactile minimale confortable (48px) */
 }
 
 *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
@@ -45,7 +46,7 @@ h1,h2,h3{ font-family:'Cormorant Garamond', serif; font-weight:600; color:var(--
 h1{ font-size:clamp(2.1rem, 4vw, 3.1rem); line-height:1.15; }
 h2{ font-size:clamp(1.5rem, 2.6vw, 2rem); margin-bottom:.75rem; }
 h3{ font-size:1.25rem; margin-bottom:.4rem; }
-.eyebrow{ font-family:'Space Mono', monospace; font-size:.78rem; letter-spacing:.04em; color:var(--gold2); }
+.eyebrow{ font-family:'Space Mono', monospace; font-size:.85rem; letter-spacing:.04em; color:var(--gold2); }
 .muted{ color:var(--muted); }
 
 /* ═══ TOPBAR ═══ */
@@ -60,10 +61,10 @@ h3{ font-size:1.25rem; margin-bottom:.4rem; }
 }
 .brand{ font-family:'Cormorant Garamond', serif; font-size:1.35rem; font-weight:600; color:var(--em1); white-space:nowrap; }
 .brand span{ color:var(--gold); }
-#tabs{ display:flex; gap:.35rem; flex-wrap:wrap; flex:1; }
+#tabs{ display:flex; gap:.5rem; flex-wrap:wrap; flex:1; }
 #tabs a{
-  display:inline-block; border:1px solid transparent; border-radius:999px;
-  padding:.5rem 1rem; font-size:.92rem; color:var(--text);
+  display:inline-flex; align-items:center; min-height:var(--touch); border:1px solid transparent; border-radius:999px;
+  padding:.6rem 1.15rem; font-size:1rem; font-weight:600; color:var(--text);
 }
 #tabs a:hover{ border-color:var(--border); }
 #tabs a.active{ background:var(--em1); color:#fff; }
@@ -73,9 +74,31 @@ main{ padding:2.5rem 0 5rem; }
 footer#club-footer{
   text-align:center; padding:2.5rem 1rem; color:var(--muted); font-size:.85rem; border-top:1px solid var(--border); margin-top:2rem;
 }
+.footer-decouverte{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:.4rem 1.2rem; margin-bottom:1rem;
+  font-family:'Space Mono', monospace; font-size:.72rem; letter-spacing:.04em; text-transform:uppercase;
+}
+.footer-decouverte a{ color:var(--gold2); }
+.footer-decouverte a:hover{ color:var(--em1); text-decoration:underline; }
+.footer-copy a{ text-decoration:underline; }
 
 @media(max-width:720px){
   .mot-miguel{ flex-direction:column; }
+
+  .topbar-inner{ flex-wrap:wrap; padding:.85rem 1rem; gap:.6rem; }
+  .brand{ font-size:1.2rem; }
+  /* Navigation entièrement visible, sans défilement caché : une
+     grille de boutons que l'on peut tous voir et toucher d'emblée
+     — plus sûr pour un public peu habitué aux gestes de balayage. */
+  #tabs{
+    order:3; flex:1 1 100%; flex-wrap:wrap; display:grid;
+    grid-template-columns:repeat(2, 1fr); gap:.55rem;
+  }
+  #tabs a{ justify-content:center; text-align:center; padding:.7rem .5rem; font-size:.95rem; }
+}
+
+@media(max-width:380px){
+  #tabs{ grid-template-columns:1fr; }
 }
 
 /* ── Barra del sitio de Miguel y fondo 3D (se montan desde assets/js/nav.js) ── */

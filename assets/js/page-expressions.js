@@ -22,7 +22,7 @@ let EXPR_DATA = null;
 
 function renderExpresiones(filtroNivel = 'todos', busqueda = '') {
   const cont = document.getElementById('expr-list');
-  const datos = ClubData.todasLasExpresiones(EXPR_DATA.semanas, SEMANA_ACTUAL).filter(e => {
+  const datos = ClubData.todasLasExpresiones(EXPR_DATA.semanas, EXPR_DATA.total_semanas).filter(e => {
     const pasaNivel = filtroNivel === 'todos' || e.nivel === filtroNivel;
     const q = busqueda.toLowerCase();
     const pasaBusqueda = !busqueda || e.fr.toLowerCase().includes(q) || e.es.toLowerCase().includes(q);

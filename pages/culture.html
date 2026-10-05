@@ -19,6 +19,18 @@
 <main class="container">
   <p class="eyebrow">Un regard sur la Francophonie</p>
   <h1>Le Coin Culture</h1>
+  <p class="muted" style="max-width:60ch;margin:.5rem 0 1.5rem;">Toute la collection d'articles culturels du parcours — des villes francophones aux grands thèmes de société — à parcourir dans l'ordre que tu veux.</p>
+
+  <div class="toolbar">
+    <input type="search" id="culture-search" placeholder="Rechercher un lieu, un thème...">
+    <div class="pill-filters" id="culture-filtres">
+      <button class="active" data-saison="toutes">Toutes les saisons</button>
+      <button data-saison="1">🗺️ Voyage en Francophonie</button>
+      <button data-saison="2">💬 Parler de soi</button>
+      <button data-saison="3">🎭 Société et Culture</button>
+    </div>
+  </div>
+
   <div id="culture-list" style="margin-top:1.5rem;"></div>
 </main>
 

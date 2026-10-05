@@ -39,14 +39,23 @@ function renderCafe(numSemana) {
   document.getElementById('expr-a1a2-es').textContent = semana.a1a2.expresion.es;
   document.getElementById('expr-b1b2-fr').textContent = semana.b1b2.expresion.fr;
   document.getElementById('expr-b1b2-es').textContent = semana.b1b2.expresion.es;
+  remplacerAudio('expr-a1a2-audio', semana.a1a2.expresion.fr);
+  remplacerAudio('expr-b1b2-audio', semana.b1b2.expresion.fr);
 
   const culturaWrap = document.getElementById('cultura-wrap');
   if (semana.cultura) {
     culturaWrap.style.display = '';
     document.getElementById('cultura-texto').textContent = semana.cultura;
+    remplacerAudio('cultura-audio', semana.cultura);
   } else {
     culturaWrap.style.display = 'none';
   }
+}
+
+function remplacerAudio(contenedorId, texto) {
+  const wrap = document.getElementById(contenedorId);
+  wrap.innerHTML = '';
+  wrap.appendChild(botonEscuchar(texto));
 }
 
 function renderVocab(nivel, semana) {

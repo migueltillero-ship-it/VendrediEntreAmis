@@ -1,84 +1,80 @@
 /* ════════════════════════════════════════════════
-   NAV.JS — topbar compartida + Coin Sérénité (accesibilidad)
-   Cada página define ANTES de incluir este script:
+   NAV.JS — topbar compartida
+   Cada página définit AVANT d'inclure ce script :
      window.PAGE_PREFIX = ""      (en index.html, raíz)
      window.PAGE_PREFIX = "../"   (en pages/*.html)
-     window.CURRENT_PAGE = "cafe" (id de pestaña activa)
-
-   Nota: "Le Coin Sérénité" no es una página aparte — vive
-   en los botones A / A+ / A++ / ◐ del encabezado, visibles
-   en todas las páginas. Por eso no aparece en esta lista.
+     window.CURRENT_PAGE = "cafe" (id de pestaña/enlace activo)
+     window.TOPBAR_CTA = { href, label, icon }  (optionnel — bouton
+       d'appel à l'action affiché dans la topbar, ex. « Rejoindre »
+       sur les pages vitrine ; omis sur les pages d'activité)
 ════════════════════════════════════════════════ */
 (function () {
   const prefix = window.PAGE_PREFIX ?? '';
   const current = window.CURRENT_PAGE ?? '';
+  const cta = window.TOPBAR_CTA ?? null;
 
   const links = [
     { id: 'accueil', href: prefix + 'index.html', label: 'Accueil' },
     { id: 'cafe', href: prefix + 'pages/cafe.html', label: 'Le Café du Vendredi' },
     { id: 'defis', href: prefix + 'pages/defis.html', label: 'Le Défi de la Semaine' },
+    { id: 'jeux', href: prefix + 'pages/jeux.html', label: 'Jeux' },
+    { id: 'dictees', href: prefix + 'pages/dictees.html', label: 'Dictées' },
     { id: 'carnet', href: prefix + 'pages/carnet.html', label: 'Mon Carnet' },
     { id: 'expressions', href: prefix + 'pages/expressions.html', label: 'La Boîte à Expressions' },
     { id: 'culture', href: prefix + 'pages/culture.html', label: 'Le Coin Culture' },
     { id: 'amis', href: prefix + 'pages/amis.html', label: 'Entre Amis' },
   ];
 
+  /* Ponts vers l'écosystème pédagogique complet (pages "hors nav"
+     mais toujours en ligne : concept, pédagogie, ressources, contact...) */
+  const liensDecouverte = [
+    { id: 'pourquoi', href: prefix + 'pourquoi.html', label: 'Le Concept' },
+    { id: 'animateur', href: prefix + 'animateur.html', label: "L'Animateur" },
+    { id: 'niveles', href: prefix + 'niveles.html', label: 'Parcours CECR' },
+    { id: 'funciona', href: prefix + 'funciona.html', label: 'Comment ça marche' },
+    { id: 'recursos', href: prefix + 'recursos.html', label: 'Centre de Ressources' },
+    { id: 'bibliotheque', href: prefix + 'bibliotheque.html', label: 'Bibliothèque de Conversation' },
+    { id: 'mediatheque', href: prefix + 'mediatheque.html', label: 'Médiathèque' },
+    { id: 'temas', href: prefix + 'temas.html', label: 'Thèmes de conversation' },
+    { id: 'certification', href: prefix + 'certification.html', label: 'Espace DELF/DALF' },
+    { id: 'calendario', href: prefix + 'calendario.html', label: 'Calendrier' },
+    { id: 'comunidad', href: prefix + 'comunidad.html', label: 'Communauté' },
+    { id: 'mur', href: prefix + 'mur.html', label: 'Le Mur de Vendredi' },
+    { id: 'ideas', href: prefix + 'ideas.html', label: 'Contact & FAQ' },
+  ];
+
   const tabsHtml = links.map(l =>
     `<a href="${l.href}"${l.id === current ? ' class="active" aria-current="page"' : ''}>${l.label}</a>`
   ).join('');
+
+  const ctaHtml = cta
+    ? `<a class="topbar-cta" href="${cta.href}" target="_blank" rel="noopener">${cta.icon ? `<i class="${cta.icon}"></i> ` : ''}${cta.label}</a>`
+    : '';
 
   const html = `
     <div class="topbar-inner">
       <a class="brand" href="${prefix}index.html">Vendredi <span>entre Amis</span></a>
       <nav id="tabs" aria-label="Sections du club">${tabsHtml}</nav>
-      <div class="a11y-controls" role="group" aria-label="Confort de lecture — Coin Sérénité">
-        <button id="btn-a-normal" aria-pressed="true" title="Taille normale">A</button>
-        <button id="btn-a-plus" aria-pressed="false" title="Texte agrandi">A+</button>
-        <button id="btn-a-plusplus" aria-pressed="false" title="Texte très agrandi">A++</button>
-        <button id="btn-contraste" aria-pressed="false" title="Contraste élevé">◐</button>
-      </div>
+      ${ctaHtml}
     </div>`;
 
   barraDelSitio();
   document.getElementById('topbar-mount').innerHTML = html;
-  initA11y();
+  peuplerFooter(prefix, liensDecouverte, current);
   fondoDelSitio();
 })();
 
-function initA11y() {
-  const html = document.documentElement;
-  const guardado = JSON.parse(localStorage.getItem('a11y-prefs') || '{}');
-  if (guardado.tamano) html.classList.add(guardado.tamano);
-  if (guardado.contraste) html.classList.add('contraste');
-  actualizarBotonesA11y();
-
-  document.getElementById('btn-a-normal').addEventListener('click', () => setTamano(null));
-  document.getElementById('btn-a-plus').addEventListener('click', () => setTamano('confort'));
-  document.getElementById('btn-a-plusplus').addEventListener('click', () => setTamano('confort-plus'));
-  document.getElementById('btn-contraste').addEventListener('click', () => {
-    html.classList.toggle('contraste');
-    guardarPrefsA11y();
-    actualizarBotonesA11y();
-  });
-}
-function setTamano(clase) {
-  const html = document.documentElement;
-  html.classList.remove('confort', 'confort-plus');
-  if (clase) html.classList.add(clase);
-  guardarPrefsA11y();
-  actualizarBotonesA11y();
-}
-function guardarPrefsA11y() {
-  const html = document.documentElement;
-  const tamano = html.classList.contains('confort-plus') ? 'confort-plus' : (html.classList.contains('confort') ? 'confort' : null);
-  localStorage.setItem('a11y-prefs', JSON.stringify({ tamano, contraste: html.classList.contains('contraste') }));
-}
-function actualizarBotonesA11y() {
-  const html = document.documentElement;
-  document.getElementById('btn-a-normal').setAttribute('aria-pressed', String(!html.classList.contains('confort') && !html.classList.contains('confort-plus')));
-  document.getElementById('btn-a-plus').setAttribute('aria-pressed', String(html.classList.contains('confort')));
-  document.getElementById('btn-a-plusplus').setAttribute('aria-pressed', String(html.classList.contains('confort-plus')));
-  document.getElementById('btn-contraste').setAttribute('aria-pressed', String(html.classList.contains('contraste')));
+function peuplerFooter(prefix, liensDecouverte, current) {
+  const footer = document.getElementById('club-footer');
+  if (!footer) return;
+  const copyright = footer.textContent.trim();
+  const liensHtml = liensDecouverte.map(l =>
+    `<a href="${l.href}"${l.id === current ? ' class="active" aria-current="page"' : ''}>${l.label}</a>`
+  ).join('');
+  footer.innerHTML = `
+    <nav class="footer-decouverte" aria-label="Découvrir l'écosystème">${liensHtml}</nav>
+    <p class="footer-copy">${copyright} · <a href="https://migueltillero-ship-it.github.io/MiguelTillero/" target="_blank" rel="noopener">Site principal de Miguel Tillero</a></p>
+  `;
 }
 
 /* ════════════════════════════════════════════════
@@ -100,8 +96,11 @@ function barraDelSitio() {
     ['galeria.html',     { es: 'Galería', fr: 'Galerie', en: 'Gallery' }],
     ['mi-espacio.html',  { es: 'Mi espacio', fr: 'Mon espace', en: 'My space' }],
     [null,               { es: 'Vendredi entre Amis', fr: 'Vendredi entre Amis', en: 'Vendredi entre Amis' }],
-    ['inscribete.html',  { es: 'Inscríbete', fr: 'Inscription', en: 'Enroll' }],
-    ['contacto.html',    { es: 'Contacto', fr: 'Contact', en: 'Contact' }],
+    ['inscribete.html',  { es: 'Inscríbete', fr: 'Inscription', en: 'Enroll' }],
+
+
+    ['contacto.html',    { es: 'Contacto', fr: 'Contact', en: 'Contact' }],
+
   ];
   const links = items.map(it => it[0] === null
     ? '<a class="club-actual" href="' + (window.PAGE_PREFIX ?? '') + 'index.html" aria-current="page">' + it[1][lang] + '</a>'

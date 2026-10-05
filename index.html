@@ -38,6 +38,11 @@
       cursor: pointer; backdrop-filter: blur(8px); font-family: 'Syne', sans-serif; transition: all 0.3s;
   }
   .btn-audio-video:hover { background: var(--gold); color: #12291c; }
+  @media(max-width:720px){
+    .bloque-video-oficial{ height:42vh !important; min-height:280px !important; margin-top:70px !important; }
+    .bloque-texto-debajo h1{ font-size:2.3rem !important; }
+    .bloque-texto-debajo .manifeste{ font-size:1rem !important; }
+  }
 
   /* 2. BLOQUE DE TEXTO DESPLAZADO HACIA ABAJO */
   .bloque-texto-debajo {
@@ -60,10 +65,69 @@
   .bloque-texto-debajo .manifeste { font-style: italic; font-size: 1.15rem; margin-bottom: 2.5rem; line-height: 1.6; color: #14110D !important; opacity: 0.85; }
 
   .reuniones-bar { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .lancement-badge {
+      margin: 1.5rem auto 0; max-width: 520px; text-align: center;
+      font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600;
+      color: #12291c; background: rgba(201,169,110,0.18); border: 1px solid var(--gold);
+      border-radius: 30px; padding: 0.6rem 1.4rem;
+  }
+  .cta-nouveau-wrap { display: flex; justify-content: center; margin-bottom: 1rem; }
   .btn-reunion { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.8rem 1.6rem; border-radius: 30px; font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
   .btn-reunion.whatsapp { background: #25D366; color: #fff; }
   .btn-reunion.zoom { background: #0A84FF; color: #fff; }
+  .btn-reunion.calendrier { background: rgba(255,255,255,0.85); color: #12291c; border: 1px solid var(--gold); }
+  .btn-reunion.nouveau { background: var(--gold); color: #12291c; font-size: 0.95rem; padding: 1rem 2rem; box-shadow: 0 6px 22px rgba(165,130,74,0.35); }
   .btn-reunion:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+  @media(max-width:600px){ .btn-reunion.nouveau{ font-size:0.85rem; padding:0.85rem 1.4rem; text-align:center; } }
+
+  .fuseaux-wrap {
+      max-width: 480px; margin: 1.5rem auto 0; background: rgba(255,255,255,0.6);
+      border: 1px solid var(--gold); border-radius: 16px; padding: 1.25rem 1.5rem; text-align: center;
+  }
+  .fuseaux-titre {
+      font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700;
+      color: #12291c; margin-bottom: 0.9rem;
+  }
+  .fuseaux-select-wrap { display: flex; flex-direction: column; gap: 0.4rem; align-items: center; }
+  .fuseaux-select-wrap label { font-size: 0.85rem; color: #12291c; opacity: 0.8; }
+  #fuseauSelect {
+      width: 100%; max-width: 340px; min-height: 3rem; padding: 0.6rem 0.9rem;
+      border-radius: 10px; border: 1px solid var(--gold); background: #fff; font-family: inherit; font-size: 1rem;
+  }
+  .fuseaux-resultat {
+      margin-top: 1rem; font-family: 'Space Mono', monospace; font-size: 1.1rem; font-weight: 700; color: #0B3327;
+  }
+  .fuseaux-resultat .fuseau-note { font-weight: 400; opacity: 0.75; font-size: 0.85rem; }
+
+  /* 3. CARROUSEL D'IDENTITÉ VISUELLE */
+  /* Carrousel : pas de défilement automatique (le public lit à son
+     rythme) — on avance seulement avec les flèches, les points, ou en
+     glissant. Flèches toujours visibles, grandes et faciles à toucher. */
+  .carousel-identite { position: relative; margin: 2.5rem auto 3rem; max-width: 1080px; padding: 0 3.5rem; }
+  .carousel-track {
+      display: flex; gap: 1rem; overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0.5rem 0 1rem;
+  }
+  .carousel-track::-webkit-scrollbar { display: none; }
+  .carousel-slide {
+      flex: 0 0 auto; width: min(82vw, 340px); aspect-ratio: 2/3; scroll-snap-align: center;
+      border-radius: 14px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); margin: 0;
+  }
+  .carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .carousel-arrow {
+      position: absolute; top: 42%; transform: translateY(-50%); width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(255,255,255,0.96); border: 2px solid var(--gold); color: #12291c; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .carousel-arrow.prev { left: 0; } .carousel-arrow.next { right: 0; }
+  .carousel-arrow:hover, .carousel-arrow:focus-visible { background: var(--gold); color: #12291c; }
+  .carousel-dots { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+  .carousel-dots button { width: 14px; height: 14px; border-radius: 50%; background: rgba(18,41,28,0.25); border: none; padding: 0; cursor: pointer; transition: all 0.2s; }
+  .carousel-dots button.active { background: var(--gold); width: 34px; border-radius: 7px; }
+  @media(max-width:600px){
+      .carousel-identite{ padding: 0 3.1rem; }
+      .carousel-arrow{ width: 46px; height: 46px; }
+  }
 
   .video-cta-flottant { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 50; width: 88px; height: 88px; border-radius: 50%; background: #0B3327; border: 1px solid var(--gold); color: #fff; font-size: 0.72rem; font-weight: 600; text-align: center; display: flex; align-items: center; justify-content: center; padding: 0.4rem; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: transform 0.3s; }
   .video-cta-flottant:hover { background: var(--gold); color: #12291c; transform: scale(1.05); }
@@ -90,6 +154,12 @@
     <h1>Vendredi entre amis</h1>
     <p class="manifeste">« Chaque vendredi, une conversation. Chaque semaine, une progression. » Ici, on parle français sans peur, comme entre amis.</p>
 
+    <div class="cta-nouveau-wrap">
+      <a href="https://wa.me/584122465331?text=Bonjour%20Miguel%2C%20je%20suis%20nouveau%2Fnouvelle%20et%20je%20voudrais%20rejoindre%20Vendredi%20entre%20amis%20%21" target="_blank" class="btn-reunion nouveau">
+        <i class="fa-solid fa-hand-sparkles"></i> Je suis nouveau·elle, je veux rejoindre !
+      </a>
+    </div>
+
     <div class="reuniones-bar">
       <a href="https://chat.whatsapp.com/DtYaNnlHWktLobKA0tEEdB" target="_blank" class="btn-reunion whatsapp">
         <i class="fa-brands fa-whatsapp"></i> WhatsApp
@@ -97,7 +167,40 @@
       <a href="https://us02web.zoom.us/j/2368165321" target="_blank" class="btn-reunion zoom">
         <i class="fa-solid fa-video"></i> Zoom
       </a>
+      <a href="#" id="btn-calendrier-google" target="_blank" class="btn-reunion calendrier">
+        <i class="fa-solid fa-calendar-plus"></i> Ajouter au calendrier
+      </a>
+      <a href="#" id="btn-calendrier-ics" class="btn-reunion calendrier">
+        <i class="fa-solid fa-download"></i> Fichier .ics
+      </a>
     </div>
+
+    <p class="lancement-badge">✨ Rendez-vous chaque vendredi, 18h (heure du Mexique) — le voyage continue !</p>
+
+    <div class="fuseaux-wrap">
+      <p class="fuseaux-titre"><i class="fa-solid fa-earth-americas"></i> Découvre à quelle heure a lieu le club, où que tu sois</p>
+      <div class="fuseaux-select-wrap">
+        <label for="fuseauSelect">Choisis ton pays :</label>
+        <select id="fuseauSelect"></select>
+      </div>
+      <p class="fuseaux-resultat" id="fuseauResultat"></p>
+    </div>
+  </section>
+
+  <!-- BLOQUE 3: GALERIE / CARROUSEL D'IDENTITÉ -->
+  <section class="carousel-identite" aria-label="Galerie Vendredi entre amis">
+    <div class="carousel-track" id="carouselTrack" tabindex="0">
+      <figure class="carousel-slide"><img src="assets/club/hero-bienvenue.jpg" alt="Affiche de bienvenue « Rejoins notre Vendredi entre amis »" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/marque-identite.jpg" alt="Soyez les bienvenus à Vendredi entre amis — un groupe qui s'embrasse" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/invitation-livres.jpg" alt="Terrasse de café parisienne, guirlande lumineuse et drapeau français" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/citation-mains.jpg" alt="Illustration de deux mains qui s'enlacent, symbole du club" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/structure-papier.jpg" alt="Vendredi entre amis — citation et identité du club" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/hero-cafe.jpg" alt="Mot de bienvenue de Miguel pour ce nouveau cycle" loading="lazy"></figure>
+      <figure class="carousel-slide"><img src="assets/club/lettre-macarons.jpg" alt="La charte du club : rythme, thématique, partage et disponibilité" loading="lazy"></figure>
+    </div>
+    <button class="carousel-arrow prev" id="carouselPrev" aria-label="Image précédente"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="carousel-arrow next" id="carouselNext" aria-label="Image suivante"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="carousel-dots" id="carouselDots"></div>
   </section>
 
   <!-- EL RESTO DE LA PÁGINA -->
@@ -136,12 +239,67 @@
   <h2 style="margin-top:2.5rem;">Passeport Francophone</h2>
   <div class="passport-grid" id="passport-grid"></div>
 
+  <h2 style="margin-top:2.5rem;">Explorez nos activités</h2>
+  <p class="muted" style="max-width:640px;">Toute une bibliothèque d'exercices, par niveau et par thème, à parcourir librement entre deux vendredis.</p>
+  <div class="grid-cards">
+    <div class="card">
+      <span class="icon">☕</span>
+      <h3 style="margin:.5rem 0 0;">Le Café du Vendredi</h3>
+      <p>Vocabulaire, expression et culture de chacune des 52 semaines du parcours, à choisir librement.</p>
+      <a class="btn secondary" href="pages/cafe.html">Découvrir →</a>
+    </div>
+    <div class="card">
+      <span class="icon">🎯</span>
+      <h3 style="margin:.5rem 0 0;">Le Défi de la Semaine</h3>
+      <p>Plus de 100 petits défis d'expression, par niveau, pour pratiquer 5 minutes par jour.</p>
+      <a class="btn secondary" href="pages/defis.html">Découvrir →</a>
+    </div>
+    <div class="card">
+      <span class="icon">🎮</span>
+      <h3 style="margin:.5rem 0 0;">Jeux</h3>
+      <p>Un quiz de vocabulaire et d'expressions, plus une sélection de jeux en ligne pour s'amuser en français.</p>
+      <a class="btn secondary" href="pages/jeux.html">Découvrir →</a>
+    </div>
+    <div class="card">
+      <span class="icon">✍️</span>
+      <h3 style="margin:.5rem 0 0;">Dictées</h3>
+      <p>Des textes à écouter et à écrire, du niveau A1 au niveau C2, avec autocorrection.</p>
+      <a class="btn secondary" href="pages/dictees.html">Découvrir →</a>
+    </div>
+    <div class="card">
+      <span class="icon">💬</span>
+      <h3 style="margin:.5rem 0 0;">La Boîte à Expressions</h3>
+      <p>Plus de 100 expressions françaises, avec traduction et prononciation, cherchables par mot-clé.</p>
+      <a class="btn secondary" href="pages/expressions.html">Découvrir →</a>
+    </div>
+    <div class="card">
+      <span class="icon">🌍</span>
+      <h3 style="margin:.5rem 0 0;">Le Coin Culture</h3>
+      <p>Des villes francophones aux grands thèmes de société : toute une collection d'articles culturels.</p>
+      <a class="btn secondary" href="pages/culture.html">Découvrir →</a>
+    </div>
+    <div class="card">
+      <span class="icon">🤝</span>
+      <h3 style="margin:.5rem 0 0;">Entre Amis</h3>
+      <p>La question de la semaine, le mur des réussites, la carte du monde, et des podcasts pour s'entraîner.</p>
+      <a class="btn secondary" href="pages/amis.html">Découvrir →</a>
+    </div>
+    <div class="card">
+      <span class="icon">📔</span>
+      <h3 style="margin:.5rem 0 0;">Mon Carnet</h3>
+      <p>Consigne tes réflexions et notes personnelles, semaine après semaine.</p>
+      <a class="btn secondary" href="pages/carnet.html">Découvrir →</a>
+    </div>
+  </div>
+
 </main>
 
 <footer id="club-footer">© 2026 Vendredi entre amis · Direction Artistique &amp; Pédagogique : Miguel Tillero</footer>
 
 <a class="video-cta-flottant" href="https://us02web.zoom.us/j/2368165321" target="_blank" title="Entrer à la réunion Zoom">Rejoindre<br>la réunion</a>
 
+<script src="assets/js/calendrier.js"></script>
+<script src="assets/js/carousel.js"></script>
 <script src="assets/js/data-loader.js"></script>
 <script src="assets/js/progression.js"></script>
 <script src="assets/js/audio.js"></script>
@@ -154,6 +312,43 @@ function basculerAudioVideo(){
   v.muted = !v.muted;
   if(!v.muted){ v.volume=0.8; b.textContent='🔊 Son'; } else { b.textContent='🔇 Son'; }
 }
+
+/* ── Son automatique dès le début, quand le navigateur l'autorise ──
+   La plupart des navigateurs bloquent l'autoplay avec son tant que la
+   personne n'a pas interagi avec la page — c'est une règle du
+   navigateur, pas un choix du site. On tente quand même l'autoplay
+   avec son au chargement (fonctionne parfois, ex. visiteur régulier) ;
+   sinon, le son s'active dès le premier geste VOLONTAIRE sur la page
+   (un clic ou un toucher). On n'utilise pas le simple défilement
+   (scroll) : pour un public senior qui prend le temps de lire, un son
+   qui démarre pendant qu'on fait juste défiler la page surprendrait
+   plus qu'il n'aiderait. */
+function tenterSonAutomatique(){
+  const v = document.getElementById('headerVideo');
+  const b = document.getElementById('btnAudioVideo');
+  if(!v) return;
+  v.muted = false;
+  v.volume = 0.8;
+  const p = v.play();
+  if(p && p.catch){
+    p.then(() => { if(b) b.textContent = '🔊 Son'; })
+     .catch(() => { v.muted = true; }); // bloqué par le navigateur, on réessaiera au premier geste
+  }
+}
+document.addEventListener('DOMContentLoaded', tenterSonAutomatique);
+
+function activerSonAuPremierGeste(){
+  const v = document.getElementById('headerVideo');
+  const b = document.getElementById('btnAudioVideo');
+  if(!v || !v.muted) return;
+  v.muted = false;
+  v.volume = 0.8;
+  v.play().catch(() => {});
+  if(b) b.textContent = '🔊 Son';
+}
+['click','touchstart'].forEach(ev =>
+  document.addEventListener(ev, activerSonAuPremierGeste, { once: true, passive: true })
+);
 </script>
 </body>
 </html>
