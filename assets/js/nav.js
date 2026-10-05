@@ -113,6 +113,11 @@ function barraDelSitio() {
 
 function fondoDelSitio() {
   if (document.getElementById('vanta-bg')) return;
+  try {
+    var cx = navigator.connection;
+    if ((window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || (cx && (cx.saveData || /(^|-)2g$/.test(cx.effectiveType || ''))) ||
+        (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) || (navigator.deviceMemory && navigator.deviceMemory <= 2)) return;
+  } catch (e) {}
   const bg = document.createElement('div');
   bg.id = 'vanta-bg';
   document.body.insertBefore(bg, document.body.firstChild);
