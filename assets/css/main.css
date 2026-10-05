@@ -77,3 +77,21 @@ footer#club-footer{
 @media(max-width:720px){
   .mot-miguel{ flex-direction:column; }
 }
+
+/* ── Barra del sitio de Miguel y fondo 3D (se montan desde assets/js/nav.js) ── */
+#vanta-bg { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.8; }
+.sitio-barra {
+  display: flex; align-items: center; justify-content: space-between; gap: 0.8rem 1.4rem; flex-wrap: wrap;
+  padding: 0.7rem clamp(1rem, 4.5vw, 6rem); background: rgba(207,230,217,0.92); border-bottom: 1px solid rgba(165,130,74,0.3);
+}
+.sitio-marca { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.4rem; color: #12291c; text-decoration: none; white-space: nowrap; }
+.sitio-marca em { font-style: normal; color: #a5824a; }
+.sitio-barra nav { display: flex; flex-wrap: wrap; gap: 0.4rem; justify-content: center; }
+.sitio-barra nav a {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; white-space: nowrap;
+  padding: 0.5rem 0.85rem; border-radius: 999px; color: #1a2e24; background: rgba(255,255,255,0.72); border: 1px solid rgba(165,130,74,0.34);
+  box-shadow: 0 1px 3px rgba(20,45,32,0.08); transition: background .25s, color .25s, border-color .25s, transform .25s;
+}
+.sitio-barra nav a:hover { color: #86673a; background: #fff; border-color: #a5824a; transform: translateY(-1px); }
+.sitio-barra nav a.club-actual { color: #fff; background: linear-gradient(90deg, #2b4535, #0d7f57); border-color: transparent; }
+@media (max-width: 720px) { .sitio-barra { justify-content: center; } .sitio-barra nav a { font-size: 0.74rem; padding: 0.42rem 0.7rem; } }

@@ -39,8 +39,10 @@
       </div>
     </div>`;
 
+  barraDelSitio();
   document.getElementById('topbar-mount').innerHTML = html;
   initA11y();
+  fondoDelSitio();
 })();
 
 function initA11y() {
@@ -77,4 +79,57 @@ function actualizarBotonesA11y() {
   document.getElementById('btn-a-plus').setAttribute('aria-pressed', String(html.classList.contains('confort')));
   document.getElementById('btn-a-plusplus').setAttribute('aria-pressed', String(html.classList.contains('confort-plus')));
   document.getElementById('btn-contraste').setAttribute('aria-pressed', String(html.classList.contains('contraste')));
+}
+
+/* ════════════════════════════════════════════════
+   Barra del sitio de Miguel + fondo de puntos 3D
+   El club comparte el menú y el fondo del sitio principal
+   (migueltillero-ship-it.github.io/MiguelTillero) para que
+   pasar de uno a otro no se sienta como cambiar de web.
+════════════════════════════════════════════════ */
+function barraDelSitio() {
+  const BASE = 'https://migueltillero-ship-it.github.io/MiguelTillero/';
+  let lang = 'es';
+  try { lang = (localStorage.getItem('preferenciaIdioma_MT') || 'es'); } catch (e) {}
+  if (['es', 'fr', 'en'].indexOf(lang) === -1) lang = 'es';
+  const items = [
+    ['index.html',       { es: 'Inicio', fr: 'Accueil', en: 'Home' }],
+    ['perfil.html',      { es: 'Perfil', fr: 'Profil', en: 'Profile' }],
+    ['servicios.html',   { es: 'Servicios', fr: 'Services', en: 'Services' }],
+    ['cursos.html',      { es: 'Cursos y exámenes', fr: 'Cours et examens', en: 'Courses & exams' }],
+    ['galeria.html',     { es: 'Galería', fr: 'Galerie', en: 'Gallery' }],
+    ['mi-espacio.html',  { es: 'Mi espacio', fr: 'Mon espace', en: 'My space' }],
+    [null,               { es: 'Vendredi entre Amis', fr: 'Vendredi entre Amis', en: 'Vendredi entre Amis' }],
+    ['inscribete.html',  { es: 'Inscríbete', fr: 'Inscription', en: 'Enroll' }],
+    ['contacto.html',    { es: 'Contacto', fr: 'Contact', en: 'Contact' }],
+  ];
+  const links = items.map(it => it[0] === null
+    ? '<a class="club-actual" href="' + (window.PAGE_PREFIX ?? '') + 'index.html" aria-current="page">' + it[1][lang] + '</a>'
+    : '<a href="' + BASE + it[0] + '">' + it[1][lang] + '</a>').join('');
+  const barra = document.createElement('div');
+  barra.className = 'sitio-barra';
+  barra.innerHTML = '<a class="sitio-marca" href="' + BASE + 'index.html">Miguel <em>Tillero</em></a><nav aria-label="Sitio de Miguel Tillero">' + links + '</nav>';
+  document.body.insertBefore(barra, document.body.firstChild);
+}
+
+function fondoDelSitio() {
+  if (document.getElementById('vanta-bg')) return;
+  const bg = document.createElement('div');
+  bg.id = 'vanta-bg';
+  document.body.insertBefore(bg, document.body.firstChild);
+  function cargar(src, listo) { const s = document.createElement('script'); s.src = src; s.onload = listo; document.head.appendChild(s); }
+  function arrancar() {
+    cargar('https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js', function () {
+      cargar('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js', function () {
+        try {
+          const movil = window.innerWidth < 768;
+          VANTA.NET({ el: '#vanta-bg', THREE: window.THREE, mouseControls: true, touchControls: true, gyroControls: false,
+            minHeight: 200, minWidth: 200, scale: 1.0, scaleMobile: 0.6, color: 0xa5824a, backgroundColor: 0xbcdcc9,
+            points: movil ? 5 : 8, maxDistance: movil ? 17 : 21, spacing: movil ? 25 : 21, showDots: true });
+        } catch (e) {}
+      });
+    });
+  }
+  if (document.readyState === 'complete') setTimeout(arrancar, 400);
+  else window.addEventListener('load', function () { setTimeout(arrancar, 400); });
 }
