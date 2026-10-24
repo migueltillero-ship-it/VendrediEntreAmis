@@ -336,7 +336,9 @@
         },
         "reto": "¿Qué opinas del dicho suizo sobre la calma? Da tu opinión en 3-4 frases."
       },
-      "cultura": "Suiza tiene cuatro lenguas oficiales; el francés se habla en la región llamada 'Suisse romande'."
+      "cultura": "Suiza tiene cuatro lenguas oficiales; el francés se habla en la región llamada 'Suisse romande'.",
+      "fecha": "2026-10-23",
+      "activite_art_vendredi23": true
     },
     {
       "semana": 6,

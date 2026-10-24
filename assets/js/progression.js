@@ -4,7 +4,7 @@
    Todas las páginas del club se ajustan solas a partir
    de este único número — no hay que tocar nada más.
 ════════════════════════════════════════════════ */
-const SEMANA_ACTUAL = 1;
+const SEMANA_ACTUAL = 5;
 
 function retoCompletado(semana, nivel) {
   return localStorage.getItem('reto-completado-' + semana + '-' + nivel) === '1';

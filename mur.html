@@ -22,6 +22,48 @@
   <p style="color:rgba(255,255,255,0.85); margin-bottom:1.2rem; max-width:70ch;">Le journal de nos sessions : la ville explorée, ce qui s'y est dit, et l'activité à réaliser avant de se retrouver.</p>
   <div id="journal-semaines" style="display:flex; flex-direction:column; gap:1.5rem; margin-bottom:2.5rem;"></div>
 
+  <!-- Activité bespoke Semaine 5 (23 octobre) : déplacée par assets/js/page-mur.js dans la
+       carte du journal correspondante (semana.activite_art_vendredi23 === true). -->
+  <div id="activite-art-23oct" style="display:none;">
+
+    <!-- Hero -->
+    <div style="background:linear-gradient(135deg, rgba(197,160,89,0.18), rgba(255,255,255,0.04)); border:1px solid var(--gold-claro); border-radius:12px; overflow:hidden; margin-bottom:2rem;">
+      <img src="assets/club/session-23-octobre-art.webp" alt="Le groupe réuni en visioconférence, souriant, pendant la session du 23 octobre" style="width:100%; display:block; max-height:420px; object-fit:cover;">
+      <div style="padding:1.8rem 2rem;">
+        <span style="font-family:'Syne'; font-size:0.85rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-claro);">Moment fort · 23 octobre</span>
+        <h3 style="margin:0.5rem 0 1rem; font-size:1.7rem; color:#fff;">Quand un tableau a changé le cours de notre vendredi</h3>
+        <p style="font-size:1.15rem; line-height:1.8; color:rgba(255,255,255,0.92); max-width:75ch; margin:0;">Ce vendredi, la conversation a pris un chemin que personne n'avait prévu : Corina a partagé avec tout le groupe un tableau qu'elle a peint elle-même. Spontanément, la séance s'est transformée en un moment de culture, d'art et d'émotion partagée — exactement ce que « Vendredi entre amis » cherche à créer.</p>
+      </div>
+    </div>
+
+    <!-- Quiz culture et art -->
+    <div style="background:rgba(255,255,255,0.05); border-radius:12px; padding:2rem; margin-bottom:2rem;">
+      <h4 style="color:var(--gold-claro); font-size:1.35rem; margin:0 0 0.6rem;"><i class="fa-solid fa-palette"></i> Quiz : 12 œuvres, 12 peintres</h4>
+      <p style="font-size:1.08rem; line-height:1.7; color:rgba(255,255,255,0.9); margin-bottom:1.3rem;">En lien avec le tableau de Corina, un petit quiz pour (re)découvrir 12 grandes œuvres et leurs peintres. Choisissez la bonne réponse parmi les quatre options — aucune pression, c'est pour le plaisir de la culture.</p>
+
+      <div style="margin-bottom:1.5rem; border-radius:10px; overflow:hidden; aspect-ratio:16/9; max-width:640px;">
+        <iframe style="width:100%; height:100%; border:0;" src="https://www.youtube.com/embed/sVBWGbQxniE" title="Vidéo culture et art" allowfullscreen loading="lazy"></iframe>
+      </div>
+
+      <div id="art-quiz"></div>
+    </div>
+
+    <!-- Espace émotionnel -->
+    <div style="background:rgba(197,160,89,0.1); border:1px solid var(--gold); border-radius:12px; padding:2.2rem;">
+      <h4 style="color:#fff; font-size:1.35rem; margin:0 0 0.8rem;"><i class="fa-solid fa-heart"></i> L'Espace Émotionnel</h4>
+      <p style="font-size:1.1rem; line-height:1.8; color:rgba(255,255,255,0.92); margin-bottom:1.2rem;">Miguel a posé une question à tout le groupe : quel rêve ou objectif aimeriez-vous accomplir dans les prochaines 24 heures ?</p>
+      <p style="font-size:1.3rem; font-family:'Cormorant Garamond'; font-style:italic; color:var(--gold-claro); background:rgba(0,0,0,0.25); padding:1rem 1.3rem; border-radius:8px; margin-bottom:1.5rem;">« Si j'avais un rêve à accomplir… Ce serait… »</p>
+
+      <label for="reve-texte" style="display:block; font-size:1.1rem; color:rgba(255,255,255,0.9); margin-bottom:0.6rem;">Écrivez votre réponse ici, à votre rythme :</label>
+      <textarea id="reve-texte" rows="4" placeholder="Si j'avais un rêve à accomplir dans les prochaines 24 heures, ce serait..." style="width:100%; font-size:1.15rem; line-height:1.6; padding:1rem; border-radius:10px; border:2px solid var(--gold-claro); background:rgba(255,255,255,0.95); color:#1a1a1a; box-sizing:border-box;"></textarea>
+
+      <div style="margin-top:1.3rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+        <button type="button" id="reve-enregistrer" class="btn-oro" style="font-size:1.1rem; padding:0.9rem 1.8rem;">Enregistrer dans mon Carnet de Voyage</button>
+        <span id="reve-statut" style="color:rgba(255,255,255,0.8); font-size:1rem;"></span>
+      </div>
+    </div>
+  </div>
+
   <!-- Activité bespoke Semaine 1 : déplacée par assets/js/page-mur.js dans la carte du journal
        correspondante (semana.activite_paris_monuments === true). -->
   <div id="activite-paris" style="display:none;">
@@ -112,6 +154,7 @@
 <script src="assets/js/supabase-config.js"></script>
 <script src="assets/js/carnet.js"></script>
 <script src="assets/js/activite-paris.js"></script>
+<script src="assets/js/activite-art-vendredi23.js"></script>
 <script src="assets/js/page-mur.js"></script>
 </body>
 </html>
