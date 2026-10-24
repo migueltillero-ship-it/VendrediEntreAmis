@@ -39,16 +39,22 @@
     `;
   }).join('');
 
-  semanas.filter(s => s.activite_paris_monuments).forEach(s => {
-    const slot = cont.querySelector(`[data-activite-slot="${s.semana}"]`);
-    const widget = document.getElementById('activite-paris');
-    if (slot && widget) {
-      widget.style.display = 'block';
-      widget.style.marginTop = '1.5rem';
-      widget.style.paddingTop = '1.5rem';
-      widget.style.borderTop = '1px dashed var(--line)';
-      slot.appendChild(widget);
-    }
+  const activitesBespoke = [
+    { flag: 'activite_paris_monuments', idWidget: 'activite-paris' },
+    { flag: 'activite_art_vendredi23', idWidget: 'activite-art-23oct' },
+  ];
+  activitesBespoke.forEach(({ flag, idWidget }) => {
+    semanas.filter(s => s[flag]).forEach(s => {
+      const slot = cont.querySelector(`[data-activite-slot="${s.semana}"]`);
+      const widget = document.getElementById(idWidget);
+      if (slot && widget) {
+        widget.style.display = 'block';
+        widget.style.marginTop = '1.5rem';
+        widget.style.paddingTop = '1.5rem';
+        widget.style.borderTop = '1px dashed var(--line)';
+        slot.appendChild(widget);
+      }
+    });
   });
 })();
 
