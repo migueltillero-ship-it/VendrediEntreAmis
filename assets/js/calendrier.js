@@ -9,8 +9,8 @@ const EVENEMENT_CLUB = {
   lieu: 'En ligne (Zoom) — lien dans le groupe WhatsApp',
   description: "Chaque vendredi, une conversation. Chaque semaine, une nouvelle destination francophone. Rejoignez-nous sur Zoom : https://us02web.zoom.us/j/2368165321",
   dateLancement: '2026-09-18', // 1er vendredi
-  heureDebut: '18:00',         // heure du Mexique (confirmé)
-  heureFin: '19:30',           // heure du Mexique (confirmé)
+  heureDebut: '18:30',         // heure du Mexique (confirmé)
+  heureFin: '20:00',           // heure du Mexique (confirmé)
   fuseauIana: 'America/Mexico_City', // utilisé par Google Calendar (ctz)
   decalageUtc: -6,             // Mexique n'a plus d'heure d'été depuis 2022 : décalage fixe
 };
